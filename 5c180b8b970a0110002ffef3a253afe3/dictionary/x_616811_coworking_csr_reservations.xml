@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="csr_reservations" max_length="40" name="x_616811_coworking_csr_reservations" type="collection">
+        <element attributes="encode_utf8=false" label="Applicant" mandatory="true" max_length="32" name="applicant" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Date" mandatory="true" max_length="40" name="date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Space" mandatory="true" max_length="40" name="space" type="integer"/>
+        <element label="Status" mandatory="true" max_length="40" name="status" type="boolean"/>
+        <index name="index">
+            <element name="applicant"/>
+        </index>
+    </element>
+</database>
