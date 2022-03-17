@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>CSR Homepage - Container 2</name>
+        <order>2</order>
+        <sp_page display_value="csr_homepage">2395ff03970e0110002ffef3a253af63</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-10 08:03:54</sys_created_on>
+        <sys_id>b2de374f970e0110002ffef3a253af35</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CSR Homepage - Container 2</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_container_b2de374f970e0110002ffef3a253af35</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-10 08:09:13</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_container_b2de374f970e0110002ffef3a253af35</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>CSR Homepage - Container 2</name><order>2</order><sp_page display_value="csr_homepage">2395ff03970e0110002ffef3a253af63</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-10 08:03:54</sys_created_on><sys_id>b2de374f970e0110002ffef3a253af35</sys_id><sys_mod_count>1</sys_mod_count><sys_name>CSR Homepage - Container 2</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sp_container_b2de374f970e0110002ffef3a253af35</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-10 08:09:13</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>875052981</payload_hash>
+        <record_name>CSR Homepage - Container 2</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-10 08:09:13</sys_created_on>
+        <sys_id>b01080df970e0110002ffef3a253af7c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f72dff3c80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-10 08:09:13</sys_updated_on>
+        <type>Container</type>
+        <update_guid>f81080dfec0e0110bc6c3f24ecd6447b</update_guid>
+        <update_guid_history>f81080dfec0e0110bc6c3f24ecd6447b:875052981,bade374f140e0110a9251f24b3aec236:94948788</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CSR Homepage - Container 2">79d9889b974e0110002ffef3a253af90</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-10 08:51:54</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>05a231d633854bc88046a7b5b8781e44</sys_id>
+        <sys_metadata>b2de374f970e0110002ffef3a253af35</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CSR Homepage - Container 2</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_container_b2de374f970e0110002ffef3a253af35</sys_update_name>
+        <sys_update_version display_value="sp_container_b2de374f970e0110002ffef3a253af35">b01080df970e0110002ffef3a253af7c</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-10 08:51:54</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

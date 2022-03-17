@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="3" type="collection">
+        <element choice="3" default="single" label="Accessibility" max_length="40" name="accessibility" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Single" sequence="0" value="single"/>
+                <element inactive_on_update="false" label="Group" sequence="1" value="group"/>
+                <element inactive_on_update="false" label="Conference" sequence="2" value="conference"/>
+                <element inactive_on_update="false" label="Private Room" sequence="3" value="private_room"/>
+                <element inactive_on_update="false" label="Private Office" sequence="4" value="private_office"/>
+            </choice>
+        </element>
+        <element label="Available" max_length="40" name="availability" type="boolean"/>
+        <element label="description" mandatory="true" max_length="200" name="description" type="string"/>
+        <element label="F" max_length="40" name="f" type="boolean"/>
+        <element choice="3" label="Facility" mandatory="true" max_length="40" name="facility" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Projector" value="projector"/>
+                <element inactive_on_update="false" label="Tv Conference" value="tv_conference"/>
+                <element inactive_on_update="false" label="White Board and Markers" value="white_board_markers"/>
+            </choice>
+        </element>
+        <element label="M" max_length="40" name="m" type="boolean"/>
+        <element label="name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Rent" max_length="40" name="rent" type="float"/>
+        <element label="Sat" max_length="40" name="sat" type="boolean"/>
+        <element label="Seating capacity" max_length="40" name="seating_capacity" type="integer"/>
+        <element label="Sun" max_length="40" name="sun" type="boolean"/>
+        <element label="T" max_length="40" name="t" type="boolean"/>
+        <element label="Th" max_length="40" name="th" type="boolean"/>
+        <element label="W" max_length="40" name="w" type="boolean"/>
+    </element>
+</database>

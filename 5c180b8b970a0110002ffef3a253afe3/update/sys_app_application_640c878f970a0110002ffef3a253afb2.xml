@@ -7,14 +7,14 @@
         <hint>an application that allows people to reserve spaces for a coworking space rental company.</hint>
         <name/>
         <order/>
-        <roles>x_616811_coworking.csr_manager,x_616811_coworking.csr_user,x_616811_coworking.csr_admin</roles>
+        <roles>user,x_616811_coworking.admin,x_616811_coworking.manager</roles>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 04:21:45</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>640c878f970a0110002ffef3a253afb2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Coworking space Reservation System</sys_name>
         <sys_overrides/>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
@@ -22,7 +22,7 @@
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_app_application_640c878f970a0110002ffef3a253afb2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 04:21:45</sys_updated_on>
+        <sys_updated_on>2022-03-16 07:38:44</sys_updated_on>
         <title>Coworking space Reservation System</title>
         <view_name/>
     </sys_app_application>

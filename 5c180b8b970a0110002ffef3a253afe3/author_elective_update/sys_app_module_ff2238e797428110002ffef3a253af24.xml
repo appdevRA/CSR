@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Coworking space Reservation System">640c878f970a0110002ffef3a253afb2</application>
+        <assessment/>
+        <device_type/>
+        <filter table="x_616811_coworking_csr_reservations">status=awaiting_approval^EQ<item display_value="Awaiting approval" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="awaiting_approval"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint>List of requested records</hint>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Requested</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_616811_coworking_csr_reservations</name>
+        <order>120</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_616811_coworking.csr_admin,x_616811_coworking.csr_manager</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-11 06:28:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ff2238e797428110002ffef3a253af24</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Requested</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_app_module_ff2238e797428110002ffef3a253af24</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 15:20:12</sys_updated_on>
+        <timeline_page/>
+        <title>Requested</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_app_module_ff2238e797428110002ffef3a253af24</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Coworking space Reservation System">640c878f970a0110002ffef3a253afb2</application><assessment/><device_type/><filter table="x_616811_coworking_csr_reservations">status=awaiting_approval^EQ<item display_value="Awaiting approval" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="awaiting_approval"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></filter><hint>List of requested records</hint><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Requested</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_616811_coworking_csr_reservations</name><order>120</order><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_616811_coworking.csr_admin,x_616811_coworking.csr_manager</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-11 06:28:12</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>ff2238e797428110002ffef3a253af24</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Requested</sys_name><sys_overrides/><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sys_app_module_ff2238e797428110002ffef3a253af24</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-14 15:20:12</sys_updated_on><timeline_page/><title>Requested</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1877376809</payload_hash>
+        <record_name>Requested</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 15:20:12</sys_created_on>
+        <sys_id>7819c6a497560110002ffef3a253aff2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f8903f4270000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 15:20:12</sys_updated_on>
+        <type>Module</type>
+        <update_guid>7019c6a40b560110a7975f832499f1f2</update_guid>
+        <update_guid_history>7019c6a40b560110a7975f832499f1f2:-1877376809,e6b27520fd160110cb4b74ca9a4bfba6:1115877945,8a330c24bb560110ad9bb38bdb2cf8bd:1281961262,bf6dcd2f49c28110f31e6aedd822c63a:-1705023035,2a82702b9d4281105c95e8fcaae73884:1425757516</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Requested">eed2f209971e4110002ffef3a253af75</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:39:41</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>07aa7798118e45d0831f854864119100</sys_id>
+        <sys_metadata>ff2238e797428110002ffef3a253af24</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Requested</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_app_module_ff2238e797428110002ffef3a253af24</sys_update_name>
+        <sys_update_version display_value="sys_app_module_ff2238e797428110002ffef3a253af24">7819c6a497560110002ffef3a253aff2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:39:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

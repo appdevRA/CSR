@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-sandiego-12-22-2021__patch0-hotfix1-02-01-2022_02-01-2022_2323.zip</compiler_build>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Create approval on reservation create and update status field depending to response</description>
+        <internal_name>reservation_approval</internal_name>
+        <label_cache>[{"name":"{{static.df1d2641971e4110002ffef3a253af1a}}","label":"CSR Manager - Record Created","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.477a05d153013010b846ddeeff7b1225}}","label":"App Engine Admins - Record Created","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.applicant.sys_domain","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant➛Domain","reference":"sys_user_group","reference_display":"Group","type":"domain_id","base_type":"domain_id","parent_table_name":"sys_user","column_name":"sys_domain"},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.__dont_treat_as_error__","label":"5 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.__action_status__","label":"5 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.table_name","label":"5 - Update Record➛CSR Reservations Table","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.record","label":"5 - Update Record➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__action_status__.message","label":"1➛Action Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.__dont_treat_as_error__","label":"3 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.__action_status__","label":"3 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.table_name","label":"3 - Update Record➛CSR Reservations Table","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.record","label":"3 - Update Record➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.run_start_time","label":"Trigger - Record Created➛Run Start Time UTC","type":"glide_date_time","base_type":"glide_date_time","attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.applicant.manager","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager"},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__action_status__","label":"1 - Ask For Approval➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__dont_treat_as_error__","label":"1 - Ask For Approval➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.applicant","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_616811_coworking_csr_reservations","column_name":"applicant"},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.record","label":"1 - Update Record➛Record","reference_display":"Record","type":"document_id","base_type":"document_id","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.table_name","label":"1 - Update Record➛Table","reference_display":"Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.__action_status__","label":"1 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"co_type_name":"FDACTIONSTATUS","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.__dont_treat_as_error__","label":"1 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true"}}]</label_cache>
+        <master_snapshot>468ea2c1971e4110002ffef3a253af02</master_snapshot>
+        <name>Reservation Approval</name>
+        <natlang/>
+        <outputs/>
+        <remote_trigger_id>2a8ea2c1971e4110002ffef3a253af72</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 07:55:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f63324e497d60110002ffef3a253afc1</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Reservation Approval</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_hub_flow_f63324e497d60110002ffef3a253afc1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f63324e497d60110002ffef3a253afc1"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f63324e497d60110002ffef3a253afc1"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_616811_coworking_csr_reservations">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2a8ea2c1971e4110002ffef3a253af72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"table":"sys_trigger_runner_mapping","id":"268ea2c1971e4110002ffef3a253af73","name":"trigger_runner","type":"java.util.Collections$UnmodifiableMap"}</data>
+        <identifier>f63324e497d60110002ffef3a253afc1</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_id>268ea2c1971e4110002ffef3a253af73</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <trigger display_value="">2a8ea2c1971e4110002ffef3a253af72</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_json_chunk action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAGXLWwqAIBBA0b3MdytwKxGD5fggGUFHLKK99yAo6Pce7ga5MtqYGgYGBaOeZpdTZQPdTc0TYy2UMYYioPrh0wuJBHbXl8T/jpc1r48mRlqE2JA5u9WxEOwH5v2lw4YAAAA=</data>
+        <document_id>268ea2c1971e4110002ffef3a253af73</document_id>
+        <field>trigger_runner</field>
+        <length>144</length>
+        <position>0</position>
+        <source_table>sys_trigger_runner_mapping</source_table>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_id>e28ea2c1971e4110002ffef3a253af74</sys_id>
+    </sys_json_chunk>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=f63324e497d60110002ffef3a253afc1^sys_idNOT IN268ea2c1971e4110002ffef3a253af73"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=f63324e497d60110002ffef3a253afc1^sys_idNOT IN263a2020971a0110002ffef3a253af56"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>263a2020971a0110002ffef3a253af56</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=263a2020971a0110002ffef3a253af56"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>263a2020971a0110002ffef3a253af56</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>623a2020971a0110002ffef3a253af58</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>263a2020971a0110002ffef3a253af56</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>e63a2020971a0110002ffef3a253af57</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f63324e497d60110002ffef3a253afc1"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f63324e497d60110002ffef3a253afc1^sys_idNOT IN7a3324e497d60110002ffef3a253afc3"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f63324e497d60110002ffef3a253afc1</id>
+        <name>Reservation Approval</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 07:55:14</sys_created_on>
+        <sys_id>7a3324e497d60110002ffef3a253afc3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 07:55:14</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=7a3324e497d60110002ffef3a253afc3"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f63324e497d60110002ffef3a253afc1^sys_idNOT IN2a3a2020971a0110002ffef3a253af51,a23aacec97d60110002ffef3a253af99"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</model>
+        <model_id>f63324e497d60110002ffef3a253afc1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>2a3a2020971a0110002ffef3a253af51</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</model>
+        <model_id>f63324e497d60110002ffef3a253afc1</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>a23aacec97d60110002ffef3a253af99</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=f63324e497d60110002ffef3a253afc1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f63324e497d60110002ffef3a253afc1"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=f63324e497d60110002ffef3a253afc1^sys_idNOT IN0998ec7497920110002ffef3a253afaa,9998ec7497920110002ffef3a253afb3,e23a2020971a0110002ffef3a253af5e"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Set status to approved</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <order>3</order>
+        <parent_ui_id>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0998ec7497920110002ffef3a253afaa</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>john.withoutPatronRole</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:22:06</sys_updated_on>
+        <ui_id>317bfe09-4798-4cd2-8db7-9f049f16c1d6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=0998ec7497920110002ffef3a253afaa"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>0998ec7497920110002ffef3a253afaa</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0d98ec7497920110002ffef3a253afac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value>status=approved</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>0998ec7497920110002ffef3a253afaa</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>cd98ec7497920110002ffef3a253afac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=0998ec7497920110002ffef3a253afaa"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>0998ec7497920110002ffef3a253afaa</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>c598ec7497920110002ffef3a253afac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>0998ec7497920110002ffef3a253afaa</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0598ec7497920110002ffef3a253afac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>0998ec7497920110002ffef3a253afaa</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>8998ec7497920110002ffef3a253afac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0998ec7497920110002ffef3a253afaa"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0998ec7497920110002ffef3a253afaa"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment>Set status to rejected</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <order>5</order>
+        <parent_ui_id>6902388f-b526-45b7-b36b-714a40d31f5e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>9998ec7497920110002ffef3a253afb3</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>john.withoutPatronRole</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:22:06</sys_updated_on>
+        <ui_id>8840d1a4-0f08-44a6-95e4-a57270656e7f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=9998ec7497920110002ffef3a253afb3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>9998ec7497920110002ffef3a253afb3</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>9598ec7497920110002ffef3a253afb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>9998ec7497920110002ffef3a253afb3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>d198ec7497920110002ffef3a253afb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=9998ec7497920110002ffef3a253afb3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>9998ec7497920110002ffef3a253afb3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>9d98ec7497920110002ffef3a253afb4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>9998ec7497920110002ffef3a253afb3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>d998ec7497920110002ffef3a253afb4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>9998ec7497920110002ffef3a253afb3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>5198ec7497920110002ffef3a253afb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9998ec7497920110002ffef3a253afb3"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9998ec7497920110002ffef3a253afb3"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>e23a2020971a0110002ffef3a253af5e</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>john.withoutPatronRole</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:22:06</sys_updated_on>
+        <ui_id>0c6f4476-b6ce-4779-82bd-d541e776ce6d</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e23a2020971a0110002ffef3a253af5e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e23a2020971a0110002ffef3a253af5e</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>263a2020971a0110002ffef3a253af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e23a2020971a0110002ffef3a253af5e</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>623a2020971a0110002ffef3a253af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <value>status</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e23a2020971a0110002ffef3a253af5e</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:04</sys_created_on>
+        <sys_id>8998ec7497920110002ffef3a253af9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:04</sys_updated_on>
+        <value>approval_history</value>
+        <variable display_value="Journal Field">c1f2e9920b10030085c083eb37673ae3</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e23a2020971a0110002ffef3a253af5e</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>aa3a2020971a0110002ffef3a253af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e23a2020971a0110002ffef3a253af5e</document_key>
+        <order>4</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>e63a2020971a0110002ffef3a253af62</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value/>
+        <variable display_value="Approval Conditions">45f2e9920b10030085c083eb37673aee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e23a2020971a0110002ffef3a253af5e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>2e3a2020971a0110002ffef3a253af61</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:30</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.df1d2641971e4110002ffef3a253af1a}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>6e3a2020971a0110002ffef3a253af60</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>6a3a2020971a0110002ffef3a253af61</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"approve","date_type":"relative","date":"{{Created_1.run_start_time}}","duration":"3","duration_type":"days","schedule":"090eecae0a0a0b260077e1dfa71da828","schedule_label":"8-5 weekdays excluding holidays"}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>journal_field</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:04</sys_created_on>
+        <sys_id>8598ec7497920110002ffef3a253af9e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:04</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>a63a2020971a0110002ffef3a253af61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>e23a2020971a0110002ffef3a253af5e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>ee3a2020971a0110002ffef3a253af61</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e23a2020971a0110002ffef3a253af5e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e23a2020971a0110002ffef3a253af5e"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=f63324e497d60110002ffef3a253afc1"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=f63324e497d60110002ffef3a253afc1^sys_idNOT IN0198ec7497920110002ffef3a253afa2,0d98ec7497920110002ffef3a253afad"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">0198ec7497920110002ffef3a253afa1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0198ec7497920110002ffef3a253afa2</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <ui_id>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=0198ec7497920110002ffef3a253afa2"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>0198ec7497920110002ffef3a253afa2</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>8598ec7497920110002ffef3a253afa6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <value>If Request is approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=0198ec7497920110002ffef3a253afa2"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>0198ec7497920110002ffef3a253afa2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0598ec7497920110002ffef3a253afa6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{0c6f4476-b6ce-4779-82bd-d541e776ce6d.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>0198ec7497920110002ffef3a253afa2</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>4198ec7497920110002ffef3a253afa6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 02:57:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=0198ec7497920110002ffef3a253afa2"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0198ec7497920110002ffef3a253afa2"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">4598ec7497920110002ffef3a253afad</block>
+        <comment/>
+        <connected_to>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 02:57:05</sys_created_on>
+        <sys_id>0d98ec7497920110002ffef3a253afad</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <ui_id>6902388f-b526-45b7-b36b-714a40d31f5e</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=0d98ec7497920110002ffef3a253afad"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=0d98ec7497920110002ffef3a253afad"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0d98ec7497920110002ffef3a253afad"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f63324e497d60110002ffef3a253afc1"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f63324e497d60110002ffef3a253afc1"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1^sys_idNOT IN2a3a2020971a0110002ffef3a253af50,623a2020971a0110002ffef3a253af54"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>2a3a2020971a0110002ffef3a253af50</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 08:25:48</sys_created_on>
+        <sys_id>623a2020971a0110002ffef3a253af54</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 08:25:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f63324e497d60110002ffef3a253afc1"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_f63324e497d60110002ffef3a253afc1"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f63324e497d60110002ffef3a253afc1"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f63324e497d60110002ffef3a253afc1^sys_idNOT INe28ea2c1971e4110002ffef3a253af75"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"e28ea2c1971e4110002ffef3a253af75","name":"plan","plan_signature":null}}</plan>
+        <plan_id>f63324e497d60110002ffef3a253afc1</plan_id>
+        <snapshot>cdde6ac1971e4110002ffef3a253af3a</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e28ea2c1971e4110002ffef3a253af75</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <trigger display_value="">2a8ea2c1971e4110002ffef3a253af72</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f63324e497d60110002ffef3a253afc1"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Create approval on reservation create and update status field depending to response</description>
+        <internal_name>reservation_approval</internal_name>
+        <label_cache>[{"name":"{{static.df1d2641971e4110002ffef3a253af1a}}","label":"CSR Manager - Record Created","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"{{static.477a05d153013010b846ddeeff7b1225}}","label":"App Engine Admins - Record Created","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.applicant.sys_domain","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant➛Domain","reference":"sys_user_group","reference_display":"Group","type":"domain_id","base_type":"domain_id","parent_table_name":"sys_user","column_name":"sys_domain"},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.__dont_treat_as_error__","label":"5 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.__action_status__","label":"5 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.table_name","label":"5 - Update Record➛CSR Reservations Table","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"8840d1a4-0f08-44a6-95e4-a57270656e7f.record","label":"5 - Update Record➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__action_status__.message","label":"1➛Action Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","attributes":{}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.__dont_treat_as_error__","label":"3 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.__action_status__","label":"3 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.table_name","label":"3 - Update Record➛CSR Reservations Table","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"317bfe09-4798-4cd2-8db7-9f049f16c1d6.record","label":"3 - Update Record➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.run_start_time","label":"Trigger - Record Created➛Run Start Time UTC","type":"glide_date_time","base_type":"glide_date_time","attributes":{"test_input_hidden":"true"}},{"name":"Created_1.current.applicant.manager","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager"},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__action_status__","label":"1 - Ask For Approval➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"0c6f4476-b6ce-4779-82bd-d541e776ce6d.__dont_treat_as_error__","label":"1 - Ask For Approval➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛CSR Reservations Record","reference":"x_616811_coworking_csr_reservations","reference_display":"CSR Reservations","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.applicant","label":"Trigger - Record Created➛CSR Reservations Record➛Applicant","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_616811_coworking_csr_reservations","column_name":"applicant"},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.record","label":"1 - Update Record➛Record","reference_display":"Record","type":"document_id","base_type":"document_id","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.table_name","label":"1 - Update Record➛Table","reference_display":"Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.__action_status__","label":"1 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"co_type_name":"FDACTIONSTATUS","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true"}},{"name":"9877c8e6-6123-470e-bcc5-948cb77bd1e8.__dont_treat_as_error__","label":"1 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true"}}]</label_cache>
+        <master>true</master>
+        <name>Reservation Approval</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Reservation Approval">f63324e497d60110002ffef3a253afc1</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>468ea2c1971e4110002ffef3a253af02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_variable_value action="delete_multiple" query="document_key=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=468ea2c1971e4110002ffef3a253af02^sys_idNOT INde8ea2c1971e4110002ffef3a253af53"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>de8ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=de8ea2c1971e4110002ffef3a253af53"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>de8ea2c1971e4110002ffef3a253af53</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_id>1e8ea2c1971e4110002ffef3a253af55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>de8ea2c1971e4110002ffef3a253af53</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:50</sys_created_on>
+        <sys_id>5a8ea2c1971e4110002ffef3a253af55</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:50</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=468ea2c1971e4110002ffef3a253af02^sys_idNOT IN8a8ea2c1971e4110002ffef3a253af03"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>468ea2c1971e4110002ffef3a253af02</id>
+        <name>Reservation Approval</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>8a8ea2c1971e4110002ffef3a253af03</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=8a8ea2c1971e4110002ffef3a253af03"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=468ea2c1971e4110002ffef3a253af02^sys_idNOT IN168ea2c1971e4110002ffef3a253af1c,828ea2c1971e4110002ffef3a253af05"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</model>
+        <model_id>468ea2c1971e4110002ffef3a253af02</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>168ea2c1971e4110002ffef3a253af1c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</model>
+        <model_id>468ea2c1971e4110002ffef3a253af02</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>828ea2c1971e4110002ffef3a253af05</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_flow_output action="delete_multiple" query="model=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=468ea2c1971e4110002ffef3a253af02^sys_idNOT IN5e8ea2c1971e4110002ffef3a253af42,da8ea2c1971e4110002ffef3a253af4b,de8ea2c1971e4110002ffef3a253af51"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>5e8ea2c1971e4110002ffef3a253af42</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <ui_id>0c6f4476-b6ce-4779-82bd-d541e776ce6d</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5e8ea2c1971e4110002ffef3a253af42"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5e8ea2c1971e4110002ffef3a253af42</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>1e8ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>approval_history</value>
+        <variable display_value="Journal Field">c1f2e9920b10030085c083eb37673ae3</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5e8ea2c1971e4110002ffef3a253af42</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>5a8ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>status</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5e8ea2c1971e4110002ffef3a253af42</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>928ea2c1971e4110002ffef3a253af46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5e8ea2c1971e4110002ffef3a253af42</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>de8ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5e8ea2c1971e4110002ffef3a253af42"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>168ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.df1d2641971e4110002ffef3a253af1a}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>1a8ea2c1971e4110002ffef3a253af44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>528ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"approve","date_type":"relative","date":"{{Created_1.run_start_time}}","duration":"3","duration_type":"days","schedule":"090eecae0a0a0b260077e1dfa71da828","schedule_label":"8-5 weekdays excluding holidays"}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>journal_field</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>da8ea2c1971e4110002ffef3a253af44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>9e8ea2c1971e4110002ffef3a253af44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>5e8ea2c1971e4110002ffef3a253af42</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>d68ea2c1971e4110002ffef3a253af45</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5e8ea2c1971e4110002ffef3a253af42"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5e8ea2c1971e4110002ffef3a253af42"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <comment>Set status to approved</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <order>3</order>
+        <parent_ui_id>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>da8ea2c1971e4110002ffef3a253af4b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <ui_id>317bfe09-4798-4cd2-8db7-9f049f16c1d6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=da8ea2c1971e4110002ffef3a253af4b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>da8ea2c1971e4110002ffef3a253af4b</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>5e8ea2c1971e4110002ffef3a253af4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>da8ea2c1971e4110002ffef3a253af4b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>9a8ea2c1971e4110002ffef3a253af4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>status=approved</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=da8ea2c1971e4110002ffef3a253af4b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>da8ea2c1971e4110002ffef3a253af4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>568ea2c1971e4110002ffef3a253af4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>da8ea2c1971e4110002ffef3a253af4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>928ea2c1971e4110002ffef3a253af4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>da8ea2c1971e4110002ffef3a253af4b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>1a8ea2c1971e4110002ffef3a253af4d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=da8ea2c1971e4110002ffef3a253af4b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=da8ea2c1971e4110002ffef3a253af4b"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <comment>Set status to rejected</comment>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <order>5</order>
+        <parent_ui_id>6902388f-b526-45b7-b36b-714a40d31f5e</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>de8ea2c1971e4110002ffef3a253af51</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <ui_id>8840d1a4-0f08-44a6-95e4-a57270656e7f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=de8ea2c1971e4110002ffef3a253af51"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>de8ea2c1971e4110002ffef3a253af51</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>1a8ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>de8ea2c1971e4110002ffef3a253af51</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>da8ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>x_616811_coworking_csr_reservations</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=de8ea2c1971e4110002ffef3a253af51"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>de8ea2c1971e4110002ffef3a253af51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>d28ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>de8ea2c1971e4110002ffef3a253af51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>128ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>de8ea2c1971e4110002ffef3a253af51</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>968ea2c1971e4110002ffef3a253af53</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=de8ea2c1971e4110002ffef3a253af51"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=de8ea2c1971e4110002ffef3a253af51"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=468ea2c1971e4110002ffef3a253af02^sys_idNOT IN968ea2c1971e4110002ffef3a253af39,9a8ea2c1971e4110002ffef3a253af27"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">4598ec7497920110002ffef3a253afad</block>
+        <comment/>
+        <connected_to>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>968ea2c1971e4110002ffef3a253af39</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <ui_id>6902388f-b526-45b7-b36b-714a40d31f5e</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=968ea2c1971e4110002ffef3a253af39"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=968ea2c1971e4110002ffef3a253af39"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=968ea2c1971e4110002ffef3a253af39"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">0198ec7497920110002ffef3a253afa1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Reservation Approval">468ea2c1971e4110002ffef3a253af02</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>9a8ea2c1971e4110002ffef3a253af27</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <ui_id>77ff4fca-1d6e-4cb4-af1e-c8cfa7adc8a9</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=9a8ea2c1971e4110002ffef3a253af27"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>9a8ea2c1971e4110002ffef3a253af27</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>da8ea2c1971e4110002ffef3a253af2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <value>If Request is approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=9a8ea2c1971e4110002ffef3a253af27"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>9a8ea2c1971e4110002ffef3a253af27</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>5a8ea2c1971e4110002ffef3a253af2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{0c6f4476-b6ce-4779-82bd-d541e776ce6d.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>9a8ea2c1971e4110002ffef3a253af27</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>928ea2c1971e4110002ffef3a253af2b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9a8ea2c1971e4110002ffef3a253af27"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9a8ea2c1971e4110002ffef3a253af27"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=468ea2c1971e4110002ffef3a253af02"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02^sys_idNOT IN5e8ea2c1971e4110002ffef3a253af20,9a8ea2c1971e4110002ffef3a253af18"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>5e8ea2c1971e4110002ffef3a253af20</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:20:49</sys_created_on>
+        <sys_id>9a8ea2c1971e4110002ffef3a253af18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 07:20:49</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_468ea2c1971e4110002ffef3a253af02"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_468ea2c1971e4110002ffef3a253af02"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_468ea2c1971e4110002ffef3a253af02"/>
+    <sys_hub_flow action="update">
+        <sys_id>f63324e497d60110002ffef3a253afc1</sys_id>
+        <latest_snapshot>468ea2c1971e4110002ffef3a253af02</latest_snapshot>
+    </sys_hub_flow>
+</record_update>

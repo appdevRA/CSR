@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Alert if space is not applicable to user</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+// 			alert("has role");
+   //Type appropriate comment here, and begin script below
+	if(g_form.isNewRecord() && g_user.hasRole("x_616811_coworking.csr_patron")){
+		alert("has role patron");
+	}else{
+		alert("Sorry, only registered users can reserve private rooms and offices");
+// 		g_form.removeOption('Private room', 'private_room');
+// 		g_form.removeOption('private_room', 'private_room');
+		
+	}
+	if(g_form.isNewRecord() && g_user.hasRole("x_616811_coworking.csr_admin")){
+		alert("has role admin");
+	}else
+		alert("has no role admin");
+	
+	
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 13:56:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>306db6b4971e0110002ffef3a253af93</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>Alert if space is not applicable to user</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_client_306db6b4971e0110002ffef3a253af93</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 01:57:59</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_client_306db6b4971e0110002ffef3a253af93</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Alert if space is not applicable to user&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+// 			alert("has role");
+   //Type appropriate comment here, and begin script below
+	if(g_form.isNewRecord() &amp;&amp; g_user.hasRole("x_616811_coworking.csr_patron")){
+		alert("has role patron");
+	}else{
+		alert("Sorry, only registered users can reserve private rooms and offices");
+// 		g_form.removeOption('Private room', 'private_room');
+// 		g_form.removeOption('private_room', 'private_room');
+		
+	}
+	if(g_form.isNewRecord() &amp;&amp; g_user.hasRole("x_616811_coworking.csr_admin")){
+		alert("has role admin");
+	}else
+		alert("has no role admin");
+	
+	
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-15 13:56:37&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;306db6b4971e0110002ffef3a253af93&lt;/sys_id&gt;&lt;sys_mod_count&gt;27&lt;/sys_mod_count&gt;&lt;sys_name&gt;Alert if space is not applicable to user&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_306db6b4971e0110002ffef3a253af93&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-16 01:57:59&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_csr_reservations&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>46277269</payload_hash>
+        <record_name>Alert if space is not applicable to user</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 01:57:59</sys_created_on>
+        <sys_id>11a421c997964110002ffef3a253af8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f90723a9c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 01:57:59</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>19a421c99c9641100f8bfcac35f40d8a</update_guid>
+        <update_guid_history>19a421c99c9641100f8bfcac35f40d8a:46277269,298369899b964110f83f5f208258c3ad:-890049467,a69fd1859d964110910e609b123dcc57:-1327776556,e27f91854896411042dda63d1074e1fe:1324128942,e8ec9d818496411079dbbca497ba0730:-413380943,25bc91c17d9641102eaa41602f65f901:1613429497,f1e90f34de5e0110ce1a47e914c01b4b:305210837,1dd783b0d45e011033cbe392144876f3:986389869,fb378770be5e0110d2066b3dad141591:-2095017941,dc274330855e01102a8abd5ea928de4f:-1361203547,8b968b30135e0110504c0b213059efe4:-1857609475,f7e50ffcde1e0110d186f6e93a882e54:263462106,3154cf7c661e01103befe7a7503f4f99:1957860024,36638f3ca71e01100a3b01ca1a3724f4:2115247897,bb330f3c3f1e011067d0b625c9b275e5:1634117334,dd728fb8661e0110266578454b644552:-342076047,dcb1cfb8701e0110d098ff3197b15ea4:-2105097466,5a510bb8dc1e0110db754c0ffbf6d1eb:1623748175,c71107b8501e0110a8e2cc15eeec3cd6:972457374,1d80cf78051e01105ca51887141e19c2:247274807,d1500f78c71e0110d5d40bcfa82f3284:1365891021,fe3047783e1e0110ba178abce46b0180:318965380,6a200b78051e01101dec77a776b18232:-1294033242,6d104378c31e0110d142823089764835:-1550995968,b8ffbe38bf1e011035e2d2ae56829317:154905984,a8cf3a38bd1e01109c6e83b3690e24e8:-1636749219,60af3ef4921e01107e45ddb1db6a2df5:1014587611,1e8ffa74831e01109c182853060aaf61:-951040449</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 02:00:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>27848b41667b483fa80e7d6d2d4a6259</sys_id>
+        <sys_metadata>306db6b4971e0110002ffef3a253af93</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Alert if space is not applicable to user</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="CSR Reservations">e9db478f970a0110002ffef3a253af3c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_client_306db6b4971e0110002ffef3a253af93</sys_update_name>
+        <sys_update_version display_value="sys_script_client_306db6b4971e0110002ffef3a253af93">11a421c997964110002ffef3a253af8b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 02:00:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

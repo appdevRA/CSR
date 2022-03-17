@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_616811_coworking.calendar_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>calendar_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-11 06:48:56</sys_created_on>
+        <sys_id>1a47fc6f97428110002ffef3a253af9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_616811_coworking.calendar_user</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_user_role_1a47fc6f97428110002ffef3a253af9b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-11 06:48:56</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_user_role_1a47fc6f97428110002ffef3a253af9b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_616811_coworking.calendar_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix>calendar_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-11 06:48:56</sys_created_on><sys_id>1a47fc6f97428110002ffef3a253af9b</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_616811_coworking.calendar_user</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sys_user_role_1a47fc6f97428110002ffef3a253af9b</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-11 06:48:56</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>1370422901</payload_hash>
+        <record_name>x_616811_coworking.calendar_user</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-11 06:48:56</sys_created_on>
+        <sys_id>da4738af97428110002ffef3a253afd9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f77bccc400000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-11 06:48:56</sys_updated_on>
+        <type>Role</type>
+        <update_guid>164738af8842811088fb96c21e61ebd9</update_guid>
+        <update_guid_history>164738af8842811088fb96c21e61ebd9:1370422901</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_616811_coworking.calendar_user">fc4d15a897920110002ffef3a253af3c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-14 12:08:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>0cb2ee611f0d4a658821040172e24cd9</sys_id>
+        <sys_metadata>1a47fc6f97428110002ffef3a253af9b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_616811_coworking.calendar_user</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_user_role_1a47fc6f97428110002ffef3a253af9b</sys_update_name>
+        <sys_update_version display_value="sys_user_role_1a47fc6f97428110002ffef3a253af9b">da4738af97428110002ffef3a253afd9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-14 12:08:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

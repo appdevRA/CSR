@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_616811_coworking.ReservationUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Utils Script Include for Reservation</description>
+        <name>ReservationUtils</name>
+        <script><![CDATA[var ReservationUtils = Class.create();
+ReservationUtils.prototype = {
+    initialize: function() {
+    },
+	startIsPastCurrentTime: function(start){
+		// Create GlideDateTime objects for the current date and the passed in date
+		var rightnow = new GlideDateTime();
+		var startTime = new GlideDateTime(start);
+		
+		// If the testdate is before rightnow, return true, else return false
+		if (startTime.before(rightnow)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	},
+	
+	endIsBeforeStart: function(start, end){
+		
+		// Create GlideDateTime objects for the current date and the passed in date
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		
+		// Get the date portion of rightnow and testdate (no timestamp)
+		if(endTime.before(startTime)){
+			return true;
+		}
+		else{
+			return false;
+			
+		}
+	
+		// Compare today and istoday to see if they are the same day
+// 		if(today.compareTo(istoday) == 0){
+// 			return true;
+// 		}
+// 		else {
+// 			return false;
+// 		}
+	},
+	
+    type: 'ReservationUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 12:35:49</sys_created_on>
+        <sys_id>2d27b1fc97d60110002ffef3a253afde</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ReservationUtils</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_include_2d27b1fc97d60110002ffef3a253afde</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:39:48</sys_updated_on>
+    </sys_script_include>
+</record_update>

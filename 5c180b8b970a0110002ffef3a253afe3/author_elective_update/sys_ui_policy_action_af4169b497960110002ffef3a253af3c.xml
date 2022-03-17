@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>applicant_name</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 07:05:28</sys_created_on>
+        <sys_id>af4169b497960110002ffef3a253af3c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>applicant_name</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_ui_policy_action_af4169b497960110002ffef3a253af3c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 07:05:28</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+        <ui_policy display_value="Hide Applicant Name field if not registered user">47fc597097960110002ffef3a253af5f</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_ui_policy_action_af4169b497960110002ffef3a253af3c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>applicant_name</field><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-15 07:05:28</sys_created_on><sys_id>af4169b497960110002ffef3a253af3c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>applicant_name</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sys_ui_policy_action_af4169b497960110002ffef3a253af3c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-15 07:05:28</sys_updated_on><table>x_616811_coworking_csr_reservations</table><ui_policy display_value="Hide Applicant Name field if not registered user">47fc597097960110002ffef3a253af5f</ui_policy><visible>false</visible></sys_ui_policy_action></record_update>]]></payload>
+        <payload_hash>807999775</payload_hash>
+        <record_name>applicant_name</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 07:05:28</sys_created_on>
+        <sys_id>6361617497960110002ffef3a253af67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f8c6560a60000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 07:05:28</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>ab61617451960110633fc208cbea9966</update_guid>
+        <update_guid_history>ab61617451960110633fc208cbea9966:807999775</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 07:06:45</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>97f918120a7049b0991901e661bbae40</sys_id>
+        <sys_metadata>af4169b497960110002ffef3a253af3c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>applicant_name</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="Hide Applicant field if newRecord">47fc597097960110002ffef3a253af5f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_af4169b497960110002ffef3a253af3c</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_af4169b497960110002ffef3a253af3c">6361617497960110002ffef3a253af67</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-15 07:06:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

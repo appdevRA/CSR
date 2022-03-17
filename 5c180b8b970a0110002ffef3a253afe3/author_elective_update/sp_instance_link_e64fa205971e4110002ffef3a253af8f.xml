@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>info</color>
+        <css/>
+        <glyph>calendar</glyph>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>1</order>
+        <roles/>
+        <sc_cat_item display_value="Coworking Space Reservation">d3a7be8d971e4110002ffef3a253afc9</sc_cat_item>
+        <sc_category/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ef4ede4d979a4110002ffef3a253afc1</sp_column>
+        <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 07:24:06</sys_created_on>
+        <sys_id>e64fa205971e4110002ffef3a253af8f</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Schedule Your Meeting</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_link_e64fa205971e4110002ffef3a253af8f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 09:32:52</sys_updated_on>
+        <title>Schedule Your Meeting</title>
+        <type>sc_cat_item</type>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "Circle Icon",
+		"displayValue": "Circle Icon"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="DELETE" query="documentkey=e64fa205971e4110002ffef3a253af8f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_link_e64fa205971e4110002ffef3a253af8f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_link"&gt;&lt;sp_instance_link action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;info&lt;/color&gt;&lt;css/&gt;&lt;glyph&gt;calendar&lt;/glyph&gt;&lt;id/&gt;&lt;kb_article/&gt;&lt;kb_category/&gt;&lt;kb_topic/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;sc_cat_item display_value="Coworking Space Reservation"&gt;d3a7be8d971e4110002ffef3a253afc9&lt;/sc_cat_item&gt;&lt;sc_category/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;ef4ede4d979a4110002ffef3a253afc1&lt;/sp_column&gt;&lt;sp_page display_value="sc_cat_item"&gt;9f12251147132100ba13a5554ee490f4&lt;/sp_page&gt;&lt;sp_widget display_value="Icon Link"&gt;3caa67afcb13020000f8d856634c9c2e&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_link&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-16 07:24:06&lt;/sys_created_on&gt;&lt;sys_id&gt;e64fa205971e4110002ffef3a253af8f&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;Schedule Your Meeting&lt;/sys_name&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_link_e64fa205971e4110002ffef3a253af8f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-16 09:32:52&lt;/sys_updated_on&gt;&lt;title&gt;Schedule Your Meeting&lt;/title&gt;&lt;type&gt;sc_cat_item&lt;/type&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"link_template": {
+		"value": "Circle Icon",
+		"displayValue": "Circle Icon"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_link&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e64fa205971e4110002ffef3a253af8f"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1548090447</payload_hash>
+        <record_name>Schedule Your Meeting</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 09:32:52</sys_created_on>
+        <sys_id>60cc8f49979e4110002ffef3a253afea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f9212af570000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 09:32:52</sys_updated_on>
+        <type>Instance with Link</type>
+        <update_guid>68cc8f49739e4110e6635ee2c2f9dee9</update_guid>
+        <update_guid_history>68cc8f49739e4110e6635ee2c2f9dee9:1548090447,20cc8f49479e41107fa5aace1dcc56e4:1574267641,522acf85869e4110ca56b03f691cb08c:1548090447,392a0f85599e41107d44c70450692264:-1689533906,df6fba09d75e41104528b69b416cc2b9:516924698,a4497a010a5e411098d70074223b0c96:-744933288,16b8f601db5e4110b29dfb9918d793d8:-129933757,6090ba45441e4110e00b34e80d3d0936:-1441372205,e64fa205141e4110742f954420019791:-2114421034</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Schedule Your Meeting">bcc6db0197de4110002ffef3a253af02</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 10:16:35</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_link">sp_instance_link</sys_db_object>
+        <sys_id>1e79a682b2414076bf97d696dff71871</sys_id>
+        <sys_metadata>e64fa205971e4110002ffef3a253af8f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Schedule Your Meeting</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_link_e64fa205971e4110002ffef3a253af8f</sys_update_name>
+        <sys_update_version display_value="sp_instance_link_e64fa205971e4110002ffef3a253af8f">60cc8f49979e4110002ffef3a253afea</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 10:16:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

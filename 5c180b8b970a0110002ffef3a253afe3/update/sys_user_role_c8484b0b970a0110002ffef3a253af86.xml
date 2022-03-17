@@ -6,21 +6,21 @@
         <elevated_privilege>false</elevated_privilege>
         <grantable>true</grantable>
         <includes_roles/>
-        <name>x_616811_coworking.csr_manager</name>
+        <name>x_616811_coworking.manager</name>
         <requires_subscription>-1</requires_subscription>
         <scoped_admin>false</scoped_admin>
-        <suffix>x_616811_coworking.csr_manager</suffix>
+        <suffix>x_616811_coworking.manager</suffix>
         <sys_class_name>sys_user_role</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-10 04:05:20</sys_created_on>
         <sys_id>c8484b0b970a0110002ffef3a253af86</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_616811_coworking.csr_manager</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_616811_coworking.manager</sys_name>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy/>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_user_role_c8484b0b970a0110002ffef3a253af86</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-10 04:05:20</sys_updated_on>
+        <sys_updated_on>2022-03-16 07:35:21</sys_updated_on>
     </sys_user_role>
 </record_update>

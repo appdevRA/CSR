@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="8cbc48a7978e4110002ffef3a253afc8" sys_domain="global" table="x_616811_coworking_csr_reservations" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 03:42:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>40bc48a7978e4110002ffef3a253afcc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_616811_coworking_csr_reservations" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">8cbc48a7978e4110002ffef3a253afc8</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">fa76446f974e4110002ffef3a253af1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 03:42:49</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 03:42:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ccbc48a7978e4110002ffef3a253afcc</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_616811_coworking_csr_reservations" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">8cbc48a7978e4110002ffef3a253afc8</sys_ui_form>
+            <sys_ui_section caption="Feedback" display_value="Feedback" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">c8bc48a7978e4110002ffef3a253afc7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 08:15:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 08:24:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5f1d492f97c28110002ffef3a253af22</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_616811_coworking_csr_reservations" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">8cbc48a7978e4110002ffef3a253afc8</sys_ui_form>
+            <sys_ui_section caption="Statistics" display_value="Statistics" name="x_616811_coworking_csr_reservations" sys_domain="global" view="Default view">1f1d492f97c28110002ffef3a253af1f</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 08:24:18</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_616811_coworking_csr_reservations</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 03:42:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8cbc48a7978e4110002ffef3a253afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_616811_coworking_csr_reservations</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+            <sys_update_name>sys_ui_form_sections_8cbc48a7978e4110002ffef3a253afc8</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 03:42:49</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

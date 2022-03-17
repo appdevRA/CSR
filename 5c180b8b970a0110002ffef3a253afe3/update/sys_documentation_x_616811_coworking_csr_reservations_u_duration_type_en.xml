@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_duration_type" label="Duration type" language="en" table="x_616811_coworking_csr_reservations">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_duration_type</element>
+            <help/>
+            <hint/>
+            <label>Duration type</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_reservations</name>
+            <plural>Duration types</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 07:25:59</sys_created_on>
+            <sys_id>05cfb0eb97828110002ffef3a253af2b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Duration type</sys_name>
+            <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+            <sys_update_name>sys_documentation_x_616811_coworking_csr_reservations_u_duration_type_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 07:25:59</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

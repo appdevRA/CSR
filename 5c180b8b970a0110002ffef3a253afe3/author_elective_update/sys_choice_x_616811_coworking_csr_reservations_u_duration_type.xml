@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_duration_type" table="x_616811_coworking_csr_reservations" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_duration_type</element>
+            <name>x_616811_coworking_csr_reservations</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 07:26:00</sys_created_on>
+            <sys_id>45cfb0eb97828110002ffef3a253af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_duration_type</sys_name>
+            <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+            <sys_update_name>sys_choice_x_616811_coworking_csr_reservations_u_duration_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 07:26:00</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_duration_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Hourly</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_reservations</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 07:25:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>01cfb0eb97828110002ffef3a253af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 07:25:59</sys_updated_on>
+            <value>hourly</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_duration_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Daily</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_reservations</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-11 07:26:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>89cfb0eb97828110002ffef3a253af65</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-11 07:26:00</sys_updated_on>
+            <value>daily</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
