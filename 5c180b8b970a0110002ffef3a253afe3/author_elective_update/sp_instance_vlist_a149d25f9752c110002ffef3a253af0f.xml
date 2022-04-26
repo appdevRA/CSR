@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>availability</display_field>
+        <field_list/>
+        <filter/>
+        <glyph>th-list</glyph>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">e2ee6f5f971ac110002ffef3a253af16</sp_column>
+        <sp_page display_value="approval">dcf1f502d7a23100a9ad1e173e24d414</sp_page>
+        <sp_widget display_value="Simple List">5b255672cb03020000f8d856634c9c28</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 05:34:15</sys_created_on>
+        <sys_id>a149d25f9752c110002ffef3a253af0f</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_vlist_a149d25f9752c110002ffef3a253af0f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-23 11:52:04</sys_updated_on>
+        <table>x_616811_coworking_csr_space</table>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"always_show": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"panel_body_height": {
+		"value": "",
+		"displayValue": ""
+	},
+	"image_field": {
+		"value": "",
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "",
+		"displayValue": ""
+	},
+	"rounded_images": {
+		"value": "",
+		"displayValue": ""
+	},
+	"list_page": {
+		"value": "",
+		"displayValue": ""
+	},
+	"hide_footer": {
+		"value": "",
+		"displayValue": ""
+	},
+	"view": {
+		"value": "Default view",
+		"displayValue": "Default view"
+	},
+	"disable_record_watcher": {
+		"value": "",
+		"displayValue": ""
+	},
+	"filter_acls": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="DELETE" query="documentkey=a149d25f9752c110002ffef3a253af0f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_vlist_a149d25f9752c110002ffef3a253af0f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_vlist"&gt;&lt;sp_instance_vlist action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;display_field&gt;availability&lt;/display_field&gt;&lt;field_list/&gt;&lt;filter/&gt;&lt;glyph&gt;th-list&lt;/glyph&gt;&lt;id/&gt;&lt;maximum_entries&gt;5&lt;/maximum_entries&gt;&lt;order&gt;1&lt;/order&gt;&lt;order_by/&gt;&lt;order_direction&gt;asc&lt;/order_direction&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="2"&gt;e2ee6f5f971ac110002ffef3a253af16&lt;/sp_column&gt;&lt;sp_page display_value="approval"&gt;dcf1f502d7a23100a9ad1e173e24d414&lt;/sp_page&gt;&lt;sp_widget display_value="Simple List"&gt;5b255672cb03020000f8d856634c9c28&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_vlist&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-23 05:34:15&lt;/sys_created_on&gt;&lt;sys_id&gt;a149d25f9752c110002ffef3a253af0f&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_vlist_a149d25f9752c110002ffef3a253af0f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-23 11:52:04&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_csr_space&lt;/table&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"always_show": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"panel_body_height": {
+		"value": "",
+		"displayValue": ""
+	},
+	"image_field": {
+		"value": "",
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "",
+		"displayValue": ""
+	},
+	"rounded_images": {
+		"value": "",
+		"displayValue": ""
+	},
+	"list_page": {
+		"value": "",
+		"displayValue": ""
+	},
+	"hide_footer": {
+		"value": "",
+		"displayValue": ""
+	},
+	"view": {
+		"value": "Default view",
+		"displayValue": "Default view"
+	},
+	"disable_record_watcher": {
+		"value": "",
+		"displayValue": ""
+	},
+	"filter_acls": {
+		"value": "false",
+		"displayValue": "false"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_vlist&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=a149d25f9752c110002ffef3a253af0f"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-253807020</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 11:52:04</sys_created_on>
+        <sys_id>ffbfab9f971ac110002ffef3a253af76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fb69ea5da0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-23 11:52:04</sys_updated_on>
+        <type>Instance of Simple List</type>
+        <update_guid>f7bfab9ffb1ac110664d05edc3797176</update_guid>
+        <update_guid_history>f7bfab9ffb1ac110664d05edc3797176:-253807020,96fe6f5fa31ac1102941a459ec0113c0:1414153456,672e6f1f071ac1104141021275839ba0:-1277938991,00ab1e135392c11033912802c4ac5a16:-1711643877,681ad69fc352c110da7ae816c63ebeb4:1883909525,3f991e5f3252c110379adfca215652ae:-1874084947,ad49d25f3b52c110952dd6da92c20310:1477600267</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">7b3e9763971a0510002ffef3a253afae</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-24 05:14:05</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_vlist">sp_instance_vlist</sys_db_object>
+        <sys_id>6efbe45e3d564f98a14998c91bf2c840</sys_id>
+        <sys_metadata>a149d25f9752c110002ffef3a253af0f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_vlist_a149d25f9752c110002ffef3a253af0f</sys_update_name>
+        <sys_update_version display_value="sp_instance_vlist_a149d25f9752c110002ffef3a253af0f">ffbfab9f971ac110002ffef3a253af76</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-24 05:14:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

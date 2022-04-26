@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_link">
+    <sp_instance_link action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>info</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <order>3</order>
+        <roles/>
+        <sc_cat_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</sc_cat_item>
+        <sc_category/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">9482ac73975e0510002ffef3a253af34</sp_column>
+        <sp_page display_value="sc_cat_item">9f12251147132100ba13a5554ee490f4</sp_page>
+        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sys_class_name>sp_instance_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 12:13:52</sys_created_on>
+        <sys_id>5fb4fb17975ac110002ffef3a253af49</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>Reserve now</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_link_5fb4fb17975ac110002ffef3a253af49</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 07:58:58</sys_updated_on>
+        <title>Reserve now</title>
+        <type>sc_cat_item</type>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"link_template": {
+		"value": "",
+		"displayValue": "-- None --"
+	}
+}]]></widget_parameters>
+    </sp_instance_link>
+    <sys_translated_text action="DELETE" query="documentkey=5fb4fb17975ac110002ffef3a253af49"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_link_5fb4fb17975ac110002ffef3a253af49</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_link"&gt;&lt;sp_instance_link action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;info&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;kb_article/&gt;&lt;kb_category/&gt;&lt;kb_topic/&gt;&lt;order&gt;3&lt;/order&gt;&lt;roles/&gt;&lt;sc_cat_item display_value="Reserve A Space"&gt;bcde9043971a4110002ffef3a253af2f&lt;/sc_cat_item&gt;&lt;sc_category/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;9482ac73975e0510002ffef3a253af34&lt;/sp_column&gt;&lt;sp_page display_value="sc_cat_item"&gt;9f12251147132100ba13a5554ee490f4&lt;/sp_page&gt;&lt;sp_widget display_value="Icon Link"&gt;3caa67afcb13020000f8d856634c9c2e&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance_link&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-23 12:13:52&lt;/sys_created_on&gt;&lt;sys_id&gt;5fb4fb17975ac110002ffef3a253af49&lt;/sys_id&gt;&lt;sys_mod_count&gt;34&lt;/sys_mod_count&gt;&lt;sys_name&gt;Reserve now&lt;/sys_name&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_link_5fb4fb17975ac110002ffef3a253af49&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-29 07:58:58&lt;/sys_updated_on&gt;&lt;title&gt;Reserve now&lt;/title&gt;&lt;type&gt;sc_cat_item&lt;/type&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"link_template": {
+		"value": "",
+		"displayValue": "-- None --"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_link&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=5fb4fb17975ac110002ffef3a253af49"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2011818308</payload_hash>
+        <record_name>Reserve now</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-29 07:58:58</sys_created_on>
+        <sys_id>b7e3795997e60110002ffef3a253afaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fd4af64560000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 07:58:58</sys_updated_on>
+        <type>Instance with Link</type>
+        <update_guid>bfe3795965e601109aeccf2a165129ae</update_guid>
+        <update_guid_history>bfe3795965e601109aeccf2a165129ae:2011818308,f299bc1583e201104c7765e1fa349d2c:1082675429,54d3a0f3a25e0510dad7305200c6217d:1195024273,dbb368b3465e05100c0b8798b1cdefff:841391602,c293acb3325e05102aa1405de7889e73:338804659,5b53e8b3575e05100a464d46cc300cb8:1196988308,b633a8b38b5e0510c2cd217ada9d9cc1:-1006376846,b39220b3155e051092b7f5ad72867a4f:-324859440,5182ac73525e051062eee3642c4cf995:-1048079708,c81914b7eb1e0510dd38cc5fa0e7d6f5:-1602206332,b57794372e1e05104916379c36f24f53:-1294894043,73675437d71e0510f87f3adb2434ea97:248194838,eac698f3c41e0510a105a95b9ba0b5b2:-1294894043,a3b618f3961e0510db0d64106da32ac4:280807495,10b6d4f3c91e0510ecffeb0a2ce79bc0:1370396936,8e86d0f30f1e0510ad4848b28b6e5ddc:-330393464,9095d0b33c1e051033f78e8a825bfc82:1630805350,92a39cff54da05105d883011914ba2ff:-1294894043,ba1354ff4dda0510d6177ba1b99fb04b:1810196944,f21354ff50da05102e0f24e0bc050546:-1396456710,ae0314ffefda051076024f691662a81a:1810196944,e60314ff6fda0510a95c42b1d8829c15:-1396456710,33f2d0ff2dda05103c0f710b74e1ee4c:1810196944,7bf2d0ffd5da0510b1878e0024360a46:-1396456710,72f290ff3ada0510ebf4469a0636d9f0:1810196944,495fa3e31e5a0510b12617ff2589e942:1502884655,363ca323be5a0510ad7fad42969a4824:1810196944,ba3ca3232e5a0510b4cbc795d2c64711:1502884655,e7eb6fefe31a051044287652877e9f54:1810196944,755e1b637d1a05100de2b4749e04afaa:1502884655,ff3e9763ac1a05105ce17463724bb6bd:1810196944,5485f757de5ac11025db24e142c23517:1502884655,b965b757255ac110a51d84121d1b6dc7:1243781361,28357357e25ac11042ba99daacc0bf08:-1135917499,17b4fb17575ac110f19f80f757714d4b:-288475501</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Reserve now">d554319997e60110002ffef3a253af12</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-29 08:00:42</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_link">sp_instance_link</sys_db_object>
+        <sys_id>c036c6fc3100475abb8cf7cad8afa224</sys_id>
+        <sys_metadata>5fb4fb17975ac110002ffef3a253af49</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reserve now</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_link_5fb4fb17975ac110002ffef3a253af49</sys_update_name>
+        <sys_update_version display_value="sp_instance_link_5fb4fb17975ac110002ffef3a253af49">b7e3795997e60110002ffef3a253afaf</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 08:00:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_616811_coworking_csr_reservations</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Start&amp;End date corrector</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	var reservationUtil = new ReservationUtils();
+	var didExcept = false;
+	if(reservationUtil.dateIsPastCurrentTime( current.u_start_time, current.u_end_time)){
+		gs.addErrorMessage("Start and End cannot be past current time");
+		didExcept = true;
+	}
+	if(reservationUtil.endIsBeforeStart(current.u_start_time, current.u_end_time)){
+		gs.addErrorMessage("End cannot be past Start");
+		didExcept = true;
+	
+	}
+	if(didExcept == true){
+		var asd = new GlideRecord("x_616811_coworking_csr_reservations");
+		asd.addQuery("u_start_time", "<", current.u_start_time);
+		asd.addQuery("u_end_time", ">", current.u_start_time);
+		asd.query();
+	
+	gs.addInfoMessage(asd.getRowCount());
+		current.setAbortAction(true);
+		
+	}
+	else{
+		gs.addInfoMessage("Total rent amount: P123.12");
+	}
+	
+	
+	
+// 	while(asd.next()){
+// 	gs.info(asd.u_start_time); 
+		
+// 	}
+// 	gs.info(asd.getRowCount()); 
+// 	asd.addQuery("u_start_time" ,"STARTSWITH", current.u_start_time);
+	
+	
+	
+	
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 08:29:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>54383ecd971e4110002ffef3a253afd9</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>Start&amp;End date corrector</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_54383ecd971e4110002ffef3a253afd9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 09:09:21</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=54383ecd971e4110002ffef3a253afd9"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_54383ecd971e4110002ffef3a253afd9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_616811_coworking_csr_reservations&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Start&amp;amp;End date corrector&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here
+	var reservationUtil = new ReservationUtils();
+	var didExcept = false;
+	if(reservationUtil.dateIsPastCurrentTime( current.u_start_time, current.u_end_time)){
+		gs.addErrorMessage("Start and End cannot be past current time");
+		didExcept = true;
+	}
+	if(reservationUtil.endIsBeforeStart(current.u_start_time, current.u_end_time)){
+		gs.addErrorMessage("End cannot be past Start");
+		didExcept = true;
+	
+	}
+	if(didExcept == true){
+		var asd = new GlideRecord("x_616811_coworking_csr_reservations");
+		asd.addQuery("u_start_time", "&lt;", current.u_start_time);
+		asd.addQuery("u_end_time", "&gt;", current.u_start_time);
+		asd.query();
+	
+	gs.addInfoMessage(asd.getRowCount());
+		current.setAbortAction(true);
+		
+	}
+	else{
+		gs.addInfoMessage("Total rent amount: P123.12");
+	}
+	
+	
+	
+// 	while(asd.next()){
+// 	gs.info(asd.u_start_time); 
+		
+// 	}
+// 	gs.info(asd.getRowCount()); 
+// 	asd.addQuery("u_start_time" ,"STARTSWITH", current.u_start_time);
+	
+	
+	
+	
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-16 08:29:57&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;54383ecd971e4110002ffef3a253afd9&lt;/sys_id&gt;&lt;sys_mod_count&gt;37&lt;/sys_mod_count&gt;&lt;sys_name&gt;Start&amp;amp;End date corrector&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_54383ecd971e4110002ffef3a253afd9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 09:09:21&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=54383ecd971e4110002ffef3a253afd9"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2124666030</payload_hash>
+        <record_name>Start&amp;End date corrector</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 09:09:21</sys_created_on>
+        <sys_id>35f01461975ac110002ffef3a253af07</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f9723850a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 09:09:21</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>f9f014616e5ac1102832c00950984c06</update_guid>
+        <update_guid_history>f9f014616e5ac1102832c00950984c06:2124666030,5c9d0c2d981ac1108461a96b10aac183:856686499,d24c80e9a31ac11004b6c493e631114a:-974559751,1d2c8ca91a1ac11070e1155e237054df:-961052649,315a0c29d41ac110b8f453bc8e3e3a82:-585273044,5dd9c029961ac1102916fc11d0f78e99:749659812,e9e788656c1ac110d1f44d94260953cf:-1629588596,8ec6c021a21ac110f0054f1760c31d2a:1053729372,0145482d1d96c110e3e7c9798f542d65:1181706025,9e0408e95a96c110b6aa1633ace5fbf5:2011192375,0a738ca99696c110452a3d2299a2c51f:999245367,21630ca9ff96c1106af2860bc827d5b8:-1868178318,ae7248693096c110f7e7bff689c0f8ec:-1760572860,9309739d7a56c110f01dc619d11b1da7:-1570175228,1817f3d9d456c110447b5ea0f83bd1bd:-1185546382,bc15f319a456c1109fe9ca9b4c207453:1204833362,07c4bbd55956c1104c156f72405a23b7:1757883209,87147f95ce56c1103ff4a05a99b6346b:1940857647,a2f37b954d56c110c2b6e5c98df58c8e:440958093,8ac1bbd10656c11028f710f5829c52ff:-148399055,02b0ff51d756c110d4c94e1f79a73960:1851918535,0beea7dd3316c110b6703477830d9c4d:221300919,297e2b9dc516c11069e2a4833ff11036:-825287516,89bc27d90e16c1100447e2f4d9ae7ca5:221300919,64c976d9275e81107dded2b7aded2bd1:-775532998,ec82ba513c5e8110621b56301a2cc683:-2033340070,b4f9a695051e81100d4711d679721550:1674523412,64a9a6953c1e811060b365cd5928774a:-1824303134,0e282615af1e8110054c0cada9850f00:-1694244388,5c46e291a01e8110ec3c3a9c0e65b8e5:-2066645082,ed952291831e81102febbf424033d99c:-1226623802,efd4a251601e8110ff3255bfc6abeace:-1140467636,75946e11a01e81105eea171323c2f0d0:-863961095,b6042edd16da8110692387b01ae2ac00:-209442116,ef83eaddccda8110fa8860d68360a856:1255913636,3618cc5502928110bc93771383a39e68:1988439950,9a6fba09a35e41102e7855ed79e896b3:-1946518845,fe5e3ac5155e4110a44db84e45a02849:1301699325</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 14:55:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>307dbd57c20d417eb1b5686be6175084</sys_id>
+        <sys_metadata>54383ecd971e4110002ffef3a253afd9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Start&amp;End date corrector</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">e9db478f970a0110002ffef3a253af3c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_54383ecd971e4110002ffef3a253afd9</sys_update_name>
+        <sys_update_version display_value="sys_script_54383ecd971e4110002ffef3a253afd9">35f01461975ac110002ffef3a253af07</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-18 14:55:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

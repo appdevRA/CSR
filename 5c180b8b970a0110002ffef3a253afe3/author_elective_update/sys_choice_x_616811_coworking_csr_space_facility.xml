@@ -76,5 +76,25 @@
             <sys_updated_on>2022-03-11 03:13:18</sys_updated_on>
             <value>white_board_markers</value>
         </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>facility</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Tv conference</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_space</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-12 10:38:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bdbe5eb997fe4110002ffef3a253afe5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-12 10:38:32</sys_updated_on>
+            <value>Tv conference</value>
+        </sys_choice>
     </sys_choice>
 </record_update>

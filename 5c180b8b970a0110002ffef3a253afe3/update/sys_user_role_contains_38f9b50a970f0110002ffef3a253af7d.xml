@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="import_transformer" name="import_transformer">4a69c2f70a0a0bc001ca45414850234f</contains>
+        <role display_value="x_616811_coworking.manager" name="x_616811_coworking.manager">c8484b0b970a0110002ffef3a253af86</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 12:52:35</sys_created_on>
+        <sys_id>38f9b50a970f0110002ffef3a253af7d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>import_transformer.x_616811_coworking.manager</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_user_role_contains_38f9b50a970f0110002ffef3a253af7d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 12:52:35</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

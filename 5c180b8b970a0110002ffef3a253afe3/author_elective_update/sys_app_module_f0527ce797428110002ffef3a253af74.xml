@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Coworking space Reservation System">640c878f970a0110002ffef3a253afb2</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint>Update Space Availability </hint>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Update Availability</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_616811_coworking_csr_space</name>
+        <order>50</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_616811_coworking.manager,x_616811_coworking.admin</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-11 06:34:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f0527ce797428110002ffef3a253af74</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Update Availability</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_app_module_f0527ce797428110002ffef3a253af74</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:02:04</sys_updated_on>
+        <timeline_page/>
+        <title>Update Availability</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_app_module_f0527ce797428110002ffef3a253af74</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Coworking space Reservation System">640c878f970a0110002ffef3a253afb2</application><assessment/><device_type/><filter/><hint>Update Space Availability </hint><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Update Availability</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_616811_coworking_csr_space</name><order>50</order><override_menu_roles>false</override_menu_roles><query/><report/><roles>x_616811_coworking.manager,x_616811_coworking.admin</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-11 06:34:21</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>f0527ce797428110002ffef3a253af74</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Update Availability</sys_name><sys_overrides/><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sys_app_module_f0527ce797428110002ffef3a253af74</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-03-16 08:02:04</sys_updated_on><timeline_page/><title>Update Availability</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>1345594363</payload_hash>
+        <record_name>Update Availability</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 08:02:04</sys_created_on>
+        <sys_id>a2f7b2cd971e4110002ffef3a253af82</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f91bf90170000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-16 08:02:04</sys_updated_on>
+        <type>Module</type>
+        <update_guid>aaf7b2cde91e411033e2c90aa2767281</update_guid>
+        <update_guid_history>aaf7b2cde91e411033e2c90aa2767281:1345594363,657806e04856011066199d086bdfd8a2:330283543,f8f330abb142811026cae414c5670454:-1017489303</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Update Availability">ea45087d97520110002ffef3a253af44</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 02:56:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>55417e54c0ac4d98b1eaf4d154877a40</sys_id>
+        <sys_metadata>f0527ce797428110002ffef3a253af74</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Update Availability</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_app_module_f0527ce797428110002ffef3a253af74</sys_update_name>
+        <sys_update_version display_value="sys_app_module_f0527ce797428110002ffef3a253af74">a2f7b2cd971e4110002ffef3a253af82</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-18 02:56:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

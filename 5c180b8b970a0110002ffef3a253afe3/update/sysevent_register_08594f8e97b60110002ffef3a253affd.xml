@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <description>For sending notif to applicant</description>
+        <event_name>x_616811_coworking.SpaceRecordUpdated</event_name>
+        <fired_by>Business Rule: Fire "SpaceRecordUpdated" event</fired_by>
+        <queue/>
+        <suffix>SpaceRecordUpdated</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-13 08:39:07</sys_created_on>
+        <sys_id>08594f8e97b60110002ffef3a253affd</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_616811_coworking.SpaceRecordUpdated</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sysevent_register_08594f8e97b60110002ffef3a253affd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-18 07:48:22</sys_updated_on>
+        <table>x_616811_coworking_csr_space</table>
+    </sysevent_register>
+</record_update>

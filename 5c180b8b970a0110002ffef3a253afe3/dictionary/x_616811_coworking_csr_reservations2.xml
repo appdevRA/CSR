@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="hasLabels=true" audit="true" extends="task" label="CSR Reservations" max_length="40" name="x_616811_coworking_csr_reservations2" sizeclass="5" type="collection">
+        <element label="Applicant" mandatory="true" max_length="32" name="applicant" reference="sys_user" type="reference"/>
+        <element label="Attendee count" max_length="40" name="attendee_count" type="integer"/>
+        <element label="Datetime included" max_length="40" name="datetime_included" type="string"/>
+        <element label="Date included" max_length="40" name="date_included" type="string"/>
+        <element choice="3" default="daily" label="Duration type" mandatory="true" max_length="40" name="duration_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Daily" value="daily"/>
+                <element inactive_on_update="false" label="Hourly" value="hourly"/>
+            </choice>
+        </element>
+        <element label="Email" mandatory="true" max_length="70" name="email" type="string"/>
+        <element label="Rent amount" max_length="40" name="rent_amount" type="float"/>
+        <element label="Space" mandatory="true" max_length="32" name="space" reference="x_616811_coworking_csr_space" reference_qual="availability=true^EQ" reference_qual_condition="availability=true^EQ" type="reference"/>
+        <element choice="3" label="Status" max_length="40" name="status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Approved" value="approved"/>
+                <element inactive_on_update="false" label="Awaiting approval" value="awaiting_approval"/>
+                <element inactive_on_update="false" label="Closed complete" value="closed_complete"/>
+                <element inactive_on_update="false" label="Rejected" value="rejected"/>
+                <element inactive_on_update="false" label="Requested" value="requested"/>
+            </choice>
+        </element>
+        <element label="End date" max_length="40" name="u_end_date" type="glide_date"/>
+        <element label="End date time" max_length="40" name="u_end_time" type="glide_date_time"/>
+        <element label="Start date" max_length="40" name="u_start_date" type="glide_date"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var startTime = new GlideDateTime(current.u_start_time);&#13;&#10;&#9;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return startTime.getLocalTime();  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Start date time" max_length="40" name="u_start_time" type="glide_date_time"/>
+    </element>
+</database>

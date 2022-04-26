@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="3" type="collection">
+    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="7" type="collection">
         <element choice="3" default="single" label="Accessibility" max_length="40" name="accessibility" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Single" sequence="0" value="single"/>
@@ -9,25 +9,31 @@
                 <element inactive_on_update="false" label="Private Office" sequence="4" value="private_office"/>
             </choice>
         </element>
-        <element label="Available" max_length="40" name="availability" type="boolean"/>
+        <element label="Active" max_length="40" name="availability" type="boolean"/>
+        <element choice="1" label="Days " mandatory="true" max_length="40" name="days" type="glide_list">
+            <choice>
+                <element inactive_on_update="false" label="Monday" sequence="1" value="1"/>
+                <element inactive_on_update="false" label="Tuesday" sequence="2" value="2"/>
+                <element inactive_on_update="false" label="Wednesday" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Thursday" sequence="4" value="4"/>
+                <element inactive_on_update="false" label="Friday" sequence="5" value="5"/>
+                <element inactive_on_update="false" label="Satuday" sequence="6" value="6"/>
+                <element inactive_on_update="false" label="Sunday" sequence="7" value="7"/>
+            </choice>
+        </element>
         <element label="description" mandatory="true" max_length="200" name="description" type="string"/>
-        <element label="F" max_length="40" name="f" type="boolean"/>
         <element choice="3" label="Facility" mandatory="true" max_length="40" name="facility" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Projector" value="projector"/>
                 <element inactive_on_update="false" label="Tv Conference" value="tv_conference"/>
                 <element inactive_on_update="false" label="White Board and Markers" value="white_board_markers"/>
+                <element inactive_on_update="false" label="Tv conference" sequence="0" value="Tv conference"/>
             </choice>
         </element>
-        <element label="M" max_length="40" name="m" type="boolean"/>
+        <element label="Image" max_length="40" name="image" type="user_image"/>
         <element label="name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="Rent" max_length="40" name="rent" type="float"/>
-        <element label="Sat" max_length="40" name="sat" type="boolean"/>
+        <element label="Priceperhour" max_length="40" name="priceperhour" type="float"/>
         <element label="Seating capacity" max_length="40" name="seating_capacity" type="integer"/>
-        <element label="Sun" max_length="40" name="sun" type="boolean"/>
-        <element label="T" max_length="40" name="t" type="boolean"/>
-        <element label="Th" max_length="40" name="th" type="boolean"/>
-        <element label="W" max_length="40" name="w" type="boolean"/>
     </element>
 </database>

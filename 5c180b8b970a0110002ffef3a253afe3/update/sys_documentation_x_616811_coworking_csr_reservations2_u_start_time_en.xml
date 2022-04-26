@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_start_time" label="Start date time" language="en" table="x_616811_coworking_csr_reservations2">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_start_time</element>
+            <help/>
+            <hint/>
+            <label>Start date time</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_reservations2</name>
+            <plural>Start date times</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 14:52:59</sys_created_on>
+            <sys_id>0539aabd971e0110002ffef3a253af84</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>Start date time</sys_name>
+            <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+            <sys_update_name>sys_documentation_x_616811_coworking_csr_reservations2_u_start_time_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-22 02:02:56</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

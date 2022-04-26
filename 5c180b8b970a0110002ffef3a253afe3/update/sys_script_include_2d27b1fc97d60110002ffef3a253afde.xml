@@ -5,19 +5,25 @@
         <api_name>x_616811_coworking.ReservationUtils</api_name>
         <caller_access/>
         <client_callable>true</client_callable>
-        <description>Utils Script Include for Reservation</description>
+        <description>Server side Utils for Reservation</description>
         <name>ReservationUtils</name>
         <script><![CDATA[var ReservationUtils = Class.create();
-ReservationUtils.prototype = {
+ReservationUtils.prototype =  {
+	
     initialize: function() {
-    },
-	startIsPastCurrentTime: function(start){
+    
+	},
+	
+
+	dateIsPastCurrentTime: function(sTime, eTime ){
 		// Create GlideDateTime objects for the current date and the passed in date
 		var rightnow = new GlideDateTime();
-		var startTime = new GlideDateTime(start);
-		
+		var startTime = new GlideDateTime(sTime);
+		var endTime =  new GlideDateTime(eTime);
+// 		gs.info(eTime);
+// 		gs.info(startTime +" | "+ endTime );
 		// If the testdate is before rightnow, return true, else return false
-		if (startTime.before(rightnow)) {
+		if (startTime.before(rightnow) || endTime.before(rightnow)) {
 			return true;
 		}
 		else {
@@ -25,11 +31,11 @@ ReservationUtils.prototype = {
 		}
 	},
 	
-	endIsBeforeStart: function(start, end){
+	endIsBeforeStart: function( sTime,  eTime){
 		
 		// Create GlideDateTime objects for the current date and the passed in date
-		var startTime = new GlideDateTime(start);
-		var endTime = new GlideDateTime(end);
+		var startTime = new GlideDateTime(sTime);
+		var endTime = new GlideDateTime(eTime);
 		
 		// Get the date portion of rightnow and testdate (no timestamp)
 		if(endTime.before(startTime)){
@@ -37,17 +43,237 @@ ReservationUtils.prototype = {
 		}
 		else{
 			return false;
-			
 		}
+	},
 	
-		// Compare today and istoday to see if they are the same day
-// 		if(today.compareTo(istoday) == 0){
-// 			return true;
-// 		}
-// 		else {
+	intervalIsNotEqualToHour: function(start, end){
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		var dur = new GlideDuration();
+		dur = GlideDateTime.subtract(startTime,endTime);
+		var interval = dur.getDisplayValue();
+		
+		if(interval.includes("Hour") == false || interval.includes("Minute") == true  
+			|| interval.includes("Day") == true){
+		
+			return true;
+		} else{
+			return false;
+		}
+	},
+	
+	
+	dateIsNotOnTheSameDay: function(start, end){
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		if(startTime.getLocalDate() != endTime.getLocalDate()){
+			return true;
+		} else{
+			return false;
+		}
+				
+	},
+	
+	
+	
+	dateFieldIsNotWithinBusinessHours: function(start, end){
+		
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type","=","business");
+		table.addQuery("active", "=", true);
+		table.query();
+		table.next();
+		var hour = new GlideTime();
+	
+		var tableStartTime = new GlideDateTime(table.u_start_time);
+		var tableEndTime = new GlideDateTime(table.u_end_time);
+		
+		var businessHour = tableStartTime.getTime().getByFormat("HH:mm") +" - "+ 
+							tableEndTime.getTime().getByFormat("HH:mm");
+		
+		if(startTime.getLocalTime() < tableStartTime.getLocalTime() || startTime.getLocalTime() >  
+			tableEndTime.getLocalTime() || endTime.getLocalTime() > tableEndTime.getLocalTime() || 
+			endTime.getLocalTime() < tableStartTime.getLocalTime()){
+			return true;
+		} else{
+			return false;
+		}
+		
+		
+// 		if(field != ""){
+// 			return field +"|"+ businessHour;
+// 		} else{
 // 			return false;
 // 		}
+		
+		
 	},
+	
+	dateIsNotWithinSpaceDays: function(start, end, space){
+	var spaceTable = new GlideRecord("x_616811_coworking_csr_space");
+	var obj = spaceTable.get(space);
+	var spaceDays = spaceTable.days;
+	var startDay = new GlideDateTime(start).getDayOfWeekUTC();
+	var endDay = new GlideDateTime(end).getDayOfWeekUTC();
+		
+		if(spaceDays.includes(startDay) == false || spaceDays.includes(endDay) == false){
+			return true;
+		} else{
+			return spaceDays;
+		}
+		
+	},
+	
+	dateIsOnHoliday: function(st, en){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type","=","holiday");
+		table.addQuery("active", "=", true);
+		
+		var start= new GlideDateTime(st);
+		var end= new GlideDateTime(en);
+		
+		var q1 = table.addQuery('date','STARTSWITH',start.getDate()); 
+		q1.addOrCondition('date','STARTSWITH',end.getDate()); 
+		
+		table.query();
+		table.setLimit(1);
+// 		gs.addInfoMessage(table.getRowCount());
+		
+		if(table.getRowCount() != 0){
+			return true;
+		} else{
+			return false;
+		}
+		
+	},
+	
+	hourlyDurationAlreadyExist: function(start, end, space){
+		
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		var stringDate = startTime.toString();
+		
+		var yearMonth = stringDate.split("-")[0]+"-"+stringDate.split("-")[1];
+		
+		var table = new GlideRecord("x_616811_coworking_csr_reservations2");
+		table.addQuery("space",space);
+		table.addQuery("status", "=", "approved");
+// 		var a1 = table.addQuery("u_start_date","BETWEEN", startTime.getDate()+"@"+ endTime.getDate());
+// 		var queryBlock = a1;
+// 		a1.addOrCondition("u_end_date","BETWEEN", startTime.getDate()+"@"+ endTime.getDate());
+		var a1 = table.addQuery("u_start_time","BETWEEN", startTime+"@"+ endTime);
+		var queryBlock = a1;
+		a1.addOrCondition("u_end_time","BETWEEN", startTime+"@"+ endTime);
+		
+		var b1 = queryBlock.addOrCondition("u_start_time", "STARTSWITH", startTime.getDate());
+		var b2 = b1.addCondition("u_start_time", "<", startTime);
+		b2.addCondition("u_end_time", ">", endTime);
+// 		var b1 = queryBlock.addOrCondition("date_included", "STARTSWITH", yearMonth);
+
+// 		var b2 = b1.addCondition("date_included", "CONTAINS", " "+startTime.getDayOfMonthUTC()+" ");
+// 		b2.addOrCondition("date_included", "CONTAINS", " "+endTime.getDayOfMonthUTC()+" ");
+		
+// 		var c1 = queryBlock.addOrCondition("datetime_included", "STARTSWITH", startTime.getDate());
+// 		var c2 = c1.addCondition("datetime_included", "CONTAINS", " "+startTime.getTime().getByFormat("HH")+" ");
+// 		c2.addOrCondition("datetime_included", "CONTAINS", " "+endTime.getTime().getByFormat("HH")+" ");
+
+		
+		table.setLimit(1);
+		table.query();
+		
+		if(table.getRowCount() > 0 ){
+			return true;
+		} else{
+			return false;
+		}
+		
+	},
+		
+	dailyDurationAlreadyExist: function(start, end, space){
+	
+		var startTime = new GlideDateTime(start);
+		var endTime = new GlideDateTime(end);
+		var stringDate = startTime.toString();
+		
+		var yearMonth = stringDate.split("-")[0]+"-"+stringDate.split("-")[1];
+		
+		var table = new GlideRecord("x_616811_coworking_csr_reservations2");
+		table.addQuery("space",space);
+		table.addQuery("status", "=", "approved");
+		var a1 = table.addQuery("u_start_date","BETWEEN", startTime.getDate()+"@"+ endTime.getDate());
+		var queryBlock = a1;
+		a1.addOrCondition("u_end_date","BETWEEN", startTime.getDate()+"@"+ endTime.getDate());
+		
+		var b1 = queryBlock.addOrCondition("u_start_date", "<", startTime.getDate());
+		var b2 = b1.addCondition("u_end_date", ">", endTime.getDate());
+// 		b2.addCondition("u_end_date", ">", endTime);
+// 		var b1 = queryBlock.addOrCondition("date_included", "STARTSWITH", yearMonth);
+// 		var b2 = b1.addCondition("date_included", "CONTAINS", " "+startTime.getDayOfMonthUTC()+" ");
+// 		b2.addCondition("date_included", "CONTAINS", " "+endTime.getDayOfMonthUTC()+" ");
+		
+		endTime.addDaysUTC(1);
+		queryBlock.addOrCondition("u_start_time","BETWEEN", startTime.getDate()+"@"+ endTime.getDate());
+	
+		table.setLimit(1);
+		table.query();
+
+
+		
+		if(table.getRowCount() > 0 ){
+			
+			return true;
+		} else{
+			return false;
+		}
+
+	},
+	
+	
+	
+	getTotalWorkingHours: function(){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type", "business");
+		table.addQuery("active", true);
+		table.query();
+		table.next();
+		
+		var start = new GlideDateTime(table.u_start_time);
+		var end = new GlideDateTime(table.u_end_time);
+		var totalHours = new GlideDuration();
+		totalHours = GlideDateTime.subtract(start,end);
+		return totalHours.getByFormat("HH");
+		
+	},
+	
+	
+	getBusinessdays: function(){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type", "business");
+		table.addQuery("active", true);
+		table.query();
+// 		gs.addInfoMessage(table.getRowCount());
+// 		return table.getRowCount();
+		table.next();
+		return table.u_every;
+		
+	},
+	
+	
+	getSpaceSeatingCapacity: function(space){
+		var table = new GlideRecord("x_616811_coworking_csr_space");
+		table.get(space);
+		table.next();
+		
+		return table.seating_capacity;
+	},
+	
+	
+	
+	
+	
 	
     type: 'ReservationUtils'
 };]]></script>
@@ -55,13 +281,13 @@ ReservationUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 12:35:49</sys_created_on>
         <sys_id>2d27b1fc97d60110002ffef3a253afde</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>454</sys_mod_count>
         <sys_name>ReservationUtils</sys_name>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_include_2d27b1fc97d60110002ffef3a253afde</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 08:39:48</sys_updated_on>
+        <sys_updated_on>2022-04-25 01:55:13</sys_updated_on>
     </sys_script_include>
 </record_update>

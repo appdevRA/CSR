@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>date</field>
+        <mandatory>false</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-22 06:08:11</sys_created_on>
+        <sys_id>c267d547971e4110002ffef3a253af9b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>date</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_ui_policy_action_c267d547971e4110002ffef3a253af9b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-22 06:08:11</sys_updated_on>
+        <table>x_616811_coworking_calendar</table>
+        <ui_policy display_value="Hide Holiday or Business day">0567e57c97960110002ffef3a253afae</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>

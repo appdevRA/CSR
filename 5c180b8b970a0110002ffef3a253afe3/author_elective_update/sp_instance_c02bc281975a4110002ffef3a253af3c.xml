@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">ef4ede4d979a4110002ffef3a253afc1</sp_column>
+        <sp_widget display_value="Cool Clock">3a36b30b6f3631005be8583e6b3ee490</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 04:46:07</sys_created_on>
+        <sys_id>c02bc281975a4110002ffef3a253af3c</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_c02bc281975a4110002ffef3a253af3c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 06:27:08</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"zone": {
+		"value": "Philippines",
+		"displayValue": "Philippines"
+	},
+	"c_color": {
+		"value": "Blue",
+		"displayValue": "Blue"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=c02bc281975a4110002ffef3a253af3c"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_c02bc281975a4110002ffef3a253af3c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;ef4ede4d979a4110002ffef3a253afc1&lt;/sp_column&gt;&lt;sp_widget display_value="Cool Clock"&gt;3a36b30b6f3631005be8583e6b3ee490&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-16 04:46:07&lt;/sys_created_on&gt;&lt;sys_id&gt;c02bc281975a4110002ffef3a253af3c&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_c02bc281975a4110002ffef3a253af3c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 06:27:08&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"zone": {
+		"value": "Philippines",
+		"displayValue": "Philippines"
+	},
+	"c_color": {
+		"value": "Blue",
+		"displayValue": "Blue"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=c02bc281975a4110002ffef3a253af3c"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1833579397</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 06:27:08</sys_created_on>
+        <sys_id>21dbe7599716c110002ffef3a253aff9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f968f00210000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 06:27:08</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>29dbe7597116c110c11b6ceaba44d0f8</update_guid>
+        <update_guid_history>29dbe7597116c110c11b6ceaba44d0f8:-1833579397,a85b2b194516c110dec91c72a4386f15:-1324749049,0b4be7190416c110dcb155695484fe27:1789002255,a06767dda992c11080741d83ddeb2ba3:-1324749049,1a38db4520de4110068f41b2157c827e:-2082282618,9a2acf85d09e4110c23f815634fa7986:-774294080,ca493641e35e4110ce7ea15ff7af9702:223102901,e449f241de5e4110c6e840cefe1c3845:-890001855,182bce85475a4110a7fda698d8e3abc3:-774294080</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">4e24ec32971a0110002ffef3a253afe1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-21 07:45:37</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>6e05e92bfbb84a00b8887454f2a60100</sys_id>
+        <sys_metadata>c02bc281975a4110002ffef3a253af3c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_c02bc281975a4110002ffef3a253af3c</sys_update_name>
+        <sys_update_version display_value="sp_instance_c02bc281975a4110002ffef3a253af3c">21dbe7599716c110002ffef3a253aff9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-21 07:45:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

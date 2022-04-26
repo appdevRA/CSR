@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">4199572c97c30110002ffef3a253af92</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 07:11:22</sys_created_on>
+        <sys_id>408f665f97d2c110002ffef3a253afcb</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_408f665f97d2c110002ffef3a253afcb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-21 03:59:09</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<h2 style=\"text-align: center;\" data-mce-style=\"text-align: center;\">&nbsp;<br></h2><h3 data-mce-style=\"text-align: center;\" style=\"text-align: center;\">&nbsp;<br></h3><h4 data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><strong>${Yanni Jan Mondejar}</strong></h4><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\">${Developer}</p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p>",
+		"displayValue": "<h2 style=\"text-align: center;\">&nbsp;</h2>\n<h3 style=\"text-align: center;\">&nbsp;</h3>\n<h4 style=\"text-align: center;\"><strong>${Yanni Jan Mondejar}</strong></h4>\n<p style=\"text-align: center;\">${Developer}</p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;</p>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=408f665f97d2c110002ffef3a253afcb"/>
+</record_update>

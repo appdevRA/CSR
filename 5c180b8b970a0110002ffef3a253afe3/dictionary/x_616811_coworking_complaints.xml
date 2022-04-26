@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="CSR Complaints" max_length="40" name="x_616811_coworking_complaints" sizeclass="2" type="collection">
+        <element label="Applicant" mandatory="true" max_length="40" name="applicant" reference="sys_user" type="reference"/>
+        <element label="Comment" max_length="4000" name="comment" type="string"/>
+        <element choice="1" label="Issue" mandatory="true" max_length="40" name="issue" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Projector not working" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Broken equipment" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Needs clean up" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Other" sequence="3" value="4"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Reservation number" mandatory="true" max_length="32" name="resevation" reference="x_616811_coworking_csr_reservations2" type="reference"/>
+        <element label="Space" mandatory="true" max_length="32" name="space" reference="x_616811_coworking_csr_space" type="reference"/>
+        <index name="index">
+            <element name="resevation"/>
+        </index>
+        <index name="index2">
+            <element name="space"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>100</order>
+        <published_ref display_value="Projector not working">71ee304097070110002ffef3a253afa6</published_ref>
+        <question display_value="Issue">36194dcc97070110002ffef3a253aff0</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 04:10:50</sys_created_on>
+        <sys_id>72198dcc97070110002ffef3a253af14</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Projector not working</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>question_choice_72198dcc97070110002ffef3a253af14</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:10:50</sys_updated_on>
+        <text>Projector not working</text>
+        <value>1</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=72198dcc97070110002ffef3a253af14"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>question_choice_72198dcc97070110002ffef3a253af14</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>100</order><published_ref display_value="Projector not working">71ee304097070110002ffef3a253afa6</published_ref><question display_value="Issue">36194dcc97070110002ffef3a253aff0</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-19 04:10:50</sys_created_on><sys_id>72198dcc97070110002ffef3a253af14</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Projector not working</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>question_choice_72198dcc97070110002ffef3a253af14</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-19 04:10:50</sys_updated_on><text>Projector not working</text><value>1</value></question_choice><fx_price action="delete_multiple" query="id=72198dcc97070110002ffef3a253af14"/></record_update>]]></payload>
+        <payload_hash>1784329838</payload_hash>
+        <record_name>Projector not working</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 04:10:50</sys_created_on>
+        <sys_id>3a198dcc97070110002ffef3a253af16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>180400412fa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:10:50</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>be198dcc84070110aa36317b5f37b515</update_guid>
+        <update_guid_history>be198dcc84070110aa36317b5f37b515:1784329838</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Projector not working">8b39810097470110002ffef3a253afec</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-04-19 04:11:24</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>11eef009c5b341e58a54c873e256c8c1</sys_id>
+        <sys_metadata>72198dcc97070110002ffef3a253af14</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Projector not working</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">36194dcc97070110002ffef3a253aff0</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>question_choice_72198dcc97070110002ffef3a253af14</sys_update_name>
+        <sys_update_version display_value="question_choice_72198dcc97070110002ffef3a253af14">3a198dcc97070110002ffef3a253af16</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:11:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

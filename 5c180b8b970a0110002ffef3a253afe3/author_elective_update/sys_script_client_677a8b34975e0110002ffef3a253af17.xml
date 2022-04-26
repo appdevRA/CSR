@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_start_time</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Check if start is not past today</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	var checkIf = new GlideAjax('ClientScriptInclude');
+    // Specify the getEmail method
+    checkIf.addParam('sysparm_name','startIsPastCurrentTime');
+    // Pass the Requested for sys_id
+    checkIf.addParam('sysparm_start', newValue);
+    // Send the request to the server
+    checkIf.getXML(populateEmailField);
+
+
+    // When the response is back from the server
+    function populateEmailField(response){
+        // Extract the email address from the response, clear any value from the email field, 
+        // set new value in the email field
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+		if(answer == "true"){
+			alert("Start time must not be past the current time");
+			g_form.clearValue('u_start_time');
+			
+		}
+
+    }
+	
+
+
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 14:47:18</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>677a8b34975e0110002ffef3a253af17</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Check if start is not past today</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_client_677a8b34975e0110002ffef3a253af17</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 01:12:12</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_client_677a8b34975e0110002ffef3a253af17</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;u_start_time&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Check if start is not past today&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	var checkIf = new GlideAjax('ClientScriptInclude');
+    // Specify the getEmail method
+    checkIf.addParam('sysparm_name','startIsPastCurrentTime');
+    // Pass the Requested for sys_id
+    checkIf.addParam('sysparm_start', newValue);
+    // Send the request to the server
+    checkIf.getXML(populateEmailField);
+
+
+    // When the response is back from the server
+    function populateEmailField(response){
+        // Extract the email address from the response, clear any value from the email field, 
+        // set new value in the email field
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+		if(answer == "true"){
+			alert("Start time must not be past the current time");
+			g_form.clearValue('u_start_time');
+			
+		}
+
+    }
+	
+
+
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-15 14:47:18&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;677a8b34975e0110002ffef3a253af17&lt;/sys_id&gt;&lt;sys_mod_count&gt;19&lt;/sys_mod_count&gt;&lt;sys_name&gt;Check if start is not past today&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_677a8b34975e0110002ffef3a253af17&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 01:12:12&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_csr_reservations&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>197188925</payload_hash>
+        <record_name>Check if start is not past today</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 01:12:12</sys_created_on>
+        <sys_id>50c3eedd97da8110002ffef3a253af60</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f956eaa0f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 01:12:12</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>18c3eedd9ada8110161e8856bde4bf5f</update_guid>
+        <update_guid_history>18c3eedd9ada8110161e8856bde4bf5f:197188925,daa36edda5da811058ca6a24119a4262:1299710576,32b3149135d28110bc58dcf82de949f0:-1236513682,6453985194d28110e2020af7cbf057cb:-1915059140,25231851f8d2811089e7b80011e5aa60:-1592761030,2e031411c8d2811032153cc1c446dc42:-509467302,9d22149da3928110fc6f1bc57af213fa:382256328,6f1194dddc928110683dfa70af77aed3:-201503410,f9f090dd5d928110a2ed7152c2374649:-473867467,53c0909db2928110a3154702c66b708d:-510456623,25a09c9dbb9281102246748115c8196c:1690507210,917f8c1d8a928110f81aca51f25f0b2e:-536021498,1d0f005ddc9281102494e1c5c4f3b7e2:-2095835397,2fbe0c1da4928110b3c1c3016fdc7d37:698542728,069e481d6e92811094a0f8761e4bd58d:652455433,903a0019fe928110a7cc54e79d114bef:-125244095,940a00194b9281101467c173b78bc9ea:1998619217,d4e900d573928110b9e03e67848eeb6b:-642461237,5a4b07b47f5e0110df91435c1a11ef3e:-339194298,f02b0b74715e011023173900533dc807:-199181352</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 14:55:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>0818599f112049be8482f93ec7fc2fe4</sys_id>
+        <sys_metadata>677a8b34975e0110002ffef3a253af17</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Check if start is not past today</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">e9db478f970a0110002ffef3a253af3c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_client_677a8b34975e0110002ffef3a253af17</sys_update_name>
+        <sys_update_version display_value="sys_script_client_677a8b34975e0110002ffef3a253af17">50c3eedd97da8110002ffef3a253af60</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-18 14:55:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

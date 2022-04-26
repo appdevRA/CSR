@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>300</order>
+        <published_ref display_value="Needs clean up">c26685c897070110002ffef3a253af80</published_ref>
+        <question display_value="Issue">dd68c58c97070110002ffef3a253afd5</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 04:07:44</sys_created_on>
+        <sys_id>d168c58c97070110002ffef3a253afe7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Needs clean up</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>question_choice_d168c58c97070110002ffef3a253afe7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:07:44</sys_updated_on>
+        <text>Needs clean up</text>
+        <value>3</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=d168c58c97070110002ffef3a253afe7"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>question_choice_d168c58c97070110002ffef3a253afe7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>300</order><published_ref display_value="Needs clean up">c26685c897070110002ffef3a253af80</published_ref><question display_value="Issue">dd68c58c97070110002ffef3a253afd5</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-19 04:07:44</sys_created_on><sys_id>d168c58c97070110002ffef3a253afe7</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Needs clean up</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>question_choice_d168c58c97070110002ffef3a253afe7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-19 04:07:44</sys_updated_on><text>Needs clean up</text><value>3</value></question_choice><fx_price action="delete_multiple" query="id=d168c58c97070110002ffef3a253afe7"/></record_update>]]></payload>
+        <payload_hash>-1640541687</payload_hash>
+        <record_name>Needs clean up</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 04:07:44</sys_created_on>
+        <sys_id>9968c58c97070110002ffef3a253afe9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18040013b750000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:07:44</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>1168c58c01070110243116d0ae056be9</update_guid>
+        <update_guid_history>1168c58c01070110243116d0ae056be9:-1640541687</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Needs clean up">1da8cd8c97070110002ffef3a253afa0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-04-19 04:08:49</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>54936a70279440ef9aebcc850ed9be39</sys_id>
+        <sys_metadata>d168c58c97070110002ffef3a253afe7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Needs clean up</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">dd68c58c97070110002ffef3a253afd5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>question_choice_d168c58c97070110002ffef3a253afe7</sys_update_name>
+        <sys_update_version display_value="question_choice_d168c58c97070110002ffef3a253afe7">9968c58c97070110002ffef3a253afe9</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-04-19 04:08:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

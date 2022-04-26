@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>u_start_time</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Calendar </name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+	g_form.addInfoMessage(newValue);
+		
+		return;
+// 	  var  datetime = new GlideDateTime(newValue);
+// 	   g_form.setValue("u_start_time", datetime.)
+  
+   }
+	
+	
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 07:52:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e3d8858097228510002ffef3a253afe2</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Calendar </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_client_e3d8858097228510002ffef3a253afe2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:31:16</sys_updated_on>
+        <table>x_616811_coworking_calendar</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_client_e3d8858097228510002ffef3a253afe2</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;u_start_time&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Calendar &lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+	g_form.addInfoMessage(newValue);
+		
+		return;
+// 	  var  datetime = new GlideDateTime(newValue);
+// 	   g_form.setValue("u_start_time", datetime.)
+  
+   }
+	
+	
+   //Type appropriate comment here, and begin script below
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-25 07:52:05&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e3d8858097228510002ffef3a253afe2&lt;/sys_id&gt;&lt;sys_mod_count&gt;12&lt;/sys_mod_count&gt;&lt;sys_name&gt;Calendar &lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_e3d8858097228510002ffef3a253afe2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-25 08:31:16&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_calendar&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1169250400</payload_hash>
+        <record_name>Calendar </record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 08:31:16</sys_created_on>
+        <sys_id>46f4550097628510002ffef3a253af8e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fc03387ce0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:31:16</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>4ef455006c62851003762f1e206b2b8d</update_guid>
+        <update_guid_history>4ef455006c62851003762f1e206b2b8d:-1169250400,6ee41dcc9922851071eddacd00f952ae:615017472,bb841dcc71228510d85602173b7c0e93:-1624633972,4f32990cae228510efc948f5b8db0670:151826801,fa12990c702285101b20c3c80ac56022:-896442712,2a6e010868228510a03c4dd960f8aace:426735337,2c2e01080122851040a3c4ba4b2471c8:-756072066,589d81c44122851008367573eff19309:-1590237537,e45d0d8439228510867ea019c286377e:531994448,c54d8184ad2285103f8d8bd4608d7b65:920465579,080d8d845e228510b495467116c9c018:-477293472,ae3c818473228510663371b0663ca85b:1900385851,7bfb8d443b228510131437e87835522d:1466527397</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 08:53:21</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>4e1fe55905ae4e4ab4714e8152e05164</sys_id>
+        <sys_metadata>e3d8858097228510002ffef3a253afe2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Calendar </sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="CSR Calendar">90947cab97428110002ffef3a253aff5</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_client_e3d8858097228510002ffef3a253afe2</sys_update_name>
+        <sys_update_version display_value="sys_script_client_e3d8858097228510002ffef3a253afe2">46f4550097628510002ffef3a253af8e</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:53:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

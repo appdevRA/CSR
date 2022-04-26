@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spUtil) {
+	var c = this;
+	c.expanded = !spUtil.isMobile();
+	c.expand = function() {
+		c.expanded = true;
+	};
+
+	var deregister = $rootScope.$on("sp.update.breadcrumbs", function(e, list) {
+		c.breadcrumbs = list;
+	});
+
+	$scope.$on('$destroy', function(){
+		deregister();
+	});
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.nav {
+  overflow:hidden;
+  li {
+    padding: 10px 7px;
+
+    &gt; span {
+      &gt; a {
+          display: inline;
+      }
+
+      &gt; i {
+          padding-left: 15px;
+      }
+    }
+  }
+  &amp;::before, &amp;::after {
+    content: none;
+  }
+}
+
+.a-disabled {
+  cursor: default;
+  color: $sp-disabled-breadcrumb;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>csr_breadcrumbs</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>CSR breadcrumbs</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 09:52:54</sys_created_on>
+        <sys_id>b7ea9469975ac110002ffef3a253afe5</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>CSR breadcrumbs</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_widget_b7ea9469975ac110002ffef3a253afe5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 11:04:55</sys_updated_on>
+        <template><![CDATA[<div aria-label="${Page breadcrumbs}" role="navigation" class="breadcrumbs">
+<ul class="nav nav-pills nav-sm">
+  <li>
+    <span><a ng-href="?id={{portal.homepage_dv}}">${Home}</a>
+      <i aria-hidden="true" class="fa fa-long-arrow-right"></i></span>
+  </li>
+  <li ng-if="!c.expanded &amp;&amp; c.breadcrumbs &amp;&amp; c.breadcrumbs.length > 2">
+    <span><a ng-click="c.expand()"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+      <i aria-hidden="true" class="fa fa-long-arrow-right"></i></span>
+  </li>
+  <li ng-if="!c.breadcrumbs"><span style="display: inline;" class="a-disabled" aria-current="page">{{page.title}}</span></li>
+  <li ng-if="c.expanded || ((c.breadcrumbs.length > 2  &amp;&amp; $index > c.breadcrumbs.length-3) || (c.breadcrumbs.length <= 2))" ng-repeat="item in c.breadcrumbs track by $index" >
+    <span><a ng-if="!$last" ng-href="{{item.url}}">{{item.label}}</a>
+      <span class="a-disabled" ng-if="$last" aria-current="page">{{item.label}}</span>
+      <i aria-hidden="true" ng-if="!$last" class="fa fa-long-arrow-right"></i></span>
+  </li>
+</ul>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_widget_b7ea9469975ac110002ffef3a253afe5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, $rootScope, spUtil) {
+	var c = this;
+	c.expanded = !spUtil.isMobile();
+	c.expand = function() {
+		c.expanded = true;
+	};
+
+	var deregister = $rootScope.$on("sp.update.breadcrumbs", function(e, list) {
+		c.breadcrumbs = list;
+	});
+
+	$scope.$on('$destroy', function(){
+		deregister();
+	});
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.nav {
+  overflow:hidden;
+  li {
+    padding: 10px 7px;
+
+    &amp;gt; span {
+      &amp;gt; a {
+          display: inline;
+      }
+
+      &amp;gt; i {
+          padding-left: 15px;
+      }
+    }
+  }
+  &amp;amp;::before, &amp;amp;::after {
+    content: none;
+  }
+}
+
+.a-disabled {
+  cursor: default;
+  color: $sp-disabled-breadcrumb;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;csr_breadcrumbs&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;CSR breadcrumbs&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-17 09:52:54&lt;/sys_created_on&gt;&lt;sys_id&gt;b7ea9469975ac110002ffef3a253afe5&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;CSR breadcrumbs&lt;/sys_name&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_b7ea9469975ac110002ffef3a253afe5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 11:04:55&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div aria-label="${Page breadcrumbs}" role="navigation" class="breadcrumbs"&gt;
+&lt;ul class="nav nav-pills nav-sm"&gt;
+  &lt;li&gt;
+    &lt;span&gt;&lt;a ng-href="?id={{portal.homepage_dv}}"&gt;${Home}&lt;/a&gt;
+      &lt;i aria-hidden="true" class="fa fa-long-arrow-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li ng-if="!c.expanded &amp;amp;&amp;amp; c.breadcrumbs &amp;amp;&amp;amp; c.breadcrumbs.length &gt; 2"&gt;
+    &lt;span&gt;&lt;a ng-click="c.expand()"&gt;&lt;i class="fa fa-ellipsis-h" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;i aria-hidden="true" class="fa fa-long-arrow-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li ng-if="!c.breadcrumbs"&gt;&lt;span style="display: inline;" class="a-disabled" aria-current="page"&gt;{{page.title}}&lt;/span&gt;&lt;/li&gt;
+  &lt;li ng-if="c.expanded || ((c.breadcrumbs.length &gt; 2  &amp;amp;&amp;amp; $index &gt; c.breadcrumbs.length-3) || (c.breadcrumbs.length &lt;= 2))" ng-repeat="item in c.breadcrumbs track by $index" &gt;
+    &lt;span&gt;&lt;a ng-if="!$last" ng-href="{{item.url}}"&gt;{{item.label}}&lt;/a&gt;
+      &lt;span class="a-disabled" ng-if="$last" aria-current="page"&gt;{{item.label}}&lt;/span&gt;
+      &lt;i aria-hidden="true" ng-if="!$last" class="fa fa-long-arrow-right"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1296604143</payload_hash>
+        <record_name>CSR breadcrumbs</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 11:04:55</sys_created_on>
+        <sys_id>ea6b642d979ac110002ffef3a253af87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f978d506b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 11:04:55</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>e26b642d919ac110993ae49b17441487</update_guid>
+        <update_guid_history>e26b642d919ac110993ae49b17441487:1296604143,008aa4a95b9ac110d98ff0adf0a62b0a:1452556029,f679a8e99d9ac11076bcdbb2556061eb:1693364059,9be86ce9719ac1100a7d98a23cf95c09:2060616604,b0c8a8e9469ac1106355e72cc4db8654:-1747569216,835824e9159ac110dff8eda7e0edd7c7:2060616604,913860e9ac9ac11098834237b85ef6ee:866399022,62f760699b9ac110dc12456c4e581470:1446160330,ffea9469835ac11081404f67d2db9ce7:2060616604</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="CSR breadcrumbs">0d041bea97520110002ffef3a253af24</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-21 01:55:28</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>89ac1721cfe94d5a8ebcd26d759684d9</sys_id>
+        <sys_metadata>b7ea9469975ac110002ffef3a253afe5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CSR breadcrumbs</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_widget_b7ea9469975ac110002ffef3a253afe5</sys_update_name>
+        <sys_update_version display_value="sp_widget_b7ea9469975ac110002ffef3a253afe5">ea6b642d979ac110002ffef3a253af87</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-21 01:55:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

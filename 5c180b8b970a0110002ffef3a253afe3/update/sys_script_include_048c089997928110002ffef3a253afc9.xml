@@ -2,46 +2,226 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_616811_coworking.ClientScriptInclude</api_name>
+        <api_name>x_616811_coworking.ReservationClientUtils</api_name>
         <caller_access/>
         <client_callable>true</client_callable>
         <description/>
-        <name>ClientScriptInclude</name>
-        <script><![CDATA[var ClientScriptInclude = Class.create();
-ClientScriptInclude.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-
+        <name>ReservationClientUtils</name>
+        <script><![CDATA[var ReservationClientUtils = Class.create();
+ReservationClientUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	isRoomOrOffice: function() {
+        var spaceRecord = new GlideRecord("x_616811_coworking_csr_space");
+	
+        spaceRecord.get(this.getParameter('sysparm_spaceID'));
+		if(spaceRecord.accessibility == "private_room" || spaceRecord.accessibility == "private_office")
+			return true;
+    },
 	getEmail: function() {
         var userRecord = new GlideRecord("sys_user");
         userRecord.get(this.getParameter('sysparm_userID'));
         return userRecord.email + '';
     },
 	
-	startIsPastCurrentTime: function(){
+	dateIsPastCurrentTime: function(){
 		// Create GlideDateTime objects for the current date and the passed in date
 		var rightnow = new GlideDateTime();
-		var startTime = new GlideDateTime(this.getParameter('sysparm_start'));
-		gs.info(startTime);
+		var dateTime = new GlideDateTime(this.getParameter('sysparm_dateTime'));
+// 		gs.info(eTime);
+// 		gs.info(startTime +" | "+ endTime );
 		// If the testdate is before rightnow, return true, else return false
-		if (startTime.before(rightnow)) {
+		if (dateTime.before(rightnow)) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	},
-    type: 'ClientScriptInclude'
+	
+	endIsBeforeStart: function(){
+		var asd = new GlideDateTime();
+		// Create GlideDateTime objects for the current date and the passed in date
+		var startTime = new GlideDateTime(this.getParameter('sysparm_sTime'));
+		var endTime = new GlideDateTime(this.getParameter('sysparm_eTime'));
+		
+		// Get the date portion of rightnow and testdate (no timestamp)
+		if(endTime.before(startTime)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	},
+	
+	
+	intervalIsNotEqualToHour: function(){
+		var startTime = new GlideDateTime(this.getParameter('sysparm_sTime'));
+		var endTime = new GlideDateTime(this.getParameter('sysparm_eTime'));
+		var dur = new GlideDuration();
+		dur = GlideDateTime.subtract(startTime,endTime);
+		var interval = dur.getDisplayValue();
+		
+		if(interval.includes("Hour") == false || interval.includes("Minute") == true  || interval.includes("Day") == 
+			true){
+
+			return true;
+		} else{
+			return false;
+		}
+
+		
+	},
+	
+	
+	intervalIsNotEqualtoDay: function(){
+		var startTime = new GlideDateTime(this.getParameter('sysparm_sTime'));
+		var endTime = new GlideDateTime(this.getParameter('sysparm_eTime'));
+		
+		var dur = new GlideDuration();
+		dur = GlideDateTime.subtract(startTime,endTime);
+		var interval = dur.getDisplayValue();
+		
+		if(interval.includes("Day") == false  || interval.includes("Hour") == true || interval.includes("Minute") == 
+			true){
+			
+			return true;
+		} else{
+			return false;
+		}		
+	},
+	
+	//dateFieldIsNotWithinBusinessHours
+	dateFieldIsNotWithinBusinessHours: function(){
+		
+		var startTime = new GlideDateTime(this.getParameter('sysparm_sTime'));
+		var endTime = new GlideDateTime(this.getParameter('sysparm_eTime'));
+
+
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type","=","business");
+		table.addQuery("active", "=", true);
+		table.query();
+		table.next();
+		
+		var hour = new GlideTime();
+		hour.setValue("07:00:00");
+		startTime.add(hour);
+		endTime.add(hour);
+		
+		var tableStartTime = new GlideDateTime(table.u_start_time);
+		var tableEndTime = new GlideDateTime(table.u_end_time);
+		
+// 		gs.addInfoMessage("start local: "+startTime.getLocalTime() +" | "+ tableStartTime.getLocalTime());
+// 		gs.addInfoMessage("end local: "+endTime.getLocalTime() +" | "+ tableEndTime.getLocalTime());
+		
+		
+		var field = "";
+		if(startTime.getLocalTime() < tableStartTime.getLocalTime() || startTime.getLocalTime() >  tableEndTime.getLocalTime()){
+			field = "start";
+		
+		}
+		if(endTime.getLocalTime() > tableEndTime.getLocalTime() || endTime.getLocalTime() < tableStartTime.getLocalTime()){
+			field = field + " end";
+		
+		} 
+		
+		if(field != ""){
+			var businessHour = tableStartTime.getLocalTime().getByFormat("HH:mm") +" - "+ 
+							tableEndTime.getLocalTime().getByFormat("HH:mm");
+			return field +"|"+ businessHour;
+		} else{
+			return false;
+		}
+			
+	},
+	
+	//dateIsNotWithinSpaceDays
+	dateIsNotWithinSpaceDays: function(){
+	var spaceTable = new GlideRecord("x_616811_coworking_csr_space");
+	var obj = spaceTable.get(this.getParameter('sysparm_space'));
+	var spaceDaysNumber = spaceTable.days;
+		
+	var startDay = new GlideDateTime(this.getParameter('sysparm_sTime')).getDayOfWeekUTC();
+	var endDay = new GlideDateTime(this.getParameter('sysparm_eTime')).getDayOfWeekUTC();
+	
+	var spaceDays = "";
+	var spaceDaysArray = [];
+	var days = ["Mon", "Tue","Wed","Thu","Fri","Sat","Sun"];
+	spaceDaysArray = spaceDaysNumber.split(",");
+		
+	for(var i=0;i<spaceDaysArray.length;i++){
+		if(i == 0){
+			spaceDays = days[spaceDaysArray[i]-1];
+		} else{
+			spaceDays = spaceDays +", "+ days[spaceDaysArray[i]-1];
+		}
+	}
+	var field = "";	
+	if(spaceDaysNumber.includes(startDay) == false){
+		field = "start";
+	} 
+		if( spaceDaysNumber.includes(endDay) == false){
+			field = field + " end";
+		} 
+		
+		
+		if(field != ""){
+			return field +"|" + spaceDays;
+		}else{
+			return "false|" + spaceDays;
+
+		}
+		
+	},
+	
+	dateIsOnHoliday: function(){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type","=","holiday");
+		table.addQuery("active", "=", true);
+		
+		var start= new GlideDateTime(this.getParameter('sysparm_dateTime'));
+		
+		var q1 = table.addQuery('date','STARTSWITH',start.getDate()); 
+// 		q1.addOrCondition('date','STARTSWITH',end); 
+		
+		table.query();
+		
+// 		gs.addInfoMessage(table.getRowCount());
+// 		return table.getRowCount();
+		if(table.getRowCount() != 0){
+			return true;
+		} else{
+			return false;
+		}
+		
+	},
+	
+	getBusinessdays: function(){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type", "business");
+		table.addQuery("active", true);
+		table.query();
+// 		gs.addInfoMessage(table.getRowCount());
+// 		return table.getRowCount();
+		table.next();
+		return table.u_every;
+		
+	},
+	
+	
+    type: 'ReservationClientUtils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-16 14:17:32</sys_created_on>
         <sys_id>048c089997928110002ffef3a253afc9</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>ClientScriptInclude</sys_name>
+        <sys_mod_count>138</sys_mod_count>
+        <sys_name>ReservationClientUtils</sys_name>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_include_048c089997928110002ffef3a253afc9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-03-16 14:27:02</sys_updated_on>
+        <sys_updated_on>2022-04-25 01:34:01</sys_updated_on>
     </sys_script_include>
 </record_update>

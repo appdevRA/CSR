@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="ea18e07597160110002ffef3a253afb6" sys_domain="global" table="sys_app_application" version="3" view="Coworking_Space_Reservation">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>title</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 05:29:26</sys_created_on>
+            <sys_id>8e38687597160110002ffef3a253af12</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_app_application" sys_domain="global" view="1218e07597160110002ffef3a253afb2">ea18e07597160110002ffef3a253afb6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-18 05:29:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 05:29:26</sys_created_on>
+            <sys_id>8238687597160110002ffef3a253af13</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_app_application" sys_domain="global" view="1218e07597160110002ffef3a253afb2">ea18e07597160110002ffef3a253afb6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-18 05:29:26</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_scope</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 05:29:26</sys_created_on>
+            <sys_id>8638687597160110002ffef3a253af13</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_app_application" sys_domain="global" view="1218e07597160110002ffef3a253afb2">ea18e07597160110002ffef3a253afb6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-18 05:29:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 05:29:26</sys_created_on>
+            <sys_id>8a38687597160110002ffef3a253af13</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sys_app_application" sys_domain="global" view="1218e07597160110002ffef3a253afb2">ea18e07597160110002ffef3a253afb6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-18 05:29:26</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>sys_app_application</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-03-18 05:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ea18e07597160110002ffef3a253afb6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_app_application</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+            <sys_update_name>sys_ui_section_ea18e07597160110002ffef3a253afb6</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-03-18 05:28:55</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Coworking Space Reservation" name="Coworking_Space_Reservation">1218e07597160110002ffef3a253afb2</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

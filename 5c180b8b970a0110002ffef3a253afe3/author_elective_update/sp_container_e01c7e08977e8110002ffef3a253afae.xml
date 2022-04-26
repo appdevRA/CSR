@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color>#ffffff</background_color>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Pending Approvals - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="pending_approvals">96356e5f9792c110002ffef3a253afaf</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-07 02:17:26</sys_created_on>
+        <sys_id>e01c7e08977e8110002ffef3a253afae</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Pending Approvals - Container 1</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_container_e01c7e08977e8110002ffef3a253afae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 01:48:52</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_container_e01c7e08977e8110002ffef3a253afae</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color>#ffffff</background_color><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Pending Approvals - Container 1</name><order>1</order><sp_page display_value="pending_approvals">96356e5f9792c110002ffef3a253afaf</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-07 02:17:26</sys_created_on><sys_id>e01c7e08977e8110002ffef3a253afae</sys_id><sys_mod_count>5</sys_mod_count><sys_name>Pending Approvals - Container 1</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>sp_container_e01c7e08977e8110002ffef3a253afae</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-19 01:48:52</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1148652260</payload_hash>
+        <record_name>Pending Approvals - Container 1</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 01:48:52</sys_created_on>
+        <sys_id>0b98244097830110002ffef3a253af86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1803f8218110000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 01:48:52</sys_updated_on>
+        <type>Container</type>
+        <update_guid>03982440a6830110064f68a6475cfd86</update_guid>
+        <update_guid_history>03982440a6830110064f68a6475cfd86:-1148652260,a7786840d183011060d2dd6e02cfc5c5:-1920456330,fb386840f78301107379a56b71647a01:-1148652260,64ef3b481eb2c1108053ac968f347cbc:2108716340,297cba48397e81108a0e113d9ca91b78:774370982,281c7e08957e81109e2218f2d17154b0:1848708618</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Pending Approvals - Container 1">7ed8288097830110002ffef3a253af16</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-19 01:49:56</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>0d7ce7112d804ee4827c3c232ce7ee10</sys_id>
+        <sys_metadata>e01c7e08977e8110002ffef3a253afae</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pending Approvals - Container 1</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_container_e01c7e08977e8110002ffef3a253afae</sys_update_name>
+        <sys_update_version display_value="sp_container_e01c7e08977e8110002ffef3a253afae">0b98244097830110002ffef3a253af86</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-19 01:49:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

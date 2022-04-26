@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_616811_coworking.dateTime</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>dateTime</name>
+        <script><![CDATA[var dateTime = Class.create();
+dateTime.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getLocalTime: function(){
+		
+		var timeStart = new GlideDateTime(this.getParameter('sysparm_time'));
+		var a = JSON.stringify(timeStart);
+// 		var a = JSON.stringify(time.getLocalTime());
+		return a;
+	},
+	
+    type: 'dateTime'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 07:49:00</sys_created_on>
+        <sys_id>fee90dc097228510002ffef3a253afd1</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>dateTime</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_include_fee90dc097228510002ffef3a253afd1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:28:33</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_include_fee90dc097228510002ffef3a253afd1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_616811_coworking.dateTime&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;dateTime&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var dateTime = Class.create();
+dateTime.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getLocalTime: function(){
+		
+		var timeStart = new GlideDateTime(this.getParameter('sysparm_time'));
+		var a = JSON.stringify(timeStart);
+// 		var a = JSON.stringify(time.getLocalTime());
+		return a;
+	},
+	
+    type: 'dateTime'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-25 07:49:00&lt;/sys_created_on&gt;&lt;sys_id&gt;fee90dc097228510002ffef3a253afd1&lt;/sys_id&gt;&lt;sys_mod_count&gt;13&lt;/sys_mod_count&gt;&lt;sys_name&gt;dateTime&lt;/sys_name&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_fee90dc097228510002ffef3a253afd1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-25 08:28:33&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>749701812</payload_hash>
+        <record_name>dateTime</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 08:28:33</sys_created_on>
+        <sys_id>c65455cc97228510002ffef3a253afb5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fc03108270000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:28:33</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>ce5455cc83228510f5b355ed36ee88b4</update_guid>
+        <update_guid_history>ce5455cc83228510f5b355ed36ee88b4:749701812,2f34d1ccfc228510fbf1e0ada6c827b7:1896751143,be63518ceb2285108d73e676152f3c49:-1127662840,1f33d94c7422851000dc165791a576b5:-205076980,4062dd0c722285105f99646f416cf97d:22630722,e3d1d10cb7228510796a2624642c10c7:1483192175,eab19dc850228510afe06a4835888fc8:-619987245,00711dc8c62285107e6f6878dde436d3:-44221797,c9fe45485c228510b3827e32ad23692c:1061139255,f6ce8148e1228510474c109f5848dd98:1329793222,6e9e89087422851068c831f612eb3a37:1138649195,c5abc544ab228510a59edd5e3a2977c5:476416042,217b8544152285109526bffce2f06e1c:-1073149437,264b814482228510867dd1a2129a5f5d:-1852523114</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 08:53:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>064bcdcfd8ec44c2854c9d75d25cdf24</sys_id>
+        <sys_metadata>fee90dc097228510002ffef3a253afd1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dateTime</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_include_fee90dc097228510002ffef3a253afd1</sys_update_name>
+        <sys_update_version display_value="sys_script_include_fee90dc097228510002ffef3a253afd1">c65455cc97228510002ffef3a253afb5</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-25 08:53:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

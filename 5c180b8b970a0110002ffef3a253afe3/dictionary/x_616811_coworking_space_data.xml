@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="CSR Space Data" max_length="40" name="x_616811_coworking_space_data" sizeclass="5" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Accessibility" label="Accessibility" max_length="40" name="u_accessibility" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Description" label="Description" max_length="40" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Facility" label="Facility" max_length="40" name="u_facility" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Name" label="Name" max_length="40" name="u_name" type="string"/>
+        <element attributes="import_attribute_name=Priceperhour" label="Priceperhour" max_length="40" name="u_priceperhour" type="integer"/>
+        <element attributes="import_attribute_name=Seating capacity" label="Seating capacity" max_length="40" name="u_seating_capacity" type="integer"/>
+    </element>
+</database>

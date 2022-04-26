@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>space</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Prohibit private space from guests</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+
+   }
+	var script = new GlideAjax('VerifySpaceAccessibility');
+	script.addParam('sysparm_name','isRoomOrOffice');
+	script.addParam('sysparm_spaceID', newValue);
+	script.getXML(populateEmailField);
+
+	// When the response is back from the server
+	function populateEmailField(response){
+		// Extract the email address from the response, clear any value from the email field, 
+		// set new value in the email field
+		var isRoomOrOffice = response.responseXML.documentElement.getAttribute("answer");
+		if(isRoomOrOffice  && !g_user.hasRole("x_616811_coworking.csr_patron")){
+			g_form.addFormMessage("Only registered users can reserve this type of Space");
+			g_form.clearValue("space");
+			
+		} else{
+			g_form.clearAllFormMessages();
+		}
+	}
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-16 02:03:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a2352d0d97964110002ffef3a253af1a</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Prohibit private space from guests</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_client_a2352d0d97964110002ffef3a253af1a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 01:50:56</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_client_a2352d0d97964110002ffef3a253af1a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;space&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Prohibit private space from guests&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+
+   }
+	var script = new GlideAjax('VerifySpaceAccessibility');
+	script.addParam('sysparm_name','isRoomOrOffice');
+	script.addParam('sysparm_spaceID', newValue);
+	script.getXML(populateEmailField);
+
+	// When the response is back from the server
+	function populateEmailField(response){
+		// Extract the email address from the response, clear any value from the email field, 
+		// set new value in the email field
+		var isRoomOrOffice = response.responseXML.documentElement.getAttribute("answer");
+		if(isRoomOrOffice  &amp;&amp; !g_user.hasRole("x_616811_coworking.csr_patron")){
+			g_form.addFormMessage("Only registered users can reserve this type of Space");
+			g_form.clearValue("space");
+			
+		} else{
+			g_form.clearAllFormMessages();
+		}
+	}
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-16 02:03:31&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;a2352d0d97964110002ffef3a253af1a&lt;/sys_id&gt;&lt;sys_mod_count&gt;19&lt;/sys_mod_count&gt;&lt;sys_name&gt;Prohibit private space from guests&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_a2352d0d97964110002ffef3a253af1a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 01:50:56&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_csr_reservations&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1231564119</payload_hash>
+        <record_name>Prohibit private space from guests</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 01:50:56</sys_created_on>
+        <sys_id>a39ca219971e8110002ffef3a253af86</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f959220eb0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 01:50:56</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>eb9ca219ae1e811077805661d58b5785</update_guid>
+        <update_guid_history>eb9ca219ae1e811077805661d58b5785:-1231564119,af7ae64d43da4110915489f484942933:85992148,e4272e09e6da411014e8ff7fe6677d8b:-2040325597,0fd6260916da4110a2be43a76782c26a:-1534665611,e0e3a605a9da41104e763ca4af03c5cb:1685953653,d283eec1e1da411076fd7b1ea14623b4:39267629,47d2e2c1dbda41100bde275b3e1d0a74:-847244301,b8b2a281ecda4110ee513770776a9363:1192719967,98be968dcc9a411045b27f2be2da4335:2110606553,dbb939057d1a41101bc80ed300bb5b7c:1022007799,7ba8f1c1a91a4110016321645fa6b4e1:1228325567,76283d813f1a41107f7140173a50b1df:1158986280,9118b981df1a4110ffe7795d76dcaad5:-1005343761,f1c7b181d11a41100be91a691a12fb27:1510527365,67f431cdeed64110a9265825ff3decef:789555356,0fa3bd0de4d6411046af76306a339869:-513600646,54e0f5493ed64110ab8a2276e575df0f:1888180500,504f6dc55fd641106591d76d0593b803:1491304306,a4be65c57ad64110e1d518733c5f046d:385582172,96e5e54dfd964110f6572cce7fc80ca0:887367135</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 14:55:33</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>3b1eb0511f6148c297f0bac87c805184</sys_id>
+        <sys_metadata>a2352d0d97964110002ffef3a253af1a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Prohibit private space from guests</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">e9db478f970a0110002ffef3a253af3c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_client_a2352d0d97964110002ffef3a253af1a</sys_update_name>
+        <sys_update_version display_value="sys_script_client_a2352d0d97964110002ffef3a253af1a">a39ca219971e8110002ffef3a253af86</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-18 14:55:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

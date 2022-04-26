@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">643a219d97a60110002ffef3a253afef</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-29 08:07:35</sys_created_on>
+        <sys_id>8ae53dd997e60110002ffef3a253af67</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_8ae53dd997e60110002ffef3a253af67</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 08:21:26</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<h1 style=\"text-align: left;\" data-mce-style=\"text-align: left;\"><strong>Best creative working </strong><strong>environments that suits </strong><strong>your business.</strong></h1><h3 style=\"text-align: left;\" data-mce-style=\"text-align: left;\">Sed quia lipsum dolor sit atur adipiscing elit is nunc quis tellus sed ligula porta ultricies quis nec magna neulla. Lorem ipsum simply dolor sit amet,consectetur adipiscing elit.</h3>",
+		"displayValue": "<h1 style=\"text-align: left;\"><strong>Best creative working </strong><strong>environments that suits </strong><strong>your business.</strong></h1>\n<h3 style=\"text-align: left;\">Sed quia lipsum dolor sit atur adipiscing elit is nunc quis tellus sed ligula porta ultricies quis nec magna neulla. Lorem ipsum simply dolor sit amet,consectetur adipiscing elit.</h3>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=8ae53dd997e60110002ffef3a253af67"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_8ae53dd997e60110002ffef3a253af67</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;643a219d97a60110002ffef3a253afef&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-29 08:07:35&lt;/sys_created_on&gt;&lt;sys_id&gt;8ae53dd997e60110002ffef3a253af67&lt;/sys_id&gt;&lt;sys_mod_count&gt;10&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_8ae53dd997e60110002ffef3a253af67&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-29 08:21:26&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;h1 style=\"text-align: left;\" data-mce-style=\"text-align: left;\"&gt;&lt;strong&gt;Best creative working &lt;/strong&gt;&lt;strong&gt;environments that suits &lt;/strong&gt;&lt;strong&gt;your business.&lt;/strong&gt;&lt;/h1&gt;&lt;h3 style=\"text-align: left;\" data-mce-style=\"text-align: left;\"&gt;Sed quia lipsum dolor sit atur adipiscing elit is nunc quis tellus sed ligula porta ultricies quis nec magna neulla. Lorem ipsum simply dolor sit amet,consectetur adipiscing elit.&lt;/h3&gt;",
+		"displayValue": "&lt;h1 style=\"text-align: left;\"&gt;&lt;strong&gt;Best creative working &lt;/strong&gt;&lt;strong&gt;environments that suits &lt;/strong&gt;&lt;strong&gt;your business.&lt;/strong&gt;&lt;/h1&gt;\n&lt;h3 style=\"text-align: left;\"&gt;Sed quia lipsum dolor sit atur adipiscing elit is nunc quis tellus sed ligula porta ultricies quis nec magna neulla. Lorem ipsum simply dolor sit amet,consectetur adipiscing elit.&lt;/h3&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=8ae53dd997e60110002ffef3a253af67"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>982584332</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-29 08:21:26</sys_created_on>
+        <sys_id>7c197151972a0110002ffef3a253af9d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fd4c3f3ab0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 08:21:26</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>74197151f92a01100cb44f9283e1559d</update_guid>
+        <update_guid_history>74197151f92a01100cb44f9283e1559d:982584332,64097151af2a01103a2777e5cdf89db0:1551140972,56783511db2a011068addf93555a8397:844889956,36683511192a0110184c864b00604818:-417725393,2c58bddd1ae601109e59c8467d5a4c19:-472202365,4848f9ddece60110a348e5aa0bb3900a:-1793522592,4ce7f5ddf1e60110945897025df9f2dd:-412907464,ceb7b59d01e60110c1d167ed4b239afe:-640869277,8a46711d28e601106bfbb74a0654ffd0:-412907464,1c36711d5de601106d3fdcac87b12f71:46492759,82e53dd9c3e6011032abf68ed2b6a569:661480050</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">7241421d972a0110002ffef3a253af01</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-29 08:57:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>3c2781024b214644be6cc601b9e9acc4</sys_id>
+        <sys_metadata>8ae53dd997e60110002ffef3a253af67</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_8ae53dd997e60110002ffef3a253af67</sys_update_name>
+        <sys_update_version display_value="sp_instance_8ae53dd997e60110002ffef3a253af67">7c197151972a0110002ffef3a253af9d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-29 08:57:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

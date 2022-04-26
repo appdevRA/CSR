@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="DELETE">
+        <active>true</active>
+        <conditions/>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+// 	g_form.setVisible('applicant_name', false);
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+		if(g_form.isNewRecord()){
+			g_form.setVisible("applicant", false);
+			g_form.setVisible('status', false);
+		}
+// 		g_form.setVisible('applicant_name', false);
+		
+	
+}]]></script_true>
+        <set_values/>
+        <short_description>Hide Applicant and Status field if newRecord</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-15 06:53:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>47fc597097960110002ffef3a253af5f</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Hide Applicant and Status field if newRecord</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_ui_policy_47fc597097960110002ffef3a253af5f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 02:31:49</sys_updated_on>
+        <table>x_616811_coworking_csr_reservations</table>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_ui_policy>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_ui_policy_47fc597097960110002ffef3a253af5f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_policy"&gt;&lt;sys_ui_policy action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;conditions/&gt;&lt;description/&gt;&lt;global&gt;true&lt;/global&gt;&lt;inherit&gt;false&lt;/inherit&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;model_id/&gt;&lt;model_table/&gt;&lt;on_load&gt;true&lt;/on_load&gt;&lt;order&gt;100&lt;/order&gt;&lt;reverse_if_false&gt;true&lt;/reverse_if_false&gt;&lt;run_scripts&gt;true&lt;/run_scripts&gt;&lt;script_false&gt;&lt;![CDATA[function onCondition() {
+// 	g_form.setVisible('applicant_name', false);
+}]]&gt;&lt;/script_false&gt;&lt;script_true&gt;&lt;![CDATA[function onCondition() {
+		if(g_form.isNewRecord()){
+			g_form.setVisible("applicant", false);
+			g_form.setVisible('status', false);
+		}
+// 		g_form.setVisible('applicant_name', false);
+		
+	
+}]]&gt;&lt;/script_true&gt;&lt;set_values/&gt;&lt;short_description&gt;Hide Applicant and Status field if newRecord&lt;/short_description&gt;&lt;sys_class_name&gt;sys_ui_policy&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-15 06:53:23&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;47fc597097960110002ffef3a253af5f&lt;/sys_id&gt;&lt;sys_mod_count&gt;20&lt;/sys_mod_count&gt;&lt;sys_name&gt;Hide Applicant and Status field if newRecord&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_policy_47fc597097960110002ffef3a253af5f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-17 02:31:49&lt;/sys_updated_on&gt;&lt;table&gt;x_616811_coworking_csr_reservations&lt;/table&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_ui_policy&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>131593815</payload_hash>
+        <record_name>Hide Applicant and Status field if newRecord</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-17 02:31:50</sys_created_on>
+        <sys_id>baf5f695975e8110002ffef3a253af3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17f95b791fb0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-17 02:31:50</sys_updated_on>
+        <type>UI Policy</type>
+        <update_guid>b2f5f6955e5e8110bc395c0e301cef3f</update_guid>
+        <update_guid_history>b2f5f6955e5e8110bc395c0e301cef3f:131593815,37e5b695f15e8110d679cf156d377714:-178431909,0cd579cdd3d64110e43dd0fb4a2d2541:38119725,04a5f9cd66d6411081f3caa2b6a7299c:-302309182,ddf4758da6d64110a1e18e04007bad27:1503704990,ed1fa9853bd641100dd4c11144d39ede:-854152946,94cbd181ad964110d6c8c543b42af82f:741114307,c0bbd941cb9641103233250be4c30bd2:2065695376,8d394bf0935e011030c989690ae06684:1146516308,d0f807f0b95e0110563dfca420cbeb8c:-1963494396,cfb883f0c85e0110580841ef9de383c5:1347271258,34c783b0605e01109ffeba6d5a19914e:-1963494396,c2240f7c8e1e0110a80226fe82140181:-108681765,91b2adf47b9601100150d94f853362f4:-1570293882,dc826138c796011054e9f80f19c30a07:-1927719090,a2322db4d1960110ae3390657faa578f:-372230232,b60221f4b696011031de525d5af24849:1834408708,6eff9d34b0960110e17946df9458e1b2:-1550109515,71afddf045960110fbe6e06ea344780a:952264331,522f5df02e960110b5b8cbc5065741ee:-613224084,2eae55f0b7960110e7c1b39dd9582d3d:-1480344762</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 14:55:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy">sys_ui_policy</sys_db_object>
+        <sys_id>5a7497be0c384b8e98bf9bc43b3a49f9</sys_id>
+        <sys_metadata>47fc597097960110002ffef3a253af5f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Hide Applicant and Status field if newRecord</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="">e9db478f970a0110002ffef3a253af3c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_47fc597097960110002ffef3a253af5f</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_47fc597097960110002ffef3a253af5f">baf5f695975e8110002ffef3a253af3f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-03-18 14:55:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
