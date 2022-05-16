@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="DELETE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</cat_item>
+        <cat_variable/>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Reservation set applicant to dynamic(Me)</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+	g_form.setValue('applicant', g_user.userID);
+	var hasRole = false;
+	
+	if( g_user.hasRoleExactly("x_616811_coworking.admin") ){
+		hasRole = true;
+	} else if( g_user.hasRoleExactly("x_616811_coworking.manager")){
+		hasRole = true;
+	} else if( g_user.hasRoleExactly( "admin") ){
+		hasRole = true;
+	}
+	
+	if(hasRole){
+		g_form.setReadOnly("applicant", false);
+	} else{
+		g_form.setReadOnly("applicant", true);
+	}
+// 		g_form.setReadOnly("applicant", true);
+	
+// 	var userGForm =  g_form.getValue('name');
+// 	var userGRecord = new GlideRecord('sys_user');
+// 	userGRecord.addQuery('sys_id', userGForm);
+// 	userGRecord.query();
+// 	if(userGRecord.next()){
+// 		g_form.setValue('email',userGRecord.email);
+// 	}
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 03:09:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>11187d1797de8110002ffef3a253afcb</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Reservation set applicant to dynamic(Me)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>catalog_script_client_11187d1797de8110002ffef3a253afcb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-18 01:01:19</sys_updated_on>
+        <table/>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>catalog_script_client_11187d1797de8110002ffef3a253afcb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Reserve A Space"&gt;bcde9043971a4110002ffef3a253af2f&lt;/cat_item&gt;&lt;cat_variable/&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Reservation set applicant to dynamic(Me)&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+	g_form.setValue('applicant', g_user.userID);
+	var hasRole = false;
+	
+	if( g_user.hasRoleExactly("x_616811_coworking.admin") ){
+		hasRole = true;
+	} else if( g_user.hasRoleExactly("x_616811_coworking.manager")){
+		hasRole = true;
+	} else if( g_user.hasRoleExactly( "admin") ){
+		hasRole = true;
+	}
+	
+	if(hasRole){
+		g_form.setReadOnly("applicant", false);
+	} else{
+		g_form.setReadOnly("applicant", true);
+	}
+// 		g_form.setReadOnly("applicant", true);
+	
+// 	var userGForm =  g_form.getValue('name');
+// 	var userGRecord = new GlideRecord('sys_user');
+// 	userGRecord.addQuery('sys_id', userGForm);
+// 	userGRecord.query();
+// 	if(userGRecord.next()){
+// 		g_form.setValue('email',userGRecord.email);
+// 	}
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-23 03:09:15&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;11187d1797de8110002ffef3a253afcb&lt;/sys_id&gt;&lt;sys_mod_count&gt;38&lt;/sys_mod_count&gt;&lt;sys_name&gt;Reservation set applicant to dynamic(Me)&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_11187d1797de8110002ffef3a253afcb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-04-18 01:01:19&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-57606711</payload_hash>
+        <record_name>Reservation set applicant to dynamic(Me)</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-18 01:01:19</sys_created_on>
+        <sys_id>f02453a797720110002ffef3a253afd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1803a3033b20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-18 01:01:19</sys_updated_on>
+        <type>Catalog Client Scripts</type>
+        <update_guid>f82453a755720110193c38ceb5e3bfd6</update_guid>
+        <update_guid_history>f82453a755720110193c38ceb5e3bfd6:-57606711,a1141b676a72011045b0d0d52c33ae9b:-350027659,cbddc743b56201107fe7fda55f744d85:-1243553518,526c4f8fa6220110ce444e2c306f986c:-1761725935,0d3cc3cf28220110812bdadf9a40e7e1:1441269921,271cc78ff2220110b6830a7b1d733733:1145317044,e90c07cf45220110d88dad4ac05678ad:894798005,4cfbc3cf592201106d685c8e5aa73113:-2095230101,1a4bcfcb9c2201107308887353c481c1:-121334458,ed0a8f0f99220110cf1d52ada7d39e27:-2081501655,0c890b0fe7220110a5ef57b724c6b9cc:1012178611,93a847cb1e220110c3e89b5b66202dbd:1786657168,4178cb8bb92201100ed51eaa3d62851a:-973310861,0358c3cb3022011095511680d4f07691:424313718,b34883cbd0220110192aad509a48c682:-1172858588,12e74b8bae22011099188363a7adccad:1619745364,a8d74b8b9d220110e8c7ab92e2b1c3c8:909004210,f7b74b8b6422011046ed9176b6b37851:1203749745,3d878f4b032201104436d0de697a718f:-315426448,aee6cb4b07220110693fe4521f9ff1d2:1063089661,3bdec812406a411083ad60a78688e87e:1018473900,4f4e88de202a4110a8e60178afb4c054:-546068695,c7bc8c8eff2a011027af2aebb8fc1fe1:-936711501,227c888e112a0110ded38e88e57e0dfe:-235254335,e8bb884efc2a011012ccf79ed9683679:-2059522041,40580c4a6c2a0110ab617c03922e7b55:1323994534,653d0dd917260110882edf1cd7413135:-191986522,eb4cc9990f260110b3278d6685897631:-1412839362,7c0c459973260110985ecb101a9dd4a7:784575856,7a393815e9e2011000d119a3ea03a244:-867916398,89b8f0d11be20110b55afbbebbde7743:180255010,4aec7ddba0de811045f39b77248338e5:-951591852,d1acfd9bdede811080b774503b66d610:926966193,c98cf1db9dde8110429111f203f235fb:-2052272109,ab4cfd9befde81109a715fc03d472ed9:1888294079,62ab719bd3de8110acaae54936305edf:-1595528504,9b8b395bf8de811015cd9359830173db:-1318718008,d498795787de8110189dbe5d4f6a3080:1906473140,5d187d171cde811062a0bd714605e7cd:930187543</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Reservation set applicant to dynamic(Me)">cb061fb49793c110002ffef3a253af79</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-04 08:37:46</sys_created_on>
+        <sys_db_object display_value="" name="catalog_script_client">catalog_script_client</sys_db_object>
+        <sys_id>3f680f6047b34cd09090d200a01c0100</sys_id>
+        <sys_metadata>11187d1797de8110002ffef3a253afcb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reservation set applicant to dynamic(Me)</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>catalog_script_client_11187d1797de8110002ffef3a253afcb</sys_update_name>
+        <sys_update_version display_value="catalog_script_client_11187d1797de8110002ffef3a253afcb">f02453a797720110002ffef3a253afd7</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-04 08:37:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

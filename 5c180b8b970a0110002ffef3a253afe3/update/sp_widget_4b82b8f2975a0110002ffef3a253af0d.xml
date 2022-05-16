@@ -29,10 +29,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>csr_cancel</id>
+        <id>csr_cancel_button</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>CSR Cancel Reservation</name>
+        <name>CSR Cancel Button</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -47,8 +47,8 @@
 	if(input){
 		var table = new GlideRecord("x_616811_coworking_csr_reservations2");
 		table.get(sysID);
-		table.deleteRecord();
-		
+		table.setValue('status', "cancelled");
+		table.update();
 	}
 })();]]></script>
         <servicenow>false</servicenow>
@@ -56,14 +56,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-21 08:48:29</sys_created_on>
         <sys_id>4b82b8f2975a0110002ffef3a253af0d</sys_id>
-        <sys_mod_count>94</sys_mod_count>
-        <sys_name>CSR Cancel Reservation</sys_name>
+        <sys_mod_count>98</sys_mod_count>
+        <sys_name>CSR Cancel Button</sys_name>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy/>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sp_widget_4b82b8f2975a0110002ffef3a253af0d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-25 13:46:01</sys_updated_on>
+        <sys_updated_on>2022-05-11 05:41:16</sys_updated_on>
         <template><![CDATA[
 
  <div class="panel b ng-scope">

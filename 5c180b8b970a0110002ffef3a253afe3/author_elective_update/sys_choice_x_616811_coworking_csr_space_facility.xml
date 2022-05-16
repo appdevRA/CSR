@@ -81,6 +81,26 @@
             <element>facility</element>
             <hint/>
             <inactive>false</inactive>
+            <label>Projector1</label>
+            <language>en</language>
+            <name>x_616811_coworking_csr_space</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>angelica.sullano</sys_created_by>
+            <sys_created_on>2022-04-29 02:03:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c5fb4cdb97874110002ffef3a253af55</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>angelica.sullano</sys_updated_by>
+            <sys_updated_on>2022-04-29 02:03:55</sys_updated_on>
+            <value>Projector1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>facility</element>
+            <hint/>
+            <inactive>false</inactive>
             <label>Tv conference</label>
             <language>en</language>
             <name>x_616811_coworking_csr_space</name>

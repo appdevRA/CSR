@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">4199572c97c30110002ffef3a253af92</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-23 07:11:22</sys_created_on>
+        <sys_id>408f665f97d2c110002ffef3a253afcb</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_instance_408f665f97d2c110002ffef3a253afcb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-21 03:59:09</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<h2 style=\"text-align: center;\" data-mce-style=\"text-align: center;\">&nbsp;<br></h2><h3 data-mce-style=\"text-align: center;\" style=\"text-align: center;\">&nbsp;<br></h3><h4 data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><strong>${Yanni Jan Mondejar}</strong></h4><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\">${Developer}</p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p><p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"><br data-mce-bogus=\"1\"></p>",
+		"displayValue": "<h2 style=\"text-align: center;\">&nbsp;</h2>\n<h3 style=\"text-align: center;\">&nbsp;</h3>\n<h4 style=\"text-align: center;\"><strong>${Yanni Jan Mondejar}</strong></h4>\n<p style=\"text-align: center;\">${Developer}</p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\">&nbsp;</p>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=408f665f97d2c110002ffef3a253afcb"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sp_instance_408f665f97d2c110002ffef3a253afcb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="2"&gt;4199572c97c30110002ffef3a253af92&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-23 07:11:22&lt;/sys_created_on&gt;&lt;sys_id&gt;408f665f97d2c110002ffef3a253afcb&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_408f665f97d2c110002ffef3a253afcb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-04-21 03:59:09&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;h2 style=\"text-align: center;\" data-mce-style=\"text-align: center;\"&gt;&amp;nbsp;&lt;br&gt;&lt;/h2&gt;&lt;h3 data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;&amp;nbsp;&lt;br&gt;&lt;/h3&gt;&lt;h4 data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;&lt;strong&gt;${Yanni Jan Mondejar}&lt;/strong&gt;&lt;/h4&gt;&lt;p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;${Developer}&lt;/p&gt;&lt;p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;&lt;br data-mce-bogus=\"1\"&gt;&lt;/p&gt;&lt;p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;&lt;br data-mce-bogus=\"1\"&gt;&lt;/p&gt;&lt;p data-mce-style=\"text-align: center;\" style=\"text-align: center;\"&gt;&lt;br data-mce-bogus=\"1\"&gt;&lt;/p&gt;",
+		"displayValue": "&lt;h2 style=\"text-align: center;\"&gt;&amp;nbsp;&lt;/h2&gt;\n&lt;h3 style=\"text-align: center;\"&gt;&amp;nbsp;&lt;/h3&gt;\n&lt;h4 style=\"text-align: center;\"&gt;&lt;strong&gt;${Yanni Jan Mondejar}&lt;/strong&gt;&lt;/h4&gt;\n&lt;p style=\"text-align: center;\"&gt;${Developer}&lt;/p&gt;\n&lt;p style=\"text-align: center;\"&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p style=\"text-align: center;\"&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p style=\"text-align: center;\"&gt;&amp;nbsp;&lt;/p&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=408f665f97d2c110002ffef3a253afcb"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>326883753</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-21 03:59:09</sys_created_on>
+        <sys_id>cb99972c97c30110002ffef3a253aff7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1804a4617ee0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-21 03:59:09</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>c399972ccac30110b44f413af9607df7</update_guid>
+        <update_guid_history>c399972ccac30110b44f413af9607df7:326883753,d7c700d0f2f2c11003ef546c1504d3b9:1317324196,01a5eb93cd1ac1107419696f6f73b7f0:533507899,aee117db0896c110874f9c5c28de7bce:531889241,01111b9b9f96c110b9b2bd42647c1995:-1043538845,c3f38bdb0f56c1106c9b2be9a77b2dd6:1595761799,b7d3fed35d16c110d26c9afcd818b9ce:-1954000387,caf1f2536b16c11017c5b17409cecb72:1489620061,58a072df9dd2c110a71edf5c62e05989:-1036501419,488f665f56d2c110a42edbe729e576cc:-1737951941</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">ccefc68797130d10002ffef3a253af80</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-11 03:17:31</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>35b73b079a6c439c93a8f9d428854799</sys_id>
+        <sys_metadata>408f665f97d2c110002ffef3a253afcb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sp_instance_408f665f97d2c110002ffef3a253afcb</sys_update_name>
+        <sys_update_version display_value="sp_instance_408f665f97d2c110002ffef3a253afcb">cb99972c97c30110002ffef3a253aff7</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-11 03:17:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

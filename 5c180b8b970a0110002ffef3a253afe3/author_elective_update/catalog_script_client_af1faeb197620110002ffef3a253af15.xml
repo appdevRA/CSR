@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="DELETE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</cat_item>
+        <cat_variable>IO:cadbb407979a4110002ffef3a253af9c</cat_variable>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Reservation duration type</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+	g_form.clearMessages();
+	
+	if(g_form.getValue("duration_type") == "daily" ){
+		var startTimeValue = g_form.getValue("u_start_time");
+		var endTimeValue = g_form.getValue("u_end_time");
+	
+		if(startTimeValue != "")
+			g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ "00:00:00");
+		if(endTimeValue != "")
+			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ "23:59:00");
+		
+	}
+
+	if(newValue == "hourly" ){
+	
+		var script4 = new GlideAjax("ReservationClientUtils");
+		script4.addParam("sysparm_name", "intervalIsNotEqualToHour");
+		script4.addParam("sysparm_sTime", g_form.getValue("u_start_time"));
+		script4.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script4.getXML(intervalIsNotEqualToHour);
+	}
+	
+	function intervalIsNotEqualToHour(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			if(scriptResponse == "true"){
+				g_form.addInfoMessage("Schedule must be exact an hour");
+			} else{
+				g_form.clearMessages();
+			}
+	}	
+	
+	
+// 	if(newValue == "daily" ){
+// 		var script5 = new GlideAjax("ReservationClientUtils");
+	
+		
+// 		script5.addParam("sysparm_name", "intervalIsNotEqualtoDay");
+// 		script5.addParam("sysparm_sTime", g_form.getValue("u_start_date"));
+// 		script5.addParam("sysparm_eTime", g_form.getValue("u_end_date"));
+		
+// 		script5.getXML(intervalIsNotEqualtoDay);
+// 	}
+	
+// 	function intervalIsNotEqualtoDay(response){
+// 		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+// 			if(scriptResponse == "true"){
+// 				g_form.clearMessages();
+// 				g_form.addInfoMessage("Duration must be exact a day ");
+// 			} else{
+// 				g_form.clearMessages();
+// 			}
+// 	}	
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-31 01:36:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>af1faeb197620110002ffef3a253af15</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Reservation duration type</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>catalog_script_client_af1faeb197620110002ffef3a253af15</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-02 05:10:04</sys_updated_on>
+        <table/>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>catalog_script_client_af1faeb197620110002ffef3a253af15</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Reserve A Space"&gt;bcde9043971a4110002ffef3a253af2f&lt;/cat_item&gt;&lt;cat_variable&gt;IO:cadbb407979a4110002ffef3a253af9c&lt;/cat_variable&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Reservation duration type&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+	g_form.clearMessages();
+	
+	if(g_form.getValue("duration_type") == "daily" ){
+		var startTimeValue = g_form.getValue("u_start_time");
+		var endTimeValue = g_form.getValue("u_end_time");
+	
+		if(startTimeValue != "")
+			g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ "00:00:00");
+		if(endTimeValue != "")
+			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ "23:59:00");
+		
+	}
+
+	if(newValue == "hourly" ){
+	
+		var script4 = new GlideAjax("ReservationClientUtils");
+		script4.addParam("sysparm_name", "intervalIsNotEqualToHour");
+		script4.addParam("sysparm_sTime", g_form.getValue("u_start_time"));
+		script4.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script4.getXML(intervalIsNotEqualToHour);
+	}
+	
+	function intervalIsNotEqualToHour(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			if(scriptResponse == "true"){
+				g_form.addInfoMessage("Schedule must be exact an hour");
+			} else{
+				g_form.clearMessages();
+			}
+	}	
+	
+	
+// 	if(newValue == "daily" ){
+// 		var script5 = new GlideAjax("ReservationClientUtils");
+	
+		
+// 		script5.addParam("sysparm_name", "intervalIsNotEqualtoDay");
+// 		script5.addParam("sysparm_sTime", g_form.getValue("u_start_date"));
+// 		script5.addParam("sysparm_eTime", g_form.getValue("u_end_date"));
+		
+// 		script5.getXML(intervalIsNotEqualtoDay);
+// 	}
+	
+// 	function intervalIsNotEqualtoDay(response){
+// 		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+// 			if(scriptResponse == "true"){
+// 				g_form.clearMessages();
+// 				g_form.addInfoMessage("Duration must be exact a day ");
+// 			} else{
+// 				g_form.clearMessages();
+// 			}
+// 	}	
+   //Type appropriate comment here, and begin script below
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-31 01:36:51&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;af1faeb197620110002ffef3a253af15&lt;/sys_id&gt;&lt;sys_mod_count&gt;18&lt;/sys_mod_count&gt;&lt;sys_name&gt;Reservation duration type&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_af1faeb197620110002ffef3a253af15&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-05-02 05:10:04&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>938847947</payload_hash>
+        <record_name>Reservation duration type</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-02 05:10:04</sys_created_on>
+        <sys_id>8153509c97170110002ffef3a253af8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>180832cf86d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-02 05:10:04</sys_updated_on>
+        <type>Catalog Client Scripts</type>
+        <update_guid>8953509c56170110da16aff247d1188e</update_guid>
+        <update_guid_history>8953509c56170110da16aff247d1188e:938847947,d602585cd61701105b4f8f6f943c34dd:1494459259,4191505cf31701104c79a5e37f8cc107:902420359,045018d895170110b0e224475c468cd3:873228490,d7c64d06084b0110e0826540f8624522:489730582,cd260506294b01107b7feef6cbd9e29a:67789695,3935c1c2074b011002a32e441202772d:1480944608,4653cd02694b011099a496a4e6710782:252245307,24cfb40e4f0b011094ac7f4215fb9cd2:-803297575,445f7cca3b0b0110189f357db6afbd8a:179362577,eeae7c8a7d0b0110c98307636278fdc6:1074405676,b8991dc9624f4110fe68440061875124:696299270,b56959c97b4f411068893a036e9b7415:-954388298,f9341945064f411079eb560b53ef79e9:-781639415,e563b87d75f641103666cdd6f6077c04:2014368036,b52af7b5d1e60110ff22bd602817e129:-1312380352,c60c9f39e126011085d6a17e743a8b33:937034176,d4d65b71642601106d2c281102968f29:1840737374,f9afa6f1de620110ac4504b4c85732e9:-2037505348</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Reservation duration type">4b061fb49793c110002ffef3a253afc3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-04 08:37:46</sys_created_on>
+        <sys_db_object display_value="" name="catalog_script_client">catalog_script_client</sys_db_object>
+        <sys_id>03aa5199998b41f099f7fa2c22119964</sys_id>
+        <sys_metadata>af1faeb197620110002ffef3a253af15</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reservation duration type</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>catalog_script_client_af1faeb197620110002ffef3a253af15</sys_update_name>
+        <sys_update_version display_value="catalog_script_client_af1faeb197620110002ffef3a253af15">8153509c97170110002ffef3a253af8f</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-04 08:37:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

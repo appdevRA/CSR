@@ -14,20 +14,6 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2022-03-14 08:01:08</sys_updated_on>
         </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>1</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2022-03-14 08:01:08</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>d594e86897d60110002ffef3a253afe6</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_616811_coworking_calendar" name="x_616811_coworking_calendar" sys_domain="global" view="Default view">9194e86897d60110002ffef3a253afe2</sys_ui_form>
-            <sys_ui_section caption="Statistics" display_value="Statistics" name="x_616811_coworking_calendar" sys_domain="global" view="Default view">dd94e86897d60110002ffef3a253afe0</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2022-03-14 08:01:08</sys_updated_on>
-        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_616811_coworking_calendar</name>
             <roles/>

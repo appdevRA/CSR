@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="7" type="collection">
+    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="13" type="collection">
         <element choice="3" default="single" label="Accessibility" max_length="40" name="accessibility" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Single" sequence="0" value="single"/>
@@ -17,7 +17,7 @@
                 <element inactive_on_update="false" label="Wednesday" sequence="3" value="3"/>
                 <element inactive_on_update="false" label="Thursday" sequence="4" value="4"/>
                 <element inactive_on_update="false" label="Friday" sequence="5" value="5"/>
-                <element inactive_on_update="false" label="Satuday" sequence="6" value="6"/>
+                <element inactive_on_update="false" label="Saturday" sequence="6" value="6"/>
                 <element inactive_on_update="false" label="Sunday" sequence="7" value="7"/>
             </choice>
         </element>
@@ -27,13 +27,17 @@
                 <element inactive_on_update="false" label="Projector" value="projector"/>
                 <element inactive_on_update="false" label="Tv Conference" value="tv_conference"/>
                 <element inactive_on_update="false" label="White Board and Markers" value="white_board_markers"/>
+                <element inactive_on_update="false" label="Projector1" sequence="0" value="Projector1"/>
                 <element inactive_on_update="false" label="Tv conference" sequence="0" value="Tv conference"/>
             </choice>
         </element>
         <element label="Image" max_length="40" name="image" type="user_image"/>
         <element label="name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="Priceperhour" max_length="40" name="priceperhour" type="float"/>
-        <element label="Seating capacity" max_length="40" name="seating_capacity" type="integer"/>
+        <element label="Priceperhour" mandatory="true" max_length="40" name="priceperhour" type="float"/>
+        <element default="1" label="Seating capacity" max_length="40" name="seating_capacity" type="integer"/>
+        <index name="index">
+            <element name="name"/>
+        </index>
     </element>
 </database>

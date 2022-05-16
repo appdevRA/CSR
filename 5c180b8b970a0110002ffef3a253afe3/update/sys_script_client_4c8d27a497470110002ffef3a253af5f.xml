@@ -8,7 +8,7 @@
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>Space onLoad Edit days option</name>
+        <name>onCreate Space </name>
         <order/>
         <script><![CDATA[function onLoad() {
 
@@ -23,6 +23,7 @@
 	function getAnswer(response){
 		var days = ["null","Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		
 		var daysArray = scriptResponse.split(",");
 		var businessDays = "";
 		for(var i=0; i< daysArray.length;i++){
@@ -44,15 +45,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4c8d27a497470110002ffef3a253af5f</sys_id>
-        <sys_mod_count>44</sys_mod_count>
-        <sys_name>Space onLoad Edit days option</sys_name>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>onCreate Space </sys_name>
         <sys_overrides/>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy/>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_client_4c8d27a497470110002ffef3a253af5f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-22 00:17:48</sys_updated_on>
+        <sys_updated_on>2022-04-27 07:54:48</sys_updated_on>
         <table>x_616811_coworking_csr_space</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>

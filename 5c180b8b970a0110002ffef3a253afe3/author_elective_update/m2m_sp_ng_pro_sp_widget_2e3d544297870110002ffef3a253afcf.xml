@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="spAttachmentManager">06e836f0d722120023c84f80de6103a1</sp_angular_provider>
+        <sp_widget display_value="CSR cancel form">623d544297870110002ffef3a253afcd</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 06:06:59</sys_created_on>
+        <sys_id>2e3d544297870110002ffef3a253afcf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spAttachmentManager.CSR cancel form</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_2e3d544297870110002ffef3a253afcf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 06:06:59</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_2e3d544297870110002ffef3a253afcf</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="spAttachmentManager">06e836f0d722120023c84f80de6103a1</sp_angular_provider><sp_widget display_value="CSR cancel form">623d544297870110002ffef3a253afcd</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-04-25 06:06:59</sys_created_on><sys_id>2e3d544297870110002ffef3a253afcf</sys_id><sys_mod_count>0</sys_mod_count><sys_name>spAttachmentManager.CSR cancel form</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_2e3d544297870110002ffef3a253afcf</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-25 06:06:59</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>-761746862</payload_hash>
+        <record_name>spAttachmentManager.CSR cancel form</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 06:06:59</sys_created_on>
+        <sys_id>a63d544297870110002ffef3a253afd2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1805f5492a30000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 06:06:59</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>ee3d544281870110e16b19a403d052d1</update_guid>
+        <update_guid_history>ee3d544281870110e16b19a403d052d1:-761746862</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="spAttachmentManager.CSR cancel form">d219948797c70110002ffef3a253af71</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-28 08:22:52</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>004834ce649c414080002ad70524e124</sys_id>
+        <sys_metadata>2e3d544297870110002ffef3a253afcf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spAttachmentManager.CSR cancel form</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_2e3d544297870110002ffef3a253afcf</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_2e3d544297870110002ffef3a253afcf">a63d544297870110002ffef3a253afd2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-28 08:22:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

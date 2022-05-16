@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="DELETE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</cat_item>
+        <cat_variable>IO:5cf6014397da4110002ffef3a253af12</cat_variable>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Reservation start datetime</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+	var scheduleType = g_form.getValue("duration_type");
+	g_form.hideErrorBox("u_start_time");
+	g_form.clearMessages();
+	
+	if(g_form.getValue("duration_type") == "daily" && newValue != ""){
+		var startTimeValue = newValue;
+		var endTimeValue = g_form.getValue("u_end_time");
+		
+		g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ "00:00:00");
+		
+		if(endTimeValue != "")
+			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ "23:59:00");
+	}
+
+	
+	var a = false;
+	var script7 = new GlideAjax("ReservationClientUtils");
+	script7.addParam("sysparm_name", "dateIsOnHoliday");
+	script7.addParam("sysparm_dateTime", newValue);
+	script7.getXML(dateIsOnHoliday);
+
+	function dateIsOnHoliday(response){
+		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		if(scriptResponse == "true"){
+			a = true;
+			g_form.showErrorBox("u_start_time","Date is on holiday", true);
+		}
+	}
+	
+	var a1= false;
+	if(a == false){
+		var script = new GlideAjax("ReservationClientUtils");
+		script.addParam("sysparm_name", "dateIsPastCurrentTime");
+		script.addParam("sysparm_dateTime", newValue);
+		validation = "dateIsPastCurrentTime";
+		script.getXML(getAnswer);
+	}
+	
+	function getAnswer(response){
+		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		if(scriptResponse == "true"){
+			a1 = true;
+			g_form.showErrorBox("u_start_time","Datetime must be ahead the current time", true);
+		}
+	}
+	
+	
+	//endIsBeforeStart
+	var a2 = false;
+	if(g_form.getValue("u_end_time") != "" && a1 == false){
+		var script3 = new GlideAjax("ReservationClientUtils");
+		script3.addParam("sysparm_name", "endIsBeforeStart");
+		script3.addParam("sysparm_sTime", newValue);
+		script3.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script3.getXML(endIsBeforeStart);
+	}
+	
+		function endIsBeforeStart(response){
+				var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+				if(scriptResponse == "true"){
+					a2 = true;
+					if(scheduleType == "daily")
+						g_form.showErrorBox("u_end_time","End  must be ahead or equal to Start",true);
+					else{
+						g_form.showErrorBox("u_end_time","End  must be ahead from Start",true);
+					}
+				}	
+		}
+	
+	//intervalIsNotEqualToHour
+	var a3 = false;
+	if( scheduleType == "hourly" && g_form.getValue("u_end_time") != "" && a2 == false){
+		var script4 = new GlideAjax("ReservationClientUtils");
+		script4.addParam("sysparm_name", "intervalIsNotEqualToHour");
+		script4.addParam("sysparm_sTime", newValue);
+		script4.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script4.getXML(intervalIsNotEqualToHour);
+	}
+	
+		function intervalIsNotEqualToHour(response){
+				var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+				if(scriptResponse == "true"){
+					a3 = true;
+					g_form.addInfoMessage("Schedule must be exact an hour and must be within the same day");
+				} 
+		}	
+	
+	//dateFieldIsNotWithinBusinessHours
+	var a4 = false;
+	if(scheduleType == "hourly" && g_form.getValue("u_end_time") != "" && a3 == false){
+		var script2 = new GlideAjax("ReservationClientUtils");
+		script2.addParam("sysparm_name", "dateFieldIsNotWithinBusinessHours");
+		script2.addParam("sysparm_sTime", newValue);
+		script2.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script2.getXML(dateFieldIsNotWithinBusinessHours);
+	}
+	
+	function dateFieldIsNotWithinBusinessHours(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			if(scriptResponse != "false"){
+				a4 = true;
+				if(scriptResponse.includes("start")){
+					g_form.showErrorBox("u_start_time", "Datetime must be witin business hours. "
+										+"\n Business hours: " + scriptResponse.split("|")[1], true);
+				}
+				if(scriptResponse.includes("end")){
+					g_form.showErrorBox("u_end_time", "Datetime must be witin business hours. "
+										+"\n Business hours: " + scriptResponse.split("|")[1],  true);
+				}
+			} 
+
+	}
+	
+	//dateIsNotWithinSpaceDays
+	var a5 = false;
+	if(g_form.getValue("u_end_time") != "" && g_form.getValue("space") != "" && a4 == false){
+		var script6 = new GlideAjax("ReservationClientUtils");
+		script6.addParam("sysparm_name", "dateIsNotWithinSpaceDays");
+		script6.addParam("sysparm_sTime", newValue);
+		script6.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		script6.addParam("sysparm_space", g_form.getValue("space"));
+		
+		
+		script6.getXML(dateIsNotWithinSpaceDays);
+	}
+	
+	function dateIsNotWithinSpaceDays(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			var days = scriptResponse.split("|");
+			g_form.hideFieldMsg("space");
+			g_form.showFieldMsg("space", "Available on: "+ days[1], "info");
+
+				if(scriptResponse.includes("start")){
+					g_form.showErrorBox("u_start_time", "Start datetime must be within Space's available "+
+										"days", true);
+					a5 = true;
+				}
+				if(scriptResponse.includes("end")){
+					g_form.showErrorBox("u_end_time", "End datetime must be within Space's available "+
+										"days", true);
+					a5 = true;
+				}		 	
+	}
+	
+	
+	
+			
+
+	
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-25 03:15:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2fe900c497ea4510002ffef3a253af5c</sys_id>
+        <sys_mod_count>123</sys_mod_count>
+        <sys_name>Reservation start datetime</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>catalog_script_client_2fe900c497ea4510002ffef3a253af5c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-02 06:34:45</sys_updated_on>
+        <table/>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>catalog_script_client_2fe900c497ea4510002ffef3a253af5c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Reserve A Space"&gt;bcde9043971a4110002ffef3a253af2f&lt;/cat_item&gt;&lt;cat_variable&gt;IO:5cf6014397da4110002ffef3a253af12&lt;/cat_variable&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Reservation start datetime&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+	var scheduleType = g_form.getValue("duration_type");
+	g_form.hideErrorBox("u_start_time");
+	g_form.clearMessages();
+	
+	if(g_form.getValue("duration_type") == "daily" &amp;&amp; newValue != ""){
+		var startTimeValue = newValue;
+		var endTimeValue = g_form.getValue("u_end_time");
+		
+		g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ "00:00:00");
+		
+		if(endTimeValue != "")
+			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ "23:59:00");
+	}
+
+	
+	var a = false;
+	var script7 = new GlideAjax("ReservationClientUtils");
+	script7.addParam("sysparm_name", "dateIsOnHoliday");
+	script7.addParam("sysparm_dateTime", newValue);
+	script7.getXML(dateIsOnHoliday);
+
+	function dateIsOnHoliday(response){
+		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		if(scriptResponse == "true"){
+			a = true;
+			g_form.showErrorBox("u_start_time","Date is on holiday", true);
+		}
+	}
+	
+	var a1= false;
+	if(a == false){
+		var script = new GlideAjax("ReservationClientUtils");
+		script.addParam("sysparm_name", "dateIsPastCurrentTime");
+		script.addParam("sysparm_dateTime", newValue);
+		validation = "dateIsPastCurrentTime";
+		script.getXML(getAnswer);
+	}
+	
+	function getAnswer(response){
+		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		if(scriptResponse == "true"){
+			a1 = true;
+			g_form.showErrorBox("u_start_time","Datetime must be ahead the current time", true);
+		}
+	}
+	
+	
+	//endIsBeforeStart
+	var a2 = false;
+	if(g_form.getValue("u_end_time") != "" &amp;&amp; a1 == false){
+		var script3 = new GlideAjax("ReservationClientUtils");
+		script3.addParam("sysparm_name", "endIsBeforeStart");
+		script3.addParam("sysparm_sTime", newValue);
+		script3.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script3.getXML(endIsBeforeStart);
+	}
+	
+		function endIsBeforeStart(response){
+				var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+				if(scriptResponse == "true"){
+					a2 = true;
+					if(scheduleType == "daily")
+						g_form.showErrorBox("u_end_time","End  must be ahead or equal to Start",true);
+					else{
+						g_form.showErrorBox("u_end_time","End  must be ahead from Start",true);
+					}
+				}	
+		}
+	
+	//intervalIsNotEqualToHour
+	var a3 = false;
+	if( scheduleType == "hourly" &amp;&amp; g_form.getValue("u_end_time") != "" &amp;&amp; a2 == false){
+		var script4 = new GlideAjax("ReservationClientUtils");
+		script4.addParam("sysparm_name", "intervalIsNotEqualToHour");
+		script4.addParam("sysparm_sTime", newValue);
+		script4.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script4.getXML(intervalIsNotEqualToHour);
+	}
+	
+		function intervalIsNotEqualToHour(response){
+				var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+				if(scriptResponse == "true"){
+					a3 = true;
+					g_form.addInfoMessage("Schedule must be exact an hour and must be within the same day");
+				} 
+		}	
+	
+	//dateFieldIsNotWithinBusinessHours
+	var a4 = false;
+	if(scheduleType == "hourly" &amp;&amp; g_form.getValue("u_end_time") != "" &amp;&amp; a3 == false){
+		var script2 = new GlideAjax("ReservationClientUtils");
+		script2.addParam("sysparm_name", "dateFieldIsNotWithinBusinessHours");
+		script2.addParam("sysparm_sTime", newValue);
+		script2.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		
+		script2.getXML(dateFieldIsNotWithinBusinessHours);
+	}
+	
+	function dateFieldIsNotWithinBusinessHours(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			if(scriptResponse != "false"){
+				a4 = true;
+				if(scriptResponse.includes("start")){
+					g_form.showErrorBox("u_start_time", "Datetime must be witin business hours. "
+										+"\n Business hours: " + scriptResponse.split("|")[1], true);
+				}
+				if(scriptResponse.includes("end")){
+					g_form.showErrorBox("u_end_time", "Datetime must be witin business hours. "
+										+"\n Business hours: " + scriptResponse.split("|")[1],  true);
+				}
+			} 
+
+	}
+	
+	//dateIsNotWithinSpaceDays
+	var a5 = false;
+	if(g_form.getValue("u_end_time") != "" &amp;&amp; g_form.getValue("space") != "" &amp;&amp; a4 == false){
+		var script6 = new GlideAjax("ReservationClientUtils");
+		script6.addParam("sysparm_name", "dateIsNotWithinSpaceDays");
+		script6.addParam("sysparm_sTime", newValue);
+		script6.addParam("sysparm_eTime", g_form.getValue("u_end_time"));
+		script6.addParam("sysparm_space", g_form.getValue("space"));
+		
+		
+		script6.getXML(dateIsNotWithinSpaceDays);
+	}
+	
+	function dateIsNotWithinSpaceDays(response){
+			var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+			var days = scriptResponse.split("|");
+			g_form.hideFieldMsg("space");
+			g_form.showFieldMsg("space", "Available on: "+ days[1], "info");
+
+				if(scriptResponse.includes("start")){
+					g_form.showErrorBox("u_start_time", "Start datetime must be within Space's available "+
+										"days", true);
+					a5 = true;
+				}
+				if(scriptResponse.includes("end")){
+					g_form.showErrorBox("u_end_time", "End datetime must be within Space's available "+
+										"days", true);
+					a5 = true;
+				}		 	
+	}
+	
+	
+	
+			
+
+	
+   //Type appropriate comment here, and begin script below
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-25 03:15:20&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2fe900c497ea4510002ffef3a253af5c&lt;/sys_id&gt;&lt;sys_mod_count&gt;123&lt;/sys_mod_count&gt;&lt;sys_name&gt;Reservation start datetime&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_2fe900c497ea4510002ffef3a253af5c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-05-02 06:34:45&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1895153475</payload_hash>
+        <record_name>Reservation start datetime</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-02 06:34:45</sys_created_on>
+        <sys_id>a5b6a09497970110002ffef3a253af3d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>180837a82170000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-02 06:34:45</sys_updated_on>
+        <type>Catalog Client Scripts</type>
+        <update_guid>adb6a094019701101f67da6ac21a3c3c</update_guid>
+        <update_guid_history>adb6a094019701101f67da6ac21a3c3c:-1895153475,1f666c5498970110ab78b5996aa1156a:291618052,1d71a010ed9701108bdc4fb9eb4e7c92:-1127004625,707f905ca857011092f9f6006a8e82ca:-296749691,b3ac549855570110dca4c5c0de97c91a:1578590196,d46adc947f570110702b4da6b56c7fdf:-132450387,6ab99c547d570110593a0ac544c7fe6e:1762184148,6af89054d55701102d3f2419518ba187:-1774585669,e1955c10f357011093b394153302f58c:-1972241789,8c54d8dcd3170110b6b9edbd529c8e58:-1498794021,51b1505cf51701101c618d76ec312a4d:-737694941,5bb098d8de170110e65ce22b6c1ddb73:-1560937658,727054d880170110001f42fb4d015d41:1235113456,ae8e3f08cad30110e0b1a4f15d1c29d9:111407318,94371c1bccc7411081bcbe92d53443f3:1513976673,3e86dcd758c741109417cbdcf8a87a78:-1899082787,db76dcd789c741108be1152eb18aa9e6:-1787606871,156618d76cc74110ddb1191cdeac372e:-1869886039,a13690d7c8c7411019c857dad3dc3b10:1334202515,02f51c97ecc74110d8babfd5c5149428:-2086395847,f385d89759c74110484ef70a0dba3cc3:-654292249,8f3220030e0b01102e1b711e93eababe:-558017849,86a544c19a0b4110d05ad0f4a5e25509:1090191570,7d9d7ff9e2e60110952d84297e6f9886:405955184,ab4c33b9efe601109f5760b10a08744f:353599184,7c09bb3593e6011023a7327b25a049ce:-511619944,9a367ffd5aa60110e9fafc8e89a153c8:711953879,0af5b7fd7ba60110446c848cc2b60696:-2040651750,d154f33da1a60110790be1f0326bc0d0:1323077951,6ce37bf91fa60110abfd005503f684d9:-1944923847,2fb3b7f98ca601109c27b8219dfebdad:-6998494,e77fe7f11ca60110d81780c07a82ea52:-528463780,e55fefb1c5a601106f8daefdb5595734:-1916193232,d41f6bb153a601106130d0568be31f1f:-651384228,8446ebb5376601108eb813f3f32284ce:-1775639865,0d262bb53f6601104d8ea67c986b9046:-1046451819,05552b750466011086dc6d12b9310d6d:-154386542,6e646335e0660110c81addb0b520b636:-298651581,9c546ff15166011086587507900c0959:1794460975,184b1bf5bc260110ac85b60ccf05f8ae:-540730271,6f159bfd83e201104cd0fa787d83bf77:2095858796,c34453bdf2e201101b9457f677c6f9ee:718253752,7563d37dd2e201106574c5951a3328e7:1260992649,d102d7f9a6e20110640728c199e2a709:-671797031,2b40df395fe2011060d85b990d26ea0a:360558023,3f00df397ae201100ca482bfcf008944:-1141471358,cf5f833977e20110a323d1def02f77ab:360558023,210987718be20110f331c2fae11a90f3:-1139611349,10a70bfdeaa20110ecd8b96c713faefe:453499,c2303635fe6201109b23862008978c03:2050809014,95dfaaf1c3620110b3821df173dc041b:107125135,169b0f252eee4110dcb51173f765df60:-364066787,e36bc72522ee411031b5dd3b3a0e309d:1953627364,376a83e1b1ee41103089bd5282d6ce66:-856148281,1dc8c361b8ee41104852285b33c9cfca:-631453221,64188721f9ee41106b7fe30bbdc259c6:-856148281,a7e7c32180ee4110be49f99f1dd62d15:-1123480600,87b74321cdee411018639f2f79e06ccf:-1880218893,3177cbedaaae41105e509631cffe1bba:539407847,4b2707edccae41109ab4db5c5fc4747e:2123537253,2afefae1edae4110db7c885839a76e97:285008070,f01ef6a125ae4110c6576d2329ca1fee:-276053796,58cb3aed9b6e4110f892ae8dff350072:-642104166,b957fa69ad6e41102296a9b762a4bea9:1122262683,fdb6ba29fa6e4110ef1055d380b583aa:1287729845,4096ba29c86e41101f132e26a53f560f:-586946701,43d57ae5a36e411064fbecd92b6abc5b:-2025705748,03e47ea5e46e4110959217f2bb62d2d6:-1105207786,37537a25eb6e411014b46f694d66847e:-813648365,c1ef6621756e411002df456dd3fab091:-1444329226,619faaed6a2e4110fa1447ed8ff15df4:-1014297251,496eee6d962e41106220cb519fa56abe:1804432410,f1bde66d932e411015e1cb1ff0164f3e:1833863825,136d626dd02e4110d838804079ea89d6:-1724106963,90ece22d4e2e41103d15a341fd308f2a:420154060,5e0be669bb2e4110fb91b04705fa06f1:-519047128,e8ca6269da2e4110bcab138e08a9b600:39975519,f7576665fb2e41102095814b0303d224:-1653897247,69005e2516aa41104fef057bf2a29562:-1902651907,cab44a69a46a4110559af420f17a74b5:-695436493,ca3049c468ee4510e36f5e5063c5e1ab:-832837316,e7cffc441bee45108b0c8c7eed156517:1147300573,87cefc44a2ee4510984f415346012b10:1374080224,d18eb8448dee451070b02dd8e5aa445a:-1594983210,126e740437ee4510cf69fa125a4d3c0f:823339510,2ebd7c047eee451080a68278bcbbf991:-409738628,b35d3404bdee4510d803ac70d671ddae:-1405170770,23fc38c0fcee45100f59abda92519829:79639957,ab7cf4c073ee4510bfd32685cc320009:1409009703,f6cbb080d6ee4510863493e1cdf11168:-65273300,418b7480d0ee4510eb748b0d166bd641:-851755358,b35bb080c7ee451006b287283290d0b9:1075055103,d7ba704066ee4510237fa193809f9cb3:1235161196,241a7000beee45100f76df4aa65d5068:840547009,a8297ccc56ae4510b82a7854a56cad10:-439152931,36a8bc8cafae4510401e87b5ac426038:-529833661,a228b84cf3ae4510a0b8865ef3f49cf3:-366600534,4d8578c88eae45107fb3afa6150b0452:-1631569938,a855b8c847ae451024fb7a06f717ebdc:1845336753,60e4b0c88bae45107115e40e3bdb3e2d:983201902,4e64b088eaae4510508f114e7f711318:-1619368194,a40470884dae4510080f447b70b6ed4b:359430538,7293384837ae45103db5ac40c7988efb:1755169513,0f3b20ccfc6e451013ea1d3a56d3f0bb:-445804863,06cae08c3e6e45105b17e1e0f86bbc89:652508905,7dc9d448362e45100ceccee842187728:597073484,79f89cc4122e45104b9a54c1423425a6:-1853356218,e7a81008f82e451005069d375a855c15:-886453476,f7989cc41c2e4510da46e08d9d4140a0:-2073228822,b278d8c4fe2e4510e1a6a628de8a71b5:752157512,980810c4ca2e4510119ca6213ec139cd:-1806098602,5ec79c845f2e451020503c337a0a16e1:-1372919613,9ca7d884512e451022ca32f66936d4bc:-1928182229,947714841b2e45106d79b3512289a377:1942907351,6d37d084722e451076f486bad4caf76b:-1970703309,9b071844922e45107d7a00fca776b2e8:-1547975371,11461004352e4510bd9bca63f38104dc:-861591668,50b598c02b2e45105a8d6292256d0a0c:-1005024893,7e35d4c0ed2e45102ef0a57a84316bbd:-874410975,06d49c800d2e45108906e54f9de372dc:1576214325,3b8418406d2e45101bfcd03a362cf0b0:-163875037,b6041840c22e4510054315c7ececa126:51882829,c193d0409c2e451076bc98c136b19245:-1092365244,caac0c48a6ea45104a6e8c772ac4fae6:735074817</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Reservation start datetime">c3061fb49793c110002ffef3a253afa1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-04 08:37:46</sys_created_on>
+        <sys_db_object display_value="" name="catalog_script_client">catalog_script_client</sys_db_object>
+        <sys_id>5f04b624f63546e9a503a7e14ceffbd1</sys_id>
+        <sys_metadata>2fe900c497ea4510002ffef3a253af5c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reservation start datetime</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>catalog_script_client_2fe900c497ea4510002ffef3a253af5c</sys_update_name>
+        <sys_update_version display_value="catalog_script_client_2fe900c497ea4510002ffef3a253af5c">a5b6a09497970110002ffef3a253af3d</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-04 08:37:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs">
+    <pa_tabs action="INSERT_OR_UPDATE">
+        <canvas_page display_value="PA Space Calendar - New Tab">b8a1432e9783c110002ffef3a253af3d</canvas_page>
+        <name>Space Calendar - New Tab</name>
+        <page display_value="PA Space Calendar - New Tab">34a1432e9783c110002ffef3a253af3c</page>
+        <sys_class_name>pa_tabs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-27 07:22:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>70a1432e9783c110002ffef3a253af40</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Space Calendar - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>pa_tabs_70a1432e9783c110002ffef3a253af40</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-27 07:22:16</sys_updated_on>
+    </pa_tabs>
+</record_update>

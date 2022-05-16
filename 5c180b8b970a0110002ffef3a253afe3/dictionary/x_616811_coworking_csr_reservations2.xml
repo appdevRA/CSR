@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="hasLabels=true" audit="true" extends="task" label="CSR Reservations" max_length="40" name="x_616811_coworking_csr_reservations2" sizeclass="5" type="collection">
+    <element attributes="hasLabels=true" audit="true" extends="task" label="CSR Reservations" max_length="40" name="x_616811_coworking_csr_reservations2" sizeclass="8" type="collection">
         <element label="Applicant" mandatory="true" max_length="32" name="applicant" reference="sys_user" type="reference"/>
-        <element label="Attendee count" max_length="40" name="attendee_count" type="integer"/>
+        <element default="1" label="Attendee count" max_length="40" name="attendee_count" type="integer"/>
         <element label="Datetime included" max_length="40" name="datetime_included" type="string"/>
         <element label="Date included" max_length="40" name="date_included" type="string"/>
         <element choice="3" default="daily" label="Duration type" mandatory="true" max_length="40" name="duration_type" type="string">
             <choice>
-                <element inactive_on_update="false" label="Daily" value="daily"/>
-                <element inactive_on_update="false" label="Hourly" value="hourly"/>
+                <element inactive_on_update="false" label="Hourly" sequence="1" value="hourly"/>
+                <element inactive_on_update="false" label="Daily" sequence="2" value="daily"/>
+                <element inactive_on_update="false" label="Weekly" sequence="3" value="weekly"/>
+                <element inactive_on_update="false" label="Monthly" sequence="4" value="monthly"/>
             </choice>
         </element>
         <element label="Email" mandatory="true" max_length="70" name="email" type="string"/>
+        <element label="Every" max_length="4000" name="every" type="glide_list"/>
+        <element label="Every" max_length="4000" name="every_monthly" type="glide_list"/>
+        <element label="isDeleted" max_length="40" name="is_deleted" type="boolean"/>
         <element label="Rent amount" max_length="40" name="rent_amount" type="float"/>
         <element label="Space" mandatory="true" max_length="32" name="space" reference="x_616811_coworking_csr_space" reference_qual="availability=true^EQ" reference_qual_condition="availability=true^EQ" type="reference"/>
-        <element choice="3" label="Status" max_length="40" name="status" type="string">
+        <element label="Space name" max_length="100" name="space_name" type="string"/>
+        <element choice="3" default="awaiting_approval" label="Status" max_length="40" name="status" type="string">
             <choice>
                 <element inactive_on_update="false" label="Approved" value="approved"/>
                 <element inactive_on_update="false" label="Awaiting approval" value="awaiting_approval"/>
+                <element inactive_on_update="false" label="Cancelled" value="cancelled"/>
                 <element inactive_on_update="false" label="Closed complete" value="closed_complete"/>
                 <element inactive_on_update="false" label="Rejected" value="rejected"/>
                 <element inactive_on_update="false" label="Requested" value="requested"/>

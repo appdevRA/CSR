@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="DELETE">
+        <catalog_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</catalog_item>
+        <catalog_variable>IO:7b33363997620110002ffef3a253afae</catalog_variable>
+        <cleared>true</cleared>
+        <disabled>true</disabled>
+        <field/>
+        <mandatory>false</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-31 01:57:13</sys_created_on>
+        <sys_id>3c4432b997620110002ffef3a253af44</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>u_start_date</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_3c4432b997620110002ffef3a253af44</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 08:52:26</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Reservation show/hide start&amp;end date">10e23ef597620110002ffef3a253af0e</ui_policy>
+        <variable>u_start_date</variable>
+        <variable_set/>
+        <visible>false</visible>
+    </catalog_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>catalog_ui_policy_action_3c4432b997620110002ffef3a253af44</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action"><catalog_ui_policy_action action="INSERT_OR_UPDATE"><catalog_item display_value="Reserve A Space">bcde9043971a4110002ffef3a253af2f</catalog_item><catalog_variable>IO:7b33363997620110002ffef3a253afae</catalog_variable><cleared>true</cleared><disabled>true</disabled><field/><mandatory>false</mandatory><order>100</order><sys_class_name>catalog_ui_policy_action</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2022-03-31 01:57:13</sys_created_on><sys_id>3c4432b997620110002ffef3a253af44</sys_id><sys_mod_count>2</sys_mod_count><sys_name>u_start_date</sys_name><sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package><sys_policy/><sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope><sys_update_name>catalog_ui_policy_action_3c4432b997620110002ffef3a253af44</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2022-04-25 08:52:26</sys_updated_on><table/><ui_policy display_value="Reservation show/hide start&amp;end date">10e23ef597620110002ffef3a253af0e</ui_policy><variable>u_start_date</variable><variable_set/><visible>false</visible></catalog_ui_policy_action></record_update>]]></payload>
+        <payload_hash>-891695896</payload_hash>
+        <record_name>u_start_date</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 08:52:26</sys_created_on>
+        <sys_id>16138902974b0110002ffef3a253afb0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1805fec0c8a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 08:52:26</sys_updated_on>
+        <type>Catalog UI Policy Action</type>
+        <update_guid>96130902c54b0110fd1052beb9ac0d35</update_guid>
+        <update_guid_history>96130902c54b0110fd1052beb9ac0d35:-891695896,2df0818e990b0110ea853f37d4be815d:626826233,c05432b9a262011079572e1a3aa512c8:2145498357</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="u_start_date">97065fb49793c110002ffef3a253af6a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-05-04 08:37:47</sys_created_on>
+        <sys_db_object display_value="" name="catalog_ui_policy_action">catalog_ui_policy_action</sys_db_object>
+        <sys_id>cb57c7ef49484c72b9cac4d83b67f644</sys_id>
+        <sys_metadata>3c4432b997620110002ffef3a253af44</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_start_date</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>catalog_ui_policy_action_3c4432b997620110002ffef3a253af44</sys_update_name>
+        <sys_update_version display_value="catalog_ui_policy_action_3c4432b997620110002ffef3a253af44">16138902974b0110002ffef3a253afb0</sys_update_version>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-05-04 08:37:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

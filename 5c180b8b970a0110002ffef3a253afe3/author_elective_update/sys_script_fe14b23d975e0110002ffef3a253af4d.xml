@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_616811_coworking_csr_reservations2</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>onSubmit Reservation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	// Add your code here
+	current.space_name = current.space.name;
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-03-18 15:43:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fe14b23d975e0110002ffef3a253af4d</sys_id>
+        <sys_mod_count>59</sys_mod_count>
+        <sys_name>onSubmit Reservation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_script_fe14b23d975e0110002ffef3a253af4d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-27 07:43:31</sys_updated_on>
+        <template>status=awaiting_approval^EQ</template>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=fe14b23d975e0110002ffef3a253af4d"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</application>
+        <file_path/>
+        <instance_id>59254ac3db06f3c852cec597059619f5</instance_id>
+        <instance_name>dev88149</instance_name>
+        <name>sys_script_fe14b23d975e0110002ffef3a253af4d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_616811_coworking_csr_reservations2&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;onSubmit Reservation&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	// Add your code here
+	current.space_name = current.space.name;
+
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-18 15:43:14&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;fe14b23d975e0110002ffef3a253af4d&lt;/sys_id&gt;&lt;sys_mod_count&gt;59&lt;/sys_mod_count&gt;&lt;sys_name&gt;onSubmit Reservation&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Coworking space Reservation System" source="x_616811_coworking"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Coworking space Reservation System"&gt;5c180b8b970a0110002ffef3a253afe3&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_fe14b23d975e0110002ffef3a253af4d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-04-27 07:43:31&lt;/sys_updated_on&gt;&lt;template&gt;status=awaiting_approval^EQ&lt;/template&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=fe14b23d975e0110002ffef3a253af4d"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-421542766</payload_hash>
+        <record_name>onSubmit Reservation</record_name>
+        <reverted_from/>
+        <source>dc0bd38f974a0110002ffef3a253afc6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-27 07:43:31</sys_created_on>
+        <sys_id>40868f6297c3c110002ffef3a253afa8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18069f9a9750000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-27 07:43:31</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>c4868f62aac3c1106af58fe71ca1bda7</update_guid>
+        <update_guid_history>c4868f62aac3c1106af58fe71ca1bda7:-421542766,8846cb62adc3c110c82da9a2169ec8dd:1541749075,2fea02f57abe4110b99ec8fb3ad74557:-1033839045,9baa0eb573be4110cf92f46c0801386a:-245011781,ac8a82b599be4110e1b1c4a48caf45ff:757066497,cc1a8e7540be4110bd7babc5e2bc319a:-2028853823,c0a9c2750bbe4110a1b3618684716178:1420231745,7e58cef19bbe411042f8071d86554ce6:996153035,4e770ab177be41107287239d6b1bf507:460928029,d5868671acbe41101b02fae7792c2564:-415317406,06403dd81d7ac110c2e5441cf555204d:-2122074285,8c00711c7f7ac1107d901a3ee7ba5266:-690231609,164ce158f67ac110fe7495e09f262228:-1431472396,cc0c6d18fd7ac110ed8c3133f67a4814:-415317406,f5daad18ef7ac11039e4e2ac768f8a88:-2122074285,939a2d18707ac1106ab51e47f7bb4323:-481495327,888a2518137ac1101a12633187009426:-1431472396,195aa518a77ac110ba5e54d6a77259bc:-481495327,2e2a25180d7ac11013c3e5379fb1c20f:-1431472396,831aed14347ac11039fffae87a11f3d2:-2122074285,24e36950a57ac110d4d18e7e96062401:-1667443572,72c6d9d08f3ac11057c45e441444bace:-1970051941,99100c58c6b2c110c93ed5cf0ae33c2f:-1667443572,76ab4fc8fabe81108eae7094b7e4735d:-1718182099,8f8b8bc8e9be81104b3803dc553fd23b:752021018,8fb3bac84d3e81100664c7c32736000d:-1718182099,7313b688553e8110e2b6490ce1e4d789:808076139,673a6a8c1bfa8110d26989fcbb4a18d1:858814666,e4d5600c16f28110a602faf23de11d9b:-777866794,7de4a40c17f28110499ae8562beb2fcf:538184853,ec8424c892f2811099dde2a5cde041d3:-1106328724,3204ec88d0f28110ca10757e32c44c3d:1146519165,d0a3e0c8c1f28110d4b82500bd46d42f:-1346764778,a7136088a0f28110d00311cde07498ec:-1212772958,8a4d9c00adf28110d1cff70834d3bd49:-777866794,648f808440b28110d7b99ed69d79a2bc:-853906002,6bee88448cb28110dd8daf471159d6f6:-1491258865,c94e804468b281109f512eba446ec945:-853906002,7b2c8c88597281100377f41e12587d95:1704779204,185bbe737a6e41108e81357aec79225a:972162389,b1a9f2330d6e411030883db9f9068479:1605288263,1c195e37f9aa4110917786237c2b31c1:-443272803,e9e9293ba9a64110d419460daad92a9e:-1641038161,11d165bf70664110a9e569ffeae874f1:-2011178446,e801297fba6641106526cb1604ad3a26:799781696,ab32c1e7c9e2011016b482e1cd4a4828:-2056256401,ef0209e760e201104ad13b73ab3fe0eb:-1286948853,f19b319f9b6e01107fa5eb7475d97d34:-47487968,1e2bb9df7a6e0110bd66710d137d4fa7:961118232,28eab5df0f6e0110bdc279f135f6a894:-843173256,8db83ddbba6e01109d227dfa903d5f35:-1717209538,08d7f51fa16e0110b68679ecd1d060fa:-1810398936,72a635d3b46e011049353e650648a8b7:1656543139,2a7e25d30c6e0110a243b79e2d309495:938509929,0e5f3f43ef6601107dac2e40cedefd49:1759090679,bcadff8f00260110f9fdc395af8171aa:-835835457,ec8d330360660110e7b0edbce7bfba31:-2117371169,f026c080dfea451098eeb5d2fe0cb8b8:-80822718,d3b5dc474cd64110f0046303e12bb82f:-1526742548,99b4723d035e01106eb3629409874335:1581796443</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-27 08:25:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>032757f8caa14e838ec3cbf83d3d0a39</sys_id>
+        <sys_metadata>fe14b23d975e0110002ffef3a253af4d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>onSubmit Reservation</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_parent display_value="CSR Reservations">56c5a6f9971e0110002ffef3a253afc9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_scope_delete display_value="">267f52b717ed4dc3b4ad3b53b33c1a49</sys_scope_delete>
+        <sys_update_name>sys_script_fe14b23d975e0110002ffef3a253af4d</sys_update_name>
+        <sys_update_version display_value="sys_script_fe14b23d975e0110002ffef3a253af4d">40868f6297c3c110002ffef3a253afa8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-27 08:25:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

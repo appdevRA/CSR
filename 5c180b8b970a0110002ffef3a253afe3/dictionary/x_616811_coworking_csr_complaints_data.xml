@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="CSR Complaints Data" max_length="40" name="x_616811_coworking_csr_complaints_data" sizeclass="5" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Applicant" label="Applicant" max_length="40" name="u_applicant" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Issue" label="Issue" max_length="40" name="u_issue" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Reservation number" label="Reservation number" max_length="40" name="u_reservation_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Space" label="Space" max_length="40" name="u_space" type="string"/>
+    </element>
+</database>
