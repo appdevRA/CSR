@@ -24,13 +24,31 @@ ReservationUtils.prototype =  {
 	
 	scheduleAlreadyExist: function(start, end, space, dType, number, isNewRecord){
 		
-		var startTime = new GlideDateTime(start);
-		var endTime = new GlideDateTime(end);
+		
+// 		var startWorkingHoursTime = new GlideDateTime(start +" "+ startWorkingHours);
+// 		var endTime = new GlideDateTime(end.split(" ")[0] +" "+ endWorkingHours);
+		
+		var startTime ="";
+		var endTime = "";
+		
+		if(dType == "hourly" || dType == "daily"){
+			startTime = new GlideDateTime(start);
+			endTime =  new GlideDateTime(end);
+		} else{
+			var startEndWorkingHours = this.getStartEndWorkingHours();
+			var startWorkingHours = startEndWorkingHours.split("|")[0].split(" ")[1];
+			var endWorkingHours = startEndWorkingHours.split("|")[1].split(" ")[1];
+			
+			startTime = new GlideDateTime(start +" "+ startWorkingHours);
+			endTime = new GlideDateTime(end +" "+ endWorkingHours);
+		}
+// 		var minute = new GlideDateTime();
+// 		minute.setValue("00:20:00");
+// 		startTime.add(minute);
 // 		endTime.addDaysUTC(1);
-		var stringDate = startTime.toString();
+// 		startTime.getTime().setValue("09:00:00");
 		
-		var yearMonth = stringDate.split("-")[0]+"-"+stringDate.split("-")[1];
-		
+// 		gs.addInfoMessage(startTime);
 		var table = new GlideRecord("x_616811_coworking_csr_reservations2");
 		
 		if(!isNewRecord){
@@ -38,27 +56,38 @@ ReservationUtils.prototype =  {
 		}
 		table.addQuery("space",space);
 		table.addQuery("status", "=", "approved");
+// 		gs.addInfoMessage(dType);
 		
-		if(dType == "hourly" || dType == "daily" ){
-			var a1 = table.addQuery("u_start_time","BETWEEN", startTime+"@"+ endTime);
-			var queryBlock = a1;
-			a1.addOrCondition("u_end_time","BETWEEN", startTime+"@"+ endTime);
+		var a1 = table.addQuery("u_start_time","BETWEEN", startTime+"@"+ endTime);
+		var queryBlock = a1;
+		a1.addOrCondition("u_end_time","BETWEEN", startTime+"@"+ endTime);
 
-			var b1 = queryBlock.addOrCondition("u_start_time", "<=", startTime);
-			b1.addCondition("u_end_time", ">=", endTime);
-		} else if(dType == "weekly" ){
-			var c1 = table.addQuery("u_start_time","STARTSWITH", startTime.getDate());
-			c1.addOrCondition("u_end_time", "STARTSWITH", endTime.getDate());
-		} else if(dType == "monthly" ){
-			var d1 = table.addQuery("u_start_time","STARTSWITH", startTime.getLocalDate());
-			d1.addOrCondition("u_end_time", "STARTSWITH", endTime.getLocalDate());
-		}
+		var b1 = queryBlock.addOrCondition("u_start_time", "<=", startTime);
+		b1.addCondition("u_end_time", ">=", endTime);
+// 		} else if(dType == "weekly" ){
+			
+// 			var c1 = table.addQuery("u_start_time","STARTSWITH", startTime.getDate());
+// 			c1.addOrCondition("u_end_time", "STARTSWITH", endTime.getDate());
+		//} else if(dType == "monthly" ){
+			
+// 			gs.addInfoMessage("withStartWorkingHours: "+new GlideDateTime(start+" "+startWorkingHours));
+// 			var d1 = table.addQuery("u_start_time","STARTSWITH", "startTime.getLocalDate()");
+// 			d1.addOrCondition("u_end_time", "STARTSWITH",endTime.getLocalDate());
+		//	var d1 = table.addQuery("u_start_time",">=", startWorkingHoursTime);
+// 			d1.addOrCondition("u_end_time", "STARTSWITH",end);
+		//}
 		
 	
 		
 		table.setLimit(1);
 		table.query();
-		gs.addInfoMessage("Shcedule | "+startTime.getLocalDate() +": "+table.getRowCount());
+		table.next();
+// 		while(table.next()){
+// 			gs.addInfoMessage(table.u_start_time);
+// 		}
+// 		gs.addInfoMessage(startWorkingHoursTime+" | "+ startTime);
+// 		gs.addInfoMessage("table start Time:"+ table.u_start_time);
+// 		gs.addInfoMessage("Shcedule | "+start+": "+ table.getRowCount()+" | "+ table.number);
 		if(table.getRowCount() > 0 ){
 			return true;
 		} else{
@@ -84,16 +113,19 @@ ReservationUtils.prototype =  {
 			var daysRange = "";
 			var didInsert = false;
 			while(gdtStart.getLocalDate() <= gdtEnd.getLocalDate()){
+								
 
 				if(	spaceDays.includes(gdtStart.getDayOfWeekLocalTime())){
 					if(everyModified.includes(" "+gdtStart.getDayOfMonthLocalTime() + " ")){
-						if(!this.dateIsOnHoliday(gdtStart, gdtStart, "weekly")){
-							if(!this.scheduleAlreadyExist(gdtStart, gdtStart, space, "weekly",0, true)){
+						if(!this.dateIsOnHoliday(gdtStart, gdtStart, "monthly")){
+							if(!this.scheduleAlreadyExist(gdtStart.getLocalDate(), gdtStart.getLocalDate(), space, 
+															"monthly",0, true)){
 								var tempStart = new GlideDateTime(gdtStart.getDisplayValue());
 								var tempStart2 = new GlideDateTime(gdtStart.getDisplayValue());
-
 								tempStart2.addDaysLocalTime(1);
-
+								
+// 								gs.addInfoMessage("gdStart: "+gdtStart);
+		
 								if(sequenceBroke){
 									a = tempStart.getDate();
 									didInsert = false;
@@ -104,12 +136,13 @@ ReservationUtils.prototype =  {
 
 									a = tempStart.getDate();
 									
-									gs.addInfoMessage("monthlyReservation: "+tempStart2);
+// 									gs.addInfoMessage("monthlyReservation: "+tempStart2);
 									
 									if(!spaceDays.includes(tempStart2.getDayOfWeekUTC()) || 
 										!everyModified.includes(" "+tempStart2.getDayOfMonthUTC() + " ") ||
-										this.dateIsOnHoliday(tempStart2, tempStart2, "weekly") || 
-										this.scheduleAlreadyExist(tempStart2, tempStart2, space, "weekly",0, true)){
+										this.dateIsOnHoliday(tempStart2, tempStart2, "monthly") || 
+										this.scheduleAlreadyExist(tempStart2.getLocalDate(), 
+															tempStart2.getLocalDate(), space, "monthly",0, true)){
 										if(!daysRange.includes(" "+ a+","+a+" ")){
 											daysRange = daysRange +a+","+a+"|";
 											sequenceBroke = true;
@@ -120,12 +153,13 @@ ReservationUtils.prototype =  {
 
 									b = tempStart.getDate();
 									
-									gs.addInfoMessage("monthlyReservation: "+tempStart2);
+// 									gs.addInfoMessage("monthlyReservation: "+tempStart2);
 									
 									if(!spaceDays.includes(tempStart2.getDayOfWeekUTC()) || 
 										!everyModified.includes(" "+tempStart2.getDayOfMonthUTC() + " ") ||
-										this.dateIsOnHoliday(tempStart2, tempStart2, "weekly") || 
-										this.scheduleAlreadyExist(tempStart2, tempStart2, space, "weekly",0, true)){
+										this.dateIsOnHoliday(tempStart2, tempStart2, "monthly") || 
+										this.scheduleAlreadyExist(tempStart2.getLocalDate(), 
+															tempStart2.getLocalDate(), space, "monthly",0, true)){
 
 										daysRange = daysRange + a+","+b+"|";
 										sequenceBroke = true;
@@ -231,7 +265,7 @@ ReservationUtils.prototype =  {
 			if(	spaceDays.includes(gdtStart.getDayOfWeekLocalTime())){
 				if(everyModified.includes(" "+gdtStart.getDayOfWeekLocalTime() + " ")){
 					if(!this.dateIsOnHoliday(gdtStart, gdtStart, "weekly")){
-						if(!this.scheduleAlreadyExist(gdtStart, gdtStart, space, "weekly",0, true)){
+						if(!this.scheduleAlreadyExist(gdtStart.getLocalDate(), gdtStart.getLocalDate(), space, "weekly",0, true)){
 		
 						
 							var tempStart = new GlideDateTime(gdtStart.getDisplayValue());
@@ -252,7 +286,7 @@ ReservationUtils.prototype =  {
 								if(!spaceDays.includes(tempStart2.getDayOfWeekUTC()) || 
 									!everyModified.includes(" "+tempStart2.getDayOfWeekUTC() + " ") ||
 									this.dateIsOnHoliday(tempStart2, tempStart2, "weekly") || 
-									this.scheduleAlreadyExist(tempStart2, tempStart2, space, "weekly",0, true)){
+									this.scheduleAlreadyExist(tempStart2.getLocalDate(), tempStart2.getLocalDate(), space, "weekly",0, true)){
 
 									if(!daysRange.includes(" "+ a+","+a+" ")){
 										daysRange = daysRange +a+","+a+"|";
@@ -267,7 +301,7 @@ ReservationUtils.prototype =  {
 								if(!spaceDays.includes(tempStart2.getDayOfWeekUTC()) || 
 									!everyModified.includes(" "+tempStart2.getDayOfWeekUTC() + " ") ||
 									this.dateIsOnHoliday(tempStart2, tempStart2, "weekly") || 
-									this.scheduleAlreadyExist(tempStart2, tempStart2, space, "weekly",0, true)){
+									this.scheduleAlreadyExist(tempStart2.getLocalDate(), tempStart2.getLocalDate(), space, "weekly",0, true)){
 // 									
 
 									daysRange = daysRange + a+","+b+"|";
@@ -468,6 +502,23 @@ ReservationUtils.prototype =  {
 	},
 	
 	
+	getStartEndWorkingHours: function(){
+		var table = new GlideRecord("x_616811_coworking_calendar");
+		table.addQuery("type", "business");
+		table.addQuery("active", true);
+		table.query();
+// 		gs.addInfoMessage(table.getRowCount());
+// 		return table.getRowCount();
+		table.next();
+		
+		var startEnd = new GlideDateTime(table.u_start_time).getLocalTime() +"|" + new 
+						GlideDateTime(table.u_end_time).getLocalTime();
+		return startEnd;
+		
+	},
+	
+	
+	
 	getSpaceSeatingCapacity: function(space){
 		var table = new GlideRecord("x_616811_coworking_csr_space");
 		table.get(space);
@@ -527,13 +578,13 @@ ReservationUtils.prototype =  {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2022-03-15 12:35:49</sys_created_on>
         <sys_id>2d27b1fc97d60110002ffef3a253afde</sys_id>
-        <sys_mod_count>968</sys_mod_count>
+        <sys_mod_count>1032</sys_mod_count>
         <sys_name>ReservationUtils</sys_name>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_include_2d27b1fc97d60110002ffef3a253afde</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-13 04:20:28</sys_updated_on>
+        <sys_updated_on>2022-05-16 07:13:32</sys_updated_on>
     </sys_script_include>
 </record_update>

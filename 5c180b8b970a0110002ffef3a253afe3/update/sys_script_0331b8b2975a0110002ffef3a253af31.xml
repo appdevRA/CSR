@@ -173,27 +173,33 @@
 				var daysRange = util.weeklyReservation(current.every, start,end, spaceDays, current.space); 
 				var totalWorkingHours = util.getTotalWorkingHours();
 				
-				gs.addInfoMessage(daysRange);
+// 				gs.addInfoMessage(daysRange);
 // 				var regex = /,/g;
 				var daysRangeArray = daysRange.split("|");
 				
 				for(var i = 0; i < daysRangeArray.length-1;i++){
 // 					var regex = /,/g;
+					var startEndWorkingHours = util.getStartEndWorkingHours();
+					var startWorkingHours = startEndWorkingHours.split("|")[0].split(" ")[1];
+					var endWorkingHours = startEndWorkingHours.split("|")[1].split(" ")[1];
+					
+					
 // 					var everyModified = every.replace(regex, " ");
-					startDate = new GlideDateTime(daysRangeArray[i].split(",")[0]);
-					endDate = new GlideDateTime(daysRangeArray[i].split(",")[1]);
-// 					gs.addInfoMessage(startDate+" | "+ endDate);
+					startDate = new GlideDateTime(daysRangeArray[i].split(",")[0]+" " + startWorkingHours);
+					endDate = new GlideDateTime(daysRangeArray[i].split(",")[1]+ " "+ endWorkingHours);
+					
+// 					gs.addInfoMessage();
+// 					gs.addErrorMessage(startDate+" | "+ endDate);
+// 					current.setAbortAction(true);
 					var numberOfDays =  GlideDateTime.subtract(startDate, endDate).getDayPart() + 1; 
 					var rentAmount = numberOfDays*spacePrice*totalWorkingHours;
 					
-					startDate.addDaysLocalTime(1);
-					endDate.addDaysLocalTime(1);
+// 					startDate.addDaysLocalTime(1);
+// 					endDate.addDaysLocalTime(1);
 // // 				
 					var hours = new GlideTime();
-// 					hours2.setValue("23:59:00");
-					hours.setValue("16:59:00");
-					startDate.subtract(hours);
-					hours.setValue("6:59:00");
+					hours.setValue("07:00:00");
+					startDate.add(hours);
 					endDate.add(hours);
 					
 					var table2 = new GlideRecord("x_616811_coworking_csr_reservations2");
@@ -211,11 +217,12 @@
 					table2.setValue("every", current.every);
 					table2.insert();
 				}
-// 				current.deleteRecord();
-// 				gs.addErrorMessage("");
-// 				current.setAbortAction(true);
+				current.deleteRecord();
+// 				
 			} else if(current.duration_type == "monthly" ){
-
+				var startDate2 = "";
+				var endDate2 = "";
+				
 				var totalWorkingHours2 = util.getTotalWorkingHours();
 				
 				var spaceTable2 = new GlideRecord("x_616811_coworking_csr_space");
@@ -225,20 +232,29 @@
 				var daysRange2 = util.monthlyReservation(current.every_monthly, start,end, spaceDays, 
 															current.space); 
 				var daysRangeArray2 = daysRange2.split("|");
-				gs.addInfoMessage(daysRange2);
-				gs.addErrorMessage("");
-				current.setAbortAction(true);
-// 				for(var ii = 0; i < daysRangeArray.length-1;ii++){
-// // 					
-// 					var startDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[0]);
-// 					var endDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[1]);
+// 				gs.addInfoMessage(daysRange2);
+				
+				for(var ii = 0; ii < daysRangeArray2.length-1;ii++){
+					var startEndWorkingHours2 = util.getStartEndWorkingHours();
+					var startWorkingHours2 = startEndWorkingHours2.split("|")[0].split(" ")[1];
+					var endWorkingHours2 = startEndWorkingHours2.split("|")[1].split(" ")[1];
+					gs.addInfoMessage("buness rule: "+ startDate2+" | "+ endDate2);
 					
-// 					var numberOfDays2 =  GlideDateTime.subtract(startDate2, endDate2).getDayPart() + 1; 
-// 					var rentAmount2 = numberOfDays2*spacePrice2*totalWorkingHours2;
+// 					var everyModified = every.replace(regex, " ");
+					startDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[0]+" " + startWorkingHours2);
+					endDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[1]+ " "+ endWorkingHours2);
 					
-// 					startDate2.addDaysLocalTime(1);
-// 					endDate2.addDaysLocalTime(1);
-// // // 				
+					
+					
+					
+					var numberOfDays2 =  GlideDateTime.subtract(startDate2, endDate2).getDayPart() + 1; 
+					var rentAmount2 = numberOfDays2*spacePrice2*totalWorkingHours2;
+					
+					var hours2 = new GlideTime();
+					hours2.setValue("07:00:00");
+					startDate2.add(hours2);
+					endDate2.add(hours2);
+					
 // 					var hours2 = new GlideTime();
 // // 					hours2.setValue("23:59:00");
 // 					hours2.setValue("16:59:00");
@@ -246,21 +262,24 @@
 // 					hours2.setValue("6:59:00");
 // 					endDate2.add(hours2);
 					
-// 					var table3 = new GlideRecord("x_616811_coworking_csr_reservations2");
-// 					table3.initialize();
-// 					table3.setValue("duration_type", "monthly"); // give correct value based on field type
-// 					table3.setValue("u_start_time",  startDate2);
-// 					table3.setValue("u_end_time",  endDate2);
-// 					table3.setValue("space", current.space);
-// 					table3.setValue("applicant", current.applicant);
-// 					table3.setValue("email", current.email);
-// 					table3.setValue("rent_amount", rentAmount2);
-// 					table3.setValue("status", "approved");
-// 					table3.setValue("attendee_count", current.attendee_count);
-// 					table3.setValue("description", current.description);
-// 					table3.setValue("every", current.every_monthly);
-// 					table3.insert();
-// 				}
+					var table3 = new GlideRecord("x_616811_coworking_csr_reservations2");
+					table3.initialize();
+					table3.setValue("duration_type", "monthly"); // give correct value based on field type
+					table3.setValue("u_start_time",  startDate2);
+					table3.setValue("u_end_time",  endDate2);
+					table3.setValue("space", current.space);
+					table3.setValue("applicant", current.applicant);
+					table3.setValue("email", current.email);
+					table3.setValue("rent_amount", rentAmount2);
+					table3.setValue("status", "approved");
+					table3.setValue("attendee_count", current.attendee_count);
+					table3.setValue("description", current.description);
+					table3.setValue("every_monthly", current.every_monthly);
+					table3.insert();
+				}
+				gs.addErrorMessage(" ");
+				current.setAbortAction(true);
+				
 // 				current.deleteRecord();
 			}
 		}
@@ -276,7 +295,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0331b8b2975a0110002ffef3a253af31</sys_id>
-        <sys_mod_count>614</sys_mod_count>
+        <sys_mod_count>639</sys_mod_count>
         <sys_name>Reservation fields validation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
@@ -284,7 +303,7 @@
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_0331b8b2975a0110002ffef3a253af31</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-13 04:14:04</sys_updated_on>
+        <sys_updated_on>2022-05-17 05:44:42</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

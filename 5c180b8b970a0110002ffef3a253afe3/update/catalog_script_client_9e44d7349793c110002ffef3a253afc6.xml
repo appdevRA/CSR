@@ -26,13 +26,24 @@
 	g_form.clearMessages();
 	
 	if(scheduleType != "hourly"  && newValue != ""){
+
+		var script1 = new GlideAjax("ReservationClientUtils");
+		script1.addParam("sysparm_name", "getStartEndWorkingHours");
+		script1.getXML(getStartEndWorkingHours);
+
+	}
+
+	function getStartEndWorkingHours(response){
+		var scriptResponse = response.responseXML.documentElement.getAttribute("answer");
+		var startEnd = scriptResponse.split("|");
+
 		var startTimeValue = newValue;
 		var endTimeValue = g_form.getValue("u_end_time");
-		
-		g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ "00:00:00");
-		
+
+		g_form.setValue("u_start_time",startTimeValue.split(" ")[0] +" "+ startEnd[0].split(" ")[1]);
+
 		if(endTimeValue != "")
-			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ "23:59:00");
+			g_form.setValue("u_end_time",endTimeValue.split(" ")[0] +" "+ startEnd[1].split(" ")[1]);
 	}
 
 	
@@ -184,7 +195,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9e44d7349793c110002ffef3a253afc6</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Reservation start datetime</sys_name>
         <sys_overrides/>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
@@ -192,7 +203,7 @@
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>catalog_script_client_9e44d7349793c110002ffef3a253afc6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-11 03:19:29</sys_updated_on>
+        <sys_updated_on>2022-05-16 06:58:50</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
