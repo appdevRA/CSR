@@ -146,8 +146,7 @@
 				current.rent_amount =  util.calculateRent(current.duration_type, current.space, start, end, 
 													spaceDays, util.getTotalWorkingHours(), every);
 			
-			} else if(!current.isNewRecord() && (current.status == "approved" | current.status == 
-												"awaiting_approval")){
+			} else if(!current.isNewRecord() && current.status == "awaiting_approval"){
 				
 				current.rent_amount =  util.calculateRent(current.duration_type, current.space, start, end, 
 													spaceDays, util.getTotalWorkingHours(), every);
@@ -194,8 +193,6 @@
 					var numberOfDays =  GlideDateTime.subtract(startDate, endDate).getDayPart() + 1; 
 					var rentAmount = numberOfDays*spacePrice*totalWorkingHours;
 					
-// 					startDate.addDaysLocalTime(1);
-// 					endDate.addDaysLocalTime(1);
 // // 				
 					var hours = new GlideTime();
 					hours.setValue("07:00:00");
@@ -232,7 +229,6 @@
 				var daysRange2 = util.monthlyReservation(current.every_monthly, start,end, spaceDays, 
 															current.space); 
 				var daysRangeArray2 = daysRange2.split("|");
-// 				gs.addInfoMessage(daysRange2);
 				
 				for(var ii = 0; ii < daysRangeArray2.length-1;ii++){
 					var startEndWorkingHours2 = util.getStartEndWorkingHours();
@@ -240,7 +236,6 @@
 					var endWorkingHours2 = startEndWorkingHours2.split("|")[1].split(" ")[1];
 					gs.addInfoMessage("buness rule: "+ startDate2+" | "+ endDate2);
 					
-// 					var everyModified = every.replace(regex, " ");
 					startDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[0]+" " + startWorkingHours2);
 					endDate2 = new GlideDateTime(daysRangeArray2[ii].split(",")[1]+ " "+ endWorkingHours2);
 					
@@ -255,12 +250,7 @@
 					startDate2.add(hours2);
 					endDate2.add(hours2);
 					
-// 					var hours2 = new GlideTime();
-// // 					hours2.setValue("23:59:00");
-// 					hours2.setValue("16:59:00");
-// 					startDate2.subtract(hours2);
-// 					hours2.setValue("6:59:00");
-// 					endDate2.add(hours2);
+// 					
 					
 					var table3 = new GlideRecord("x_616811_coworking_csr_reservations2");
 					table3.initialize();
@@ -277,10 +267,7 @@
 					table3.setValue("every_monthly", current.every_monthly);
 					table3.insert();
 				}
-				gs.addErrorMessage(" ");
-				current.setAbortAction(true);
-				
-// 				current.deleteRecord();
+				current.deleteRecord();
 			}
 		}
 		
@@ -295,7 +282,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0331b8b2975a0110002ffef3a253af31</sys_id>
-        <sys_mod_count>639</sys_mod_count>
+        <sys_mod_count>641</sys_mod_count>
         <sys_name>Reservation fields validation</sys_name>
         <sys_overrides/>
         <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
@@ -303,7 +290,7 @@
         <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
         <sys_update_name>sys_script_0331b8b2975a0110002ffef3a253af31</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-05-17 05:44:42</sys_updated_on>
+        <sys_updated_on>2022-05-17 05:58:07</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
