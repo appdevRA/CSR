@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" sizeclass="13" type="collection">
+    <element audit="true" db_object_id="000520c747702950f7709a21336d43f2" label="CSR Space" max_length="40" name="x_616811_coworking_csr_space" type="collection">
         <element choice="3" default="single" label="Accessibility" max_length="40" name="accessibility" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Single" sequence="0" value="single"/>
@@ -10,7 +10,7 @@
             </choice>
         </element>
         <element label="Active" max_length="40" name="availability" type="boolean"/>
-        <element choice="1" label="Days " mandatory="true" max_length="40" name="days" type="glide_list">
+        <element choice="1" label="Days" mandatory="true" max_length="40" name="days" type="glide_list">
             <choice>
                 <element inactive_on_update="false" label="Monday" sequence="1" value="1"/>
                 <element inactive_on_update="false" label="Tuesday" sequence="2" value="2"/>
@@ -32,7 +32,7 @@
             </choice>
         </element>
         <element label="Image" max_length="40" name="image" type="user_image"/>
-        <element label="name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Name" mandatory="true" max_length="40" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Priceperhour" mandatory="true" max_length="40" name="priceperhour" type="float"/>
         <element default="1" label="Seating capacity" max_length="40" name="seating_capacity" type="integer"/>

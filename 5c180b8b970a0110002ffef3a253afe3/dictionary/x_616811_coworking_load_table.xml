@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="78a6b9db47512110f7709a21336d43dc" extends="sys_import_set_row" label="load table" max_length="40" name="x_616811_coworking_load_table" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=accessibility" label="accessibility" max_length="40" name="u_accessibility" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=availability" label="availability" max_length="40" name="u_availability" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=days" label="days" max_length="40" name="u_days" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=description" label="description" max_length="40" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=facility" label="facility" max_length="40" name="u_facility" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=name" label="name" max_length="40" name="u_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=seating_capacity" label="seating_capacity" max_length="40" name="u_seating_capacity" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spAriaUtil) {
+	
+	$scope.accessibilityModeEnabled = spAriaUtil.isAccessibilityEnabled();
+	//this.data.href = "";
+	/*
+	var rows = [{"a": 1,"b":2, "c":3}];
+	// creates a sheet and add the "row" object value
+	var worksheet = XLSX.utils.json_to_sheet(rows);
+
+	//creates a workbook (excel)
+	var workbook = XLSX.utils.book_new();
+
+	// adds the sheet to workbook and name it "sheet1"
+	XLSX.utils.book_append_sheet(workbook, worksheet, "sheet1"); 
+
+	//exports the excel and name it President.xlsx
+	XLSX.writeFile(workbook, "Presidents.xlsx", {});
+	*/
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.iconlink {
+	padding: 3px 0;
+}
+
+.iconlink a label,h2 {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+/* TOP ICON ---------- */
+
+a.top_icon {
+  display: block;
+  padding: 20px;
+  text-align: center;
+}
+
+a.top_icon .fa {
+  display: block;
+  text-align: center;
+}
+
+/* CIRCLE ICON ---------- */
+
+a.circle_icon {
+  display: block;
+  padding: 20px 0px 20px 70px;
+  position: relative;
+}
+
+a.circle_icon .fa {
+  position:absolute;
+  left: 0px;
+  top: 10px;
+}
+
+/* COLOR BOX ---------- */
+
+a.color_box {
+  display: block;
+  position: relative;
+  padding: 20px 20px 20px 82px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+a.color_box .fa {
+  position:absolute;
+  left: 20px;
+  top: 20px;
+  width:42px;
+  text-align: center;
+}
+
+.icon-link-background-primary {
+  background-color: $brand-primary;
+}
+
+.icon-link-background-info {
+  background-color: $brand-info;
+}
+
+.icon-link-background-success {
+  background-color: $brand-success;
+}
+
+.icon-link-background-warning {
+  background-color: $brand-warning;
+}
+
+.icon-link-background-danger {
+  background-color: $brand-danger;
+}
+
+.icon-link-background-default {
+  background-color: $brand-primary;
+}
+
+.text-primary {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}
+
+.text-info {
+  color: $brand-info;
+  
+  &amp;:hover {
+    color: darken($brand-info, 20%);
+  }
+}
+
+.text-success {
+  color: $brand-success;
+  
+  &amp;:hover {
+    color: darken($brand-success, 20%);
+  }
+}
+
+.text-warning {
+  color: $brand-warning;
+  
+  &amp;:hover {
+    color: darken($brand-warning, 20%);
+  }
+}
+
+.text-danger {
+  color: $brand-danger;
+  
+  &amp;:hover {
+    color: darken($brand-danger, 20%);
+  }
+}
+
+.text-default {
+  color: $brand-primary;
+  
+  &amp;:hover {
+    color: darken($brand-primary, 20%);
+  }
+}
+
+.high-contrast {
+  .text-primary {
+    color: darken($brand-primary, 10%);
+  }
+
+  .text-info {
+    color: darken($brand-info, 10%);
+  }
+
+  .text-success {
+    color: darken($brand-success, 10%);
+  }
+
+  .text-warning {
+    color: darken($brand-warning, 10%);
+  }
+
+  .text-danger {
+    color: darken($brand-danger, 10%);
+  }
+
+  .text-default {
+    color: darken($brand-primary, 10%);
+  }
+}</css>
+        <data_table>sp_instance_link</data_table>
+        <demo_data>{&#13;
+	"options": {&#13;
+		"filterOptions": [&#13;
+			{&#13;
+				"title": "Filter",&#13;
+				"field": "short_description",&#13;
+				"type": "checkbox",&#13;
+				"expanded": true,&#13;
+				"server_side": true,&#13;
+				"options": [&#13;
+					{&#13;
+						"title": "Affix Seals",&#13;
+						"value": "affix seals",&#13;
+						"selected": true&#13;
+					},&#13;
+					{&#13;
+						"title": "Role Assignment Management",&#13;
+						"value": "Role Assignment Management",&#13;
+						"selected": false&#13;
+					},&#13;
+					{&#13;
+						"title": "Skip Approval",&#13;
+						"value": "skip approval",&#13;
+						"selected": true&#13;
+					},&#13;
+					{&#13;
+						"title": "Preservation Period Extension",&#13;
+						"value": "Preservation Period Extension",&#13;
+						"selected": false&#13;
+					}&#13;
+				]&#13;
+			}&#13;
+&#13;
+		]&#13;
+	}&#13;
+}</demo_data>
+        <description/>
+        <docs/>
+        <field_list>type,url,sc_category,sc_cat_item,kb_topic,kb_article,kb_category,sp_page,title,short_description,color,class_name,glyph</field_list>
+        <has_preview>true</has_preview>
+        <id>csr_icon_link</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>CSR Icon link</name>
+        <option_schema>[{"name":"link_template","section":"Presentation","label":"Template","type":"choice","choices":[{"label":"Top Icon","value":"Top Icon"},{"label":"Circle Icon","value":"Circle Icon"},{"label":"Color Box","value":"Color Box"}]},{"displayValue":"CSR Reservations","name":"additional_option","section":"Data","label":"additional option","type":"reference","value":"x_616811_coworking_csr_reservations2","ed":{"reference":"x_616811_coworking_csr_reservations2"}}]</option_schema>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function(){
+
+	var gr = $sp.getInstanceRecord();
+	data.href = $sp.getMenuHREF(gr);
+	//data.target = options.target || "";
+
+	
+	
+	var demoValue =  options.demoData;
+	gs.addInfoMessage(demoValue)
+/**/
+  var widget = $sp.getInstanceRecord().sp_widget.getRefRecord();
+	var demo_data =  JSON.parse(widget.getValue('demo_data'))	
+	gs.addInfoMessage("my_demo_data: "+ demo_data)
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-06 00:54:47</sys_created_on>
+        <sys_id>7492a99747112110f7709a21336d43bf</sys_id>
+        <sys_mod_count>100</sys_mod_count>
+        <sys_name>CSR Icon link</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sp_widget_7492a99747112110f7709a21336d43bf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-27 06:38:26</sys_updated_on>
+        <template><![CDATA[<div class="iconlink" ng-class="{'high-contrast': accessibilityModeEnabled}">
+  <!--// Top Icon -->
+  <a ng-if="::(options.link_template == 'Top Icon' || !options.link_template)" ng-href="{{::data.href}}" class="top_icon {{::options.class_name}}" target="{{::data.target}}" >
+    <div class="m-b fa fa-{{::options.glyph}} fa-4x {{::options.class_name}} text-{{::options.color}}"></div>
+    <h2>{{::options.title}}</h2>
+    <span class="text-muted">{{::options.short_description}}</span>
+  </a>
+
+  <!--// Circle Icon -->
+  <a ng-if="::(options.link_template == 'Circle Icon')" ng-href="{{::data.href}}" class="circle_icon {{::options.class_name}} text-{{::options.color}}" target="{{::data.target}}" >
+    <span class="fa fa-stack fa-2x" aria-hidden="true">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-{{::options.glyph}} fa-stack-1x fa-inverse"></i>
+    </span>
+    <h2>{{::options.title}}</h2>
+    <span class="text-muted">{{::options.short_description}}</span>
+  </a>
+
+  <!--// Color Box -->
+  <a ng-if="::(options.link_template == 'Color Box')" ng-href="{{::data.href}}" class="color_box {{::options.class_name}} icon-link-background-{{::options.color}} text-white" target="{{::data.target}}" >
+    <div class="fa fa-{{::options.glyph}} fa-3x {{::options.class_name}}"></div>
+    <h2>{{::options.title}}</h2>
+    <span>{{::options.short_description}}</span>
+  </a>
+</div>]]></template>
+    </sp_widget>
+</record_update>

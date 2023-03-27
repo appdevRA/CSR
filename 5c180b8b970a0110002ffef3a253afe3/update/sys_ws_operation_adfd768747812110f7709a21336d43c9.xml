@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>sample_getInfo</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    // implement resource here
+    var body = {};
+    body.totalUserNIRecs = 23;
+    body.catCounts = 12;
+    body.user = {
+        "User name": gs.getUserName(),
+        "User ID": gs.getUserID()
+    };
+	
+	response.setBody(body)
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_616811_coworking/demo_api/nigetinfo/{user_name}</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/nigetinfo/{user_name}</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description>Find the active NeedIt records for a user. Group by What needed.</short_description>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-21 02:41:34</sys_created_on>
+        <sys_id>adfd768747812110f7709a21336d43c9</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>sample_getInfo</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_ws_operation_adfd768747812110f7709a21336d43c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-21 04:17:38</sys_updated_on>
+        <web_service_definition display_value="Demo API">7a0c724747812110f7709a21336d43e1</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

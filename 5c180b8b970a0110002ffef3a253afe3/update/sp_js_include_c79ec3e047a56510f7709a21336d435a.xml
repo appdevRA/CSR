@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>xlsx</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 06:02:28</sys_created_on>
+        <sys_id>c79ec3e047a56510f7709a21336d435a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>xlsx</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_ui_script display_value="x_616811_coworking.xlsx">11aec3e047a56510f7709a21336d43f7</sys_ui_script>
+        <sys_update_name>sp_js_include_c79ec3e047a56510f7709a21336d435a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 06:02:28</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

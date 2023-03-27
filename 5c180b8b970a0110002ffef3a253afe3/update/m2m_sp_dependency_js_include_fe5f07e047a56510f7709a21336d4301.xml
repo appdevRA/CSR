@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
+    <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <sp_dependency display_value="SheetJS">6e7e03e047a56510f7709a21336d43f2</sp_dependency>
+        <sp_js_include display_value="xlsx">c79ec3e047a56510f7709a21336d435a</sp_js_include>
+        <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 06:02:28</sys_created_on>
+        <sys_id>fe5f07e047a56510f7709a21336d4301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SheetJS.xlsx</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>m2m_sp_dependency_js_include_fe5f07e047a56510f7709a21336d4301</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 06:02:28</sys_updated_on>
+    </m2m_sp_dependency_js_include>
+</record_update>

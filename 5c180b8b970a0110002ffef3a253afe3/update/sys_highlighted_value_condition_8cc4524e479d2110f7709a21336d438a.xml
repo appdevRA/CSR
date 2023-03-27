@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_highlighted_value_condition">
+    <sys_highlighted_value_condition action="INSERT_OR_UPDATE">
+        <color>high</color>
+        <conditions table="x_616811_coworking_csr_space">name=asd^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="=" or="false" value="asd"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <highlighted_value display_value="accessibility">a8441a0e479d2110f7709a21336d43d1</highlighted_value>
+        <icon display_value="accessibility-fill">accessibility_fill</icon>
+        <order>0</order>
+        <show_icon>true</show_icon>
+        <status/>
+        <sys_class_name>sys_highlighted_value_condition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-02 07:22:17</sys_created_on>
+        <sys_id>8cc4524e479d2110f7709a21336d438a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_highlighted_value_condition_8cc4524e479d2110f7709a21336d438a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-02 07:30:07</sys_updated_on>
+        <value_override/>
+        <variant>tertiary</variant>
+    </sys_highlighted_value_condition>
+</record_update>

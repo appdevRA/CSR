@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+    <sys_alias action="INSERT_OR_UPDATE">
+        <configuration_template/>
+        <connection_type>http_connection</connection_type>
+        <id>x_616811_coworking.Slack_account</id>
+        <multiple_connections>false</multiple_connections>
+        <name>Slack account</name>
+        <parent/>
+        <retry_policy display_value="Default HTTP Retry Policy">ef751ff07301330025d71afe2ff6a7f9</retry_policy>
+        <sys_class_name>sys_alias</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-07 07:35:53</sys_created_on>
+        <sys_id>3b36447b47196110f7709a21336d4329</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_616811_coworking.Slack_account</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>sys_alias_3b36447b47196110f7709a21336d4329</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-07 07:35:53</sys_updated_on>
+        <type>connection</type>
+    </sys_alias>
+</record_update>

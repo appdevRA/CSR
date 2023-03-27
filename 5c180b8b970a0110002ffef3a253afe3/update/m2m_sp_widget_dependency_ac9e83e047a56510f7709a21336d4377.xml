@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="SheetJS">6e7e03e047a56510f7709a21336d43f2</sp_dependency>
+        <sp_widget display_value="CSR Icon link">7492a99747112110f7709a21336d43bf</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-03-10 05:59:02</sys_created_on>
+        <sys_id>ac9e83e047a56510f7709a21336d4377</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SheetJS.CSR Icon link</sys_name>
+        <sys_package display_value="Coworking space Reservation System" source="x_616811_coworking">5c180b8b970a0110002ffef3a253afe3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Coworking space Reservation System">5c180b8b970a0110002ffef3a253afe3</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_ac9e83e047a56510f7709a21336d4377</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-03-10 05:59:02</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>
